@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import ChatList from './ChatList'
 import ChatWindow from './ChatWindow'
 import SubAgentChatList from './SubAgentChatList'
-import SubAgentChatWindow from './SubAgentChatWindow'
+import SubAgentChatWindo from './SubAgentChatWindo'
 import { ConfigProvider } from 'antd'
 import GroupDetailsSidebar from './GroupDetailsSidebar'
 import { ArrowLeft } from 'lucide-react'
@@ -218,7 +218,7 @@ const MessagesTabs = () => {
                   <div className="relative h-full">
                     {/* 🔙 Back Button */}
 
-                    <SubAgentChatWindow
+                    <SubAgentChatWindo
                       conversation={selectedConversation}
                       onOpenGroupSettings={() => setShowSidebar(true)}
                       handleBack={handleBack}

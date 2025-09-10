@@ -7,8 +7,14 @@ import { PaperClipOutlined } from '@ant-design/icons'
 import { Send } from 'lucide-react'
 import InviteModal from './InviteModal'
 import { ArrowLeft } from 'lucide-react'
+import { Menu, Dropdown } from 'antd'
+import { MoreOutlined } from '@ant-design/icons'
 
-const SubAgentChatWindow = ({ conversation, handleBack }) => {
+const SubAgentChatWindo = ({
+  conversation,
+  onOpenGroupSettings,
+  handleBack,
+}) => {
   const [isInviteModalOpen, setIsInviteModalOpen] = useState(false)
 
   if (!conversation) {
@@ -18,6 +24,18 @@ const SubAgentChatWindow = ({ conversation, handleBack }) => {
       </div>
     )
   }
+  const handleMenuClick = ({ key }) => {
+    if (key === 'groupSettings' && onOpenGroupSettings) {
+      onOpenGroupSettings()
+    }
+  }
+  const menu = (
+    <Menu onClick={handleMenuClick}>
+      <Menu.Item key="1">Edit Contact</Menu.Item>
+      <Menu.Item key="2">Delete Conversation</Menu.Item>
+      <Menu.Item key="groupSettings">Group Settings</Menu.Item>
+    </Menu>
+  )
 
   const participants = conversation.extra
     ? conversation.name + ' ' + conversation.extra
@@ -65,13 +83,24 @@ const SubAgentChatWindow = ({ conversation, handleBack }) => {
             </p>
           </div>
         </div>
-
-        <Button
-          className="border border-bordercolor bg-cardbg text-textnormal"
-          onClick={() => setIsInviteModalOpen(true)}
-        >
-          Invite
-        </Button>
+        <div className="flex items-center space-x-2">
+          <Button
+            className="border border-bordercolor bg-cardbg text-textnormal"
+            onClick={() => setIsInviteModalOpen(true)}
+          >
+            Invite
+          </Button>
+          <Dropdown
+            overlay={menu}
+            trigger={['click']}
+            className="bg-transparent"
+          >
+            <Button
+              icon={<MoreOutlined className="text-textnormal w-6 h-6" />}
+              className="border-none p-2"
+            />
+          </Dropdown>
+        </div>
       </div>
 
       {/* Messages */}
@@ -155,4 +184,4 @@ const SubAgentChatWindow = ({ conversation, handleBack }) => {
   )
 }
 
-export default SubAgentChatWindow
+export default SubAgentChatWindo

@@ -1,41 +1,27 @@
-'use client';
+'use client'
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { Button } from 'antd';
-import { PaperClipOutlined } from '@ant-design/icons';
-import { Send } from 'lucide-react';
-import InviteModal from './InviteModal';
+import React, { useState } from 'react'
+import Image from 'next/image'
+import { Button } from 'antd'
+import { PaperClipOutlined } from '@ant-design/icons'
+import { Send } from 'lucide-react'
+import InviteModal from './InviteModal'
 import { ArrowLeft } from 'lucide-react'
-import { Menu, Dropdown } from 'antd';
-import { MoreOutlined } from '@ant-design/icons';
 
-const SubAgentChatWindow = ({ conversation,onOpenGroupSettings,handleBack }) => {
-  const [isInviteModalOpen, setIsInviteModalOpen] = useState(false);
+const SubAgentChatWindo = ({ conversation, handleBack }) => {
+  const [isInviteModalOpen, setIsInviteModalOpen] = useState(false)
 
   if (!conversation) {
     return (
       <div className="hidden md:flex md:w-2/3 items-center justify-center text-textnormal h-screen">
         Select a conversation
       </div>
-    );
+    )
   }
-    const handleMenuClick = ({ key }) => {
-if (key === 'groupSettings' && onOpenGroupSettings) {
-  onOpenGroupSettings(); 
-}
-};
-  const menu = (
-  <Menu onClick={handleMenuClick}>
-    <Menu.Item key="1">Edit Contact</Menu.Item>
-    <Menu.Item key="2">Delete Conversation</Menu.Item>
-    <Menu.Item key="groupSettings">Group Settings</Menu.Item>
-  </Menu>
-);
 
   const participants = conversation.extra
     ? conversation.name + ' ' + conversation.extra
-    : conversation.name;
+    : conversation.name
 
   return (
     <div className=" flex flex-col h-screen bg-cardbg">
@@ -69,7 +55,9 @@ if (key === 'groupSettings' && onOpenGroupSettings) {
           </div>
           <div>
             <h2 className="text-lg font-semibold text-textheading">
-              {conversation.isGroup ? 'Michael Chen & John Smith' : conversation.name}
+              {conversation.isGroup
+                ? 'Michael Chen & John Smith'
+                : conversation.name}
             </h2>
             <p className="text-sm text-textnormal">
               {conversation.agent}
@@ -77,32 +65,27 @@ if (key === 'groupSettings' && onOpenGroupSettings) {
             </p>
           </div>
         </div>
-         <div className="flex items-center space-x-2">
+
         <Button
           className="border border-bordercolor bg-cardbg text-textnormal"
           onClick={() => setIsInviteModalOpen(true)}
         >
           Invite
         </Button>
-        <Dropdown overlay={menu} trigger={['click']}  className="bg-transparent">
-           
-            <Button
-              icon={<MoreOutlined className='text-textnormal w-6 h-6' />}
-              className="border-none p-2"
-            />
-          </Dropdown>
-          </div>
       </div>
 
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-6 space-y-6">
         {conversation.messages.length > 0 ? (
           conversation.messages.map((msg, index) => (
-            <div key={index} >
-                
+            <div key={index}>
               <div className=" flex items-center space-x-2 mb-1">
                 <Image
-                  src={msg.from === 'them' ? conversation.avatar : 'https://i.pravatar.cc/150?img=12'}
+                  src={
+                    msg.from === 'them'
+                      ? conversation.avatar
+                      : 'https://i.pravatar.cc/150?img=12'
+                  }
                   alt={msg.from === 'them' ? conversation.name : 'Me'}
                   width={24}
                   height={24}
@@ -164,12 +147,12 @@ if (key === 'groupSettings' && onOpenGroupSettings) {
         open={isInviteModalOpen}
         onCancel={() => setIsInviteModalOpen(false)}
         onConfirm={({ email, role }) => {
-          console.log('Inviting:', email, 'as', role);
-          setIsInviteModalOpen(false);
+          console.log('Inviting:', email, 'as', role)
+          setIsInviteModalOpen(false)
         }}
       />
     </div>
-  );
-};
+  )
+}
 
-export default SubAgentChatWindow;
+export default SubAgentChatWindo

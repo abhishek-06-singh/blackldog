@@ -10,11 +10,9 @@ import SubAgentLeaderBoard from './SubAgents/SubAgentLeadershipBoard'
 import SubAgentsDashboardCharts from './SubAgents/SubAgentsDashboardCharts'
 import SubAgentPerformanceOverview from './SubAgents/SubAgentPerformanceOverview'
 import ListingTable from './overview/ListingTable'
-import OverviewFilters from './overview/OverviewFilters'
+import OverviewFilter from './overview/OverviewFilter'
 import OverviewDashboardCharts from './overview/OverviewDashboardCharts'
 import OverviewSalesFunnel from './overview/OverviewSalesFunnel'
-
-
 
 const ReportsTabs = () => {
   const [activeTab, setActiveTab] = useState('my')
@@ -25,7 +23,7 @@ const ReportsTabs = () => {
       <div className="w-full  rounded-2xl p-2 pb-4 md:p-8">
         {/* Tabs Header */}
         <div className="flex border-b border-bordercolor  mb-8">
-            <button
+          <button
             onClick={() => setActiveTab('overview')}
             className={`px-4 py-2 text-sm font-medium rounded-t-lg ${
               activeTab === 'overview'
@@ -44,7 +42,7 @@ const ReportsTabs = () => {
                 : 'text-textnormal hover:text-textnormal '
             }`}
           >
-           Agents
+            Agents
           </button>
           <button
             onClick={() => setActiveTab('sub')}
@@ -61,34 +59,29 @@ const ReportsTabs = () => {
         {/* Tabs Content */}
         <div className="mt-4">
           {activeTab === 'overview' && (
-            <div className='space-y-6'>
-             <OverviewFilters />
-             <OverviewDashboardCharts />
-             <OverviewSalesFunnel />
-             <ListingTable/>
-
-           
+            <div className="space-y-6">
+              <OverviewFilter />
+              <OverviewDashboardCharts />
+              <OverviewSalesFunnel />
+              <ListingTable />
             </div>
           )}
 
           {activeTab === 'my' && (
-            <div className='space-y-6'>
-             <MyReportsFilters />
-             <DashboardCharts />
-             <SalesFunnel />
-             <ListingDetailsTable/>
-
-           
+            <div className="space-y-6">
+              <MyReportsFilters />
+              <DashboardCharts />
+              <SalesFunnel />
+              <ListingDetailsTable />
             </div>
           )}
 
           {activeTab === 'sub' && (
-            <div className='space-y-6'>
+            <div className="space-y-6">
               <SubAgentsFilters />
               <SubAgentPerformanceOverview />
               <SubAgentsDashboardCharts />
               <SubAgentLeaderBoard />
-              
             </div>
           )}
         </div>
