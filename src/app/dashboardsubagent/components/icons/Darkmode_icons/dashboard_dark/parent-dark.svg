@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="139" height="139" viewBox="0 0 139 139" fill="none">
+  <!-- Transparent background is implicit -->
+  <!-- Large head -->
+  <circle cx="40" cy="34" r="20" stroke="white" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Small head -->
+  <circle cx="98" cy="44" r="14" stroke="white" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Large body (rounded arch) -->
+  <path d="M8 120c0-30 28-48 60-48s60 18 60 48" stroke="white" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Small body (rounded arch) -->
+  <path d="M74 120c0-18 16-28 34-28s34 10 34 28" stroke="white" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Base rounded rectangle to emulate the original thick base line -->
+  <rect x="4" y="112" width="131" height="14" rx="6" fill="white" />
+</svg>
