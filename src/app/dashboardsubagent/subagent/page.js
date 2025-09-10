@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'
 
 export default function AgentDashboard() {
   return (
-     <motion.div
+    <motion.div
       className="mt-0 w-full flex flex-col overflow-x-hidden"
       initial={{ opacity: 0, y: 0 }} // start hidden + slightly down
       animate={{ opacity: 1, y: 0 }} // fade in + move up
@@ -30,7 +30,7 @@ export default function AgentDashboard() {
         <StatCards />
       </div>
       <div className="ml-5 lg:ml-10 mt-4">
-       <RecentTable />  
+        <RecentTable />
       </div>
       <div className="mr-5 ml-5 lg:ml-10 lg:mr-10 mt-4">
         <ParentAgent />

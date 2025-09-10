@@ -6,16 +6,16 @@ import StatCards from '../components/minicomponents/StatsCards'
 import PropertyActivityOverview from '../components/minicomponents/PropertyActivityOverview'
 import VisualAnalytics from '../components/minicomponents/VisualAnalytics'
 import TopPerformingTables from '../components/minicomponents/TopPerformingTables.js'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export default function AgentDashboard() {
   return (
     <motion.div
-          className="mt-0 w-full flex flex-col overflow-x-hidden"
-          initial={{ opacity: 0, y: 0 }} // start hidden + slightly down
-          animate={{ opacity: 1, y: 0 }} // fade in + move up
-          transition={{ duration: 0.6, ease: 'easeInOut' }} // 400ms
-        >
+      className="mt-0 w-full flex flex-col overflow-x-hidden"
+      initial={{ opacity: 0, y: 0 }} // start hidden + slightly down
+      animate={{ opacity: 1, y: 0 }} // fade in + move up
+      transition={{ duration: 0.6, ease: 'easeInOut' }} // 400ms
+    >
       {/* Navbar */}
       <Navbar />
 
