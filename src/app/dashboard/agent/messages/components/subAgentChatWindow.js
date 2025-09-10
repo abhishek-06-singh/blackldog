@@ -1,27 +1,27 @@
-'use client';
+'use client'
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { Button } from 'antd';
-import { PaperClipOutlined } from '@ant-design/icons';
-import { Send } from 'lucide-react';
-import InviteModal from './InviteModal';
+import React, { useState } from 'react'
+import Image from 'next/image'
+import { Button } from 'antd'
+import { PaperClipOutlined } from '@ant-design/icons'
+import { Send } from 'lucide-react'
+import InviteModal from './InviteModal'
 import { ArrowLeft } from 'lucide-react'
 
-const SubAgentChatWindow = ({ conversation,handleBack }) => {
-  const [isInviteModalOpen, setIsInviteModalOpen] = useState(false);
+const SubAgentChatWindow = ({ conversation, handleBack }) => {
+  const [isInviteModalOpen, setIsInviteModalOpen] = useState(false)
 
   if (!conversation) {
     return (
       <div className="hidden md:flex md:w-2/3 items-center justify-center text-textnormal h-screen">
         Select a conversation
       </div>
-    );
+    )
   }
 
   const participants = conversation.extra
     ? conversation.name + ' ' + conversation.extra
-    : conversation.name;
+    : conversation.name
 
   return (
     <div className=" flex flex-col h-screen bg-cardbg">
@@ -55,7 +55,9 @@ const SubAgentChatWindow = ({ conversation,handleBack }) => {
           </div>
           <div>
             <h2 className="text-lg font-semibold text-textheading">
-              {conversation.isGroup ? 'Michael Chen & John Smith' : conversation.name}
+              {conversation.isGroup
+                ? 'Michael Chen & John Smith'
+                : conversation.name}
             </h2>
             <p className="text-sm text-textnormal">
               {conversation.agent}
@@ -76,11 +78,14 @@ const SubAgentChatWindow = ({ conversation,handleBack }) => {
       <div className="flex-1 overflow-y-auto p-6 space-y-6">
         {conversation.messages.length > 0 ? (
           conversation.messages.map((msg, index) => (
-            <div key={index} >
-                
+            <div key={index}>
               <div className=" flex items-center space-x-2 mb-1">
                 <Image
-                  src={msg.from === 'them' ? conversation.avatar : 'https://i.pravatar.cc/150?img=12'}
+                  src={
+                    msg.from === 'them'
+                      ? conversation.avatar
+                      : 'https://i.pravatar.cc/150?img=12'
+                  }
                   alt={msg.from === 'them' ? conversation.name : 'Me'}
                   width={24}
                   height={24}
@@ -142,12 +147,12 @@ const SubAgentChatWindow = ({ conversation,handleBack }) => {
         open={isInviteModalOpen}
         onCancel={() => setIsInviteModalOpen(false)}
         onConfirm={({ email, role }) => {
-          console.log('Inviting:', email, 'as', role);
-          setIsInviteModalOpen(false);
+          console.log('Inviting:', email, 'as', role)
+          setIsInviteModalOpen(false)
         }}
       />
     </div>
-  );
-};
+  )
+}
 
-export default SubAgentChatWindow;
+export default SubAgentChatWindow

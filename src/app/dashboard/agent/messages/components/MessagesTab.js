@@ -4,7 +4,7 @@ import ChatList from './ChatList'
 import ChatWindow from './ChatWindow'
 import SubAgentChatList from './SubAgentChatList'
 import SubAgentChatWindow from './SubAgentChatWindow'
-import { ConfigProvider } from 'antd';
+import { ConfigProvider } from 'antd'
 import GroupDetailsSidebar from './GroupDetailsSidebar'
 import { ArrowLeft } from 'lucide-react'
 
@@ -85,14 +85,13 @@ const conversationsData = [
       },
     ],
   },
-];
-
+]
 
 const MessagesTabs = () => {
   const [activeTab, setActiveTab] = useState('my')
-  const [selectedConversation, setSelectedConversation] = useState(null);
-  const [showSidebar, setShowSidebar] = useState(false);
-   const [showMyChatWindow, setShowMyChatWindow] = useState(false)
+  const [selectedConversation, setSelectedConversation] = useState(null)
+  const [showSidebar, setShowSidebar] = useState(false)
+  const [showMyChatWindow, setShowMyChatWindow] = useState(false)
   const [showSubChatWindow, setShowSubChatWindow] = useState(false)
 
   const handleSelectConversation = (conv) => {
@@ -106,14 +105,17 @@ const MessagesTabs = () => {
     else setShowSubChatWindow(false)
   }
 
-return (
+  return (
     <div className="relative">
       {/* Sidebar stays unchanged */}
       {showSidebar && (
         <div className="overflow-y-scroll fixed right-0 top-0 h-full w-80 bg-cardbg shadow-lg border-l border-bordercolor z-50 p-4">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-semibold">Group Settings</h2>
-            <button onClick={() => setShowSidebar(false)} className="text-gray-500 hover:text-gray-700">
+            <button
+              onClick={() => setShowSidebar(false)}
+              className="text-gray-500 hover:text-gray-700"
+            >
               ✕
             </button>
           </div>
@@ -166,7 +168,9 @@ return (
           {activeTab === 'my' && (
             <div className="flex h-screen">
               {/* Chat List */}
-              <div className={`w-full lg:w-[40%] ${showMyChatWindow ? 'hidden lg:block' : 'block'}`}>
+              <div
+                className={`w-full lg:w-[40%] ${showMyChatWindow ? 'hidden lg:block' : 'block'}`}
+              >
                 <ChatList
                   conversations={conversationsData}
                   onSelect={handleSelectConversation}
@@ -175,11 +179,12 @@ return (
               </div>
 
               {/* Chat Window */}
-              <div className={`w-full  lg:w-[60%] ${showMyChatWindow ? 'block' : 'hidden lg:block'}`}>
+              <div
+                className={`w-full  lg:w-[60%] ${showMyChatWindow ? 'block' : 'hidden lg:block'}`}
+              >
                 {selectedConversation && (
                   <div className="relative h-full">
                     {/* 🔙 Back Button */}
-                    
 
                     <ChatWindow
                       conversation={selectedConversation}
@@ -195,7 +200,9 @@ return (
           {activeTab === 'sub' && (
             <div className="flex h-screen">
               {/* Sub-Agent Chat List */}
-              <div className={`w-full lg:w-[40%] ${showSubChatWindow ? 'hidden lg:block' : 'block'}`}>
+              <div
+                className={`w-full lg:w-[40%] ${showSubChatWindow ? 'hidden lg:block' : 'block'}`}
+              >
                 <SubAgentChatList
                   conversations={conversationsData}
                   onSelect={handleSelectConversation}
@@ -204,7 +211,9 @@ return (
               </div>
 
               {/* Sub-Agent Chat Window */}
-              <div className={`w-full lg:w-[60%] ${showSubChatWindow ? 'block' : 'hidden lg:block'}`}>
+              <div
+                className={`w-full lg:w-[60%] ${showSubChatWindow ? 'block' : 'hidden lg:block'}`}
+              >
                 {selectedConversation && (
                   <div className="relative h-full">
                     {/* 🔙 Back Button */}
