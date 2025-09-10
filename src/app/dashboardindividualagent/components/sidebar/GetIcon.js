@@ -34,7 +34,7 @@ import ReportsDark from '../icons/Darkmode_icons/dashboard_dark/ChartBar-dark.sv
 import SettingLight from '../icons/Lightmode_icons/dashboard/setting-light.svg?url'
 import SettingDark from '../icons/Darkmode_icons/dashboard_dark/setting-dark.svg?url'
 
-import HelpLight from '../icons/Lightmode_icons/dashboard/question-light.svg?url'
+import HelpLight from '../icons/Lightmode_icons/dashboard/Question-light.svg?url'
 import HelpDark from '../icons/Darkmode_icons/dashboard_dark/question-dark.svg?url'
 
 import ParentLight from '../icons/Lightmode_icons/dashboard/parent.svg?url'
