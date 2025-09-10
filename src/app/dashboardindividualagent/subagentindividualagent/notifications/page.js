@@ -1,3 +1,5 @@
+'use client'
+
 import Heading from '../../components/minicomponents/Heading'
 import Navbar from '../../components/minicomponents/Navbar'
 import NotificationsTabs from './components/NotificationsTabs'
