@@ -13,15 +13,15 @@ export default function Add_Document() {
       {/* Navbar */}
       <Navbar />
       {/* AntD Breadcrumb with custom separator */}
-      <div className="ml-10 mt-4 text-textheading">
+      <div className="ml-2 md:ml-6 lg:ml-10 mt-4 text-textheading">
         <Breadcrumb  
 
-          separator=">"
+          separator={<span className="text-textnormal">{">"}</span>}
           items={[
             {
               title: (
                 <a className="text-textnormal" href="/dashboard/agent/documents">
-                  Documents
+                 <span className="text-textnormal">Documents</span> 
 
                 </a>
               ),

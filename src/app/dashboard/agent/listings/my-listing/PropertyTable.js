@@ -87,7 +87,10 @@ const getMenu = (property) => (
     <Menu.Item key="2" onClick={() => alert(`Delete ${property.name}`)}>
       Delete
     </Menu.Item>
-    <Menu.Item key="3" onClick={() => alert(`View details of ${property.name}`)}>
+    <Menu.Item
+      key="3"
+      onClick={() => alert(`View details of ${property.name}`)}
+    >
       View Details
     </Menu.Item>
   </Menu>
@@ -156,7 +159,7 @@ export default function PropertyTable() {
                     onChange={() => toggleRow(property.id)}
                   />
                 </td>
-                <td className="pr-10 md:pr-16 py-4 md:p-4">
+                <td className="pr-10 md:pr-16 lg:pr-0 py-4 md:p-4">
                   <div className="flex items-center gap-3 w-full">
                     <img
                       src={property.image}
@@ -175,24 +178,34 @@ export default function PropertyTable() {
                 </td>
                 <td className="p-4">
                   <span
-                    className={`px-3 py-1 text-xs rounded-full whitespace-nowrap font-medium ${
-                      statusStyles[property.status] || 'bg-gray-300 text-black-500'
+                    className={`flex items-center justify-center  py-1 text-xs rounded-full whitespace-nowrap font-medium ${
+                      statusStyles[property.status] ||
+                      'bg-gray-300 text-black-500'
                     }`}
                   >
+                    {' '}
+                    <span className="w-1 h-1 mr-2 rounded-full inline-block bg-white"></span>
                     {property.status}
                   </span>
                 </td>
-                <td className="p-4 font-medium text-textnormal">{property.price}</td>
+                <td className="p-4 font-medium text-textnormal">
+                  {property.price}
+                </td>
                 <td className="p-4 text-textnormal">{property.views}</td>
                 <td className="p-4 text-textnormal">{property.inquiries}</td>
-                <td className="p-4 text-sm text-textnormal whitespace-nowrap">{property.date}</td>
+                <td className="p-4 text-sm text-textnormal whitespace-nowrap">
+                  {property.date}
+                </td>
                 <td className="p-4">
                   <Dropdown
                     overlay={getMenu(property)}
                     trigger={['click']}
                     placement="bottomRight"
                   >
-                    <Button type="text" icon={<MoreOutlined className="text-textnormal" />} />
+                    <Button
+                      type="text"
+                      icon={<MoreOutlined className="text-textnormal" />}
+                    />
                   </Dropdown>
                 </td>
               </tr>
@@ -222,8 +235,8 @@ export default function PropertyTable() {
               onClick={() => setCurrentPage(page)}
               className={`px-3 py-1 rounded-lg border border-bordercolor ${
                 currentPage === page
-                  ? 'bg-black-500 text-white'
-                  : 'hover:bg-boxbg text-textnormal'
+                  ? 'bg-black-500 text-white border border-textnormal'
+                  : 'hover:bg-black-500 text-textnormal'
               }`}
             >
               {page}

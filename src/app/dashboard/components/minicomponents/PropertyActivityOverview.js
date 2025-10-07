@@ -25,7 +25,7 @@ export default function PropertyActivityOverview() {
   ]
 
   return (
-    <div className="pr-10 mt-2 bg-background rounded-2xl ">
+    <div className="lg:pr-10 md:pr-6 pr-2 mt-2 bg-background rounded-2xl ">
       {/* Header */}
       <h2 className="text-xl font-semibold mb-3 text-subheading">
         Property Activity Overview

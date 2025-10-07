@@ -35,13 +35,15 @@ const ContactInformation = () => {
   const countryCodeSelector = (
     <Select
       defaultValue="US"
-      className="w-20 h-[44px]"
+      dropdownClassName=" bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
+      className="w-20 h-[44px] [&_.ant-select-selection-item]:!text-textnormal"
+      suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
       size="large"
     >
-      <Option value="US">🇺🇸 +1</Option>
-      <Option value="UK">🇬🇧 +44</Option>
-      <Option value="CA">🇨🇦 +1</Option>
-      <Option value="AU">🇦🇺 +61</Option>
+      <Option value="US" className="!text-textnormal text-xs md:!text-sm">🇺🇸 +1</Option>
+      <Option value="UK" className="!text-textnormal text-xs md:!text-sm">🇬🇧 +44</Option>
+      <Option value="CA" className="!text-textnormal text-xs md:!text-sm">🇨🇦 +1</Option>
+      <Option value="AU" className="!text-textnormal text-xs md:!text-sm">🇦🇺 +61</Option>
     </Select>
   );
 
@@ -61,9 +63,9 @@ const ContactInformation = () => {
             <Input
               placeholder="Enter Full Name"
               size="large"
-              className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
-            />
-          </div>
+            className="rounded-xl text-xs sm:!text-sm h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
+          />
+        </div>
           <div>
             <label className="block text-sm font-medium text-textnormal mb-2 no-label-marginbottom">
               Email*
@@ -71,8 +73,9 @@ const ContactInformation = () => {
             <Input
               placeholder="Enter Email"
               size="large"
-              className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
-              prefix={<span className="text-gray-400"><Mail/></span>}
+               className="rounded-xl text-xs sm:!text-sm h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
+
+              prefix={<span className="text-placeholder "><Mail className='w-4 h-4'/></span>}
             />
           </div>
         </div>
@@ -80,15 +83,22 @@ const ContactInformation = () => {
         {/* Phone Number and Status Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-textnormal mb-2 no-label-marginbottom">
+            <label className="block text-sm font-medium text-textnormal mb-2 no-label-marginbottom bg-cardbg">
               Phone Number
             </label>
-            <Input
-              addonBefore={countryCodeSelector}
-              placeholder="(555) 000-0000"
-              size="large"
-              className="w-full [&_.ant-input]:!h-[44px] rounded-xl [&_.ant-input-group]:!border [&_.ant-input-group]:!border-bordercolor [&_.ant-input-group]:!rounded-xl [&_.ant-input-group-addon]:!bg-cardbg"
-            />
+<Input
+  addonBefore={countryCodeSelector}
+  placeholder="(555) 000-0000"
+  size="large"
+  className="
+    rounded-xl text-xs sm:!text-sm h-10
+    [&_.ant-input]:!bg-cardbg [&_.ant-input]:!text-textnormal
+    ocus:!ring-0 focus:!border-bordercolor focus:!outline-none !border-bordercolor
+    [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!border-bordercolor [&_.ant-input-group]:!border-bordercolor [&_.ant-input]:!border-bordercolor [&_.ant-input-group-addon]:!bg-cardbg [&_.ant-input-group-addon]:!border-bordercolor !shadow-none !outline-none
+  "
+/>
+
+
           </div>
           <div>
             <label className="block text-sm font-medium text-textnormal mb-2 no-label-marginbottom">
@@ -99,13 +109,13 @@ const ContactInformation = () => {
               placeholder="Enter Company Name"
               size="large"
               dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-              className="w-full [&_.ant-select-selector]:!h-[44px] [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-              suffixIcon={<span className="text-textnormal"><ChevronDown /></span>}
+              className="w-full [&_.ant-select-selection-item]:!text-xs md:!text-sm [&_.ant-select-selector]:!h-[44px] [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+              suffixIcon={<span className="text-textnormal"><ChevronDown /></span>} defaultValue="lead"
             >
-              <Option value="lead">Lead</Option>
-              <Option value="customer">Customer</Option>
-              <Option value="prospect">Prospect</Option>
-              <Option value="partner">Partner</Option>
+              <Option value="lead" className="!text-textnormal text-xs md:!text-sm">Lead</Option>
+              <Option value="customer" className="!text-textnormal text-xs md:!text-sm">Customer</Option>
+              <Option value="prospect" className="!text-textnormal text-xs md:!text-sm">Prospect</Option>
+              <Option value="partner" className="!text-textnormal text-xs md:!text-sm">Partner</Option>
             </Select>
           </div>
         </div>
@@ -131,13 +141,14 @@ const ContactInformation = () => {
             <Input
               type="text"
               size="small"
-             className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
+            className="placeholder:text-placeholder rounded-xl text-xs sm:!text-sm h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
               value={inputValue}
               onChange={handleInputChange}
               onBlur={handleInputConfirm}
               onPressEnter={handleInputConfirm}
               autoFocus
               placeholder="Add Tags"
+              suffixIcon={<span className="text-textnormal"><ChevronDown /></span>}
             />
           </div>
         </div>

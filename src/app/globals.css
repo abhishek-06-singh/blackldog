@@ -47,6 +47,7 @@
   --color-iconborder:#8A8A8A;
   --color-accentBg:#fafafa;
   --color-bordersemicolor: transparent;
+  --color-placeholder:#adaebc;
 }
 
 .dark {
@@ -87,6 +88,7 @@
   --color-iconborder:#FFFFFF;
   --color-accentBg:transparent;
   --color-bordersemicolor:var(--color-bordercolor);
+  --color-placeholder:#E6E6E6;
 
 
 
@@ -324,3 +326,7 @@ h6 {
 .ant-table-tbody {
   background: transparent !important;
 }
+.ant-input::placeholder {
+  @apply text-placeholder;
+}
+

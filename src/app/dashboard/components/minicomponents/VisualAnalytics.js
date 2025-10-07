@@ -24,17 +24,17 @@ export default function VisualAnalytics() {
 
   const dealData = [
     { name: 'New', value: 33, color: '#000000' },
-    { name: 'Negotiation', value: 33, color: '#FFFFFF' }, // amber shade
-    { name: 'Closed', value: 19, color: '#eeb887' },
+    { name: 'Negotiation', value: 33, color: '#eeb887' }, // amber shade
+    { name: 'Closed', value: 19, color: '#FFFFFF' },
   ]
 
   return (
-    <div className="w-full pr-10 mt-5 mb-10 bg-background rounded-2xl ">
+    <div className="w-full lg:pr-10 md:pr-6 pr-2 mt-5 mb-10 bg-background rounded-2xl ">
       <h2 className="text-xl font-semibold mb-6 text-primary">
         Visual Analytics
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-rows-2 lg:grid-cols-12 gap-6 ">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 ">
         {/* Leads by Status */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -93,7 +93,16 @@ export default function VisualAnalytics() {
                 }}
               />
               {/* <YAxis axisLine={false} tickLine={false} /> */}
-              <Tooltip cursor={{ fill: 'transparent' }} />
+              <Tooltip
+                cursor={{ fill: 'transparent' }}
+                contentStyle={{
+                  backgroundColor: 'var(--color-cardbg)', 
+                  border: "1px solid var(--color-bordercolor)",
+                  color: 'var(--color-textnormal)',
+                }}
+                itemStyle={{ color: 'var(--color-textnormal)', fontWeight: 'bold' }}
+                labelStyle={{ color: 'var(--color-textnormal)', fontWeight: 600 }}
+              />
               <Bar dataKey="value" fill="#EDB887" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>

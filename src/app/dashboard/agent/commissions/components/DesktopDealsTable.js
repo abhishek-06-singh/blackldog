@@ -12,7 +12,7 @@ export default function DesktopDealsTable({
   statusStyles,
 }) {
   return (
-    <table className="min-w-full text-left table-auto">
+    <table className="min-w-full text-xs sm:text-sm text-left table-auto">
       <thead className="bg-cardbg text-textplaceholder text-sm font-thin">
         <tr>
           <th className="p-4">

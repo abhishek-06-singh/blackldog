@@ -14,12 +14,12 @@ const ListingsTabs = () => {
   return (
     <div>
       {' '}
-      <div className="w-full  rounded-2xl p-2 md:p-6">
+      <div className="w-full mt-6  rounded-2xl px-2 md:px-6 lg:px-10">
         {/* Tabs Header */}
         <div className="flex mb-6 border-b border-bordercolor">
           <button
             onClick={() => setActiveTab('my')}
-            className={`px-4 py-2 text-sm font-medium rounded-t-lg ${
+            className={`px-4 py-2 text-xs md:text-sm font-medium rounded-t-lg ${
               activeTab === 'my'
                 ? 'text-buttonbg border-b-2 border-buttonbg'
                 : 'text-textnormal hover:text-textnormal '
@@ -29,7 +29,7 @@ const ListingsTabs = () => {
           </button>
           <button
             onClick={() => setActiveTab('sub')}
-            className={`ml-4 px-4 py-2 text-sm font-medium rounded-t-lg ${
+            className={`ml-4 px-4 py-2 text-xs md:text-sm font-medium rounded-t-lg ${
               activeTab === 'sub'
                 ? 'text-buttonbg border-b-2 border-buttonbg'
                 : 'text-textnormal hover:text-textnormal '

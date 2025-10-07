@@ -40,10 +40,10 @@ export default function AddDealComponent() {
 
   return (
     <>
-     <h2 className="text-lg mt-10 text-primary font-semibold">Recipients</h2>
+     <h2 className="text-sm md:text-lg mt-10 text-primary font-semibold">Recipients</h2>
 
-   <div className="overflow-hidden rounded-xl shadow-md mt-4 border border-bordercolor">
-  <table className="min-w-full text-left table-auto">
+   <div className="overflow-x-auto rounded-xl shadow-md mt-4 border border-bordercolor">
+  <table className="min-w-full whitespace-nowrap text-left table-auto">
     <thead className="bg-cardbg text-textnormal text-xs border-b border-bordercolor">
       <tr>
         <th className="p-4">Name</th>
@@ -52,12 +52,12 @@ export default function AddDealComponent() {
         <th className="p-4">Actions</th>
       </tr>
     </thead>
-    <tbody className="divide-y divide-bordercolor">
+    <tbody className="divide-y divide-bordercolor text-xs md:text-sm">
       {members.map((item) => (
         <tr key={item.id} className="hover:bg-boxbg transition">
           {/* Lead */}
-          <td className="p-4">
-            <div className="flex items-center gap-3 w-full">
+          <td className="p-4 ">
+            <div className="flex items-center gap-3 w-full mr-8 md:mr-8 lg:mr-0">
               <img
                 src={item.lead.avatar}
                 className="w-9 h-9 rounded-full"

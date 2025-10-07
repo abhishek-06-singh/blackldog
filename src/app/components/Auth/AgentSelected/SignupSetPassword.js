@@ -1,14 +1,12 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Eye, EyeOff } from 'lucide-react'
-import Link from 'next/link'
-import { useState, useEffect } from 'react'
 
-export default function SignsetupPassword() {
-  const [password, setPassword] = useState('')
+export default function SignsetupPassword({ password, onChange, errors }) {
   const [showPassword, setShowPassword] = useState(false)
   const [strength, setStrength] = useState(0)
-  const checkPasswordStrenght = (pwd) => {
+
+  const checkPasswordStrength = (pwd) => {
     let score = 0
     if (pwd.length >= 6) score++
     if (/[0-9]/.test(pwd)) score++
@@ -16,6 +14,7 @@ export default function SignsetupPassword() {
     if (/[A-Z]/.test(pwd)) score++
     return score
   }
+
   const getStrengthLabel = () => {
     switch (strength) {
       case 0:
@@ -31,27 +30,29 @@ export default function SignsetupPassword() {
         return ''
     }
   }
+
   const getBarColor = () => {
     switch (strength) {
       case 0:
       case 1:
-        return 'bg-red-500' // Weak
+        return 'bg-red-500'
       case 2:
-        return 'bg-yellow-400' // Medium
+        return 'bg-yellow-400'
       case 3:
-        return 'bg-blue-500' // Strong
+        return 'bg-blue-500'
       case 4:
-        return 'bg-green-500' // Excellent
+        return 'bg-green-500'
       default:
         return 'bg-gray-300'
     }
   }
 
   useEffect(() => {
-    setStrength(checkPasswordStrenght(password))
+    setStrength(checkPasswordStrength(password))
   }, [password])
+
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 w-full">
       <label
         htmlFor="password"
         className="text-sm font-medium text-textheading"
@@ -64,8 +65,12 @@ export default function SignsetupPassword() {
           type={showPassword ? 'text' : 'password'}
           placeholder="Enter your password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-4 pr-10 py-2 md:py-3 text-sm md:text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 text-gray-900 placeholder-textplaceholder"
+          onChange={(e) => onChange('password', e.target.value)}
+          className={`w-full px-4 pr-10 py-2 md:py-3 text-sm md:text-lg border rounded-lg outline-none transition-all duration-200 ${
+            errors.password
+              ? 'border-red-500 focus:ring-red-500'
+              : 'border-gray-300 focus:ring-primary'
+          } text-gray-900 placeholder-textplaceholder`}
           required
         />
         <button
@@ -80,6 +85,8 @@ export default function SignsetupPassword() {
           )}
         </button>
       </div>
+
+      {/* Password Strength Bar */}
       <div className="flex space-x-2 mt-2">
         {[0, 1, 2, 3].map((index) => (
           <div
@@ -93,6 +100,11 @@ export default function SignsetupPassword() {
       <p className="mt-1.5 text-xs md:text-sm text-textheading">
         Password strength: <strong>{getStrengthLabel()}</strong>
       </p>
+
+      {/* Error message */}
+      {errors.password && (
+        <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+      )}
     </div>
   )
 }

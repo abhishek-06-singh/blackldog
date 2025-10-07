@@ -1,68 +1,68 @@
 import React from "react";
 import PriceCard_Module from "./PriceCard_Module";
 
-export default function Monthly_Module({showModal, selectedCard, setSelectedCard}) {
+/**
+ * Monthly_Module
+ * Expects `cards` to be the array from your API: response.data (array of plans)
+ */
+export default function Monthly_Module({
+  showModal,
+  selectedPlan,
+  setSelectedPlan,
+  onPlanSelect,
+  cards = [],
+}) {
 
+   console.log('Monthly Cards:', cards);
+  // Safety: handle empty/no-data case
+  if (!Array.isArray(cards) || cards.length === 0) {
+    return (
+      <p className="text-center text-sm text-gray-500">
+        No subscription plans found.
+      </p>
+    );
+  }
 
- const cards = [
-    {
-      title: "For Individual Agents",
-      price: "20",
-      period: "month",
-      description: "Get organized and set up simple sales processes quickly",
-      buttontext: "Get Started",
-      features: [
-        "1 user only",
-        "Access to all features",
-        "Unlimited property listings",
-        "Limited external collaborators (2 at a time)",
-      ],
-    },
-    {
-      title: "For Agencies",
-      price: "39",
-      period: "month",
-      description: "Optimize performance with more customizations and reporting",
-      buttontext: "Get Started",
-      features: [
-        "Up to 10 users",
-        "Access to all features",
-        "Limited property listings (5 per user)",
-        "Limited external collaborators (2 per user)",
-        "Additional cost per extra user",
-      ],
-    },
-    {
-      title: "Enterprise Package",
-      price: "Custom",
-      period: "",
-      buttontext: "Contact Us",
-      description: "Ideal for companies with multiple offices or more than 10 agents",
-      features: [
-        "Number of users & listings customized",
-        "Collaborators & limits decided after discussion",
-        "Dedicated support",
-        "Advanced security features",
-      ],
-    },
-  ];
+  // map feature limit value to readable string
+  const humanizeFeature = (f) => {
+    const name = (f.feature || "").replace(/_/g, " ");
+    const limit = f.limit === -1 ? "Unlimited" : String(f.limit);
+    return `${name}: ${limit}`;
+  };
+
+  const mapPriceProp = (card) => {
+    const monthly = card.pricing?.monthly;
+    // Treat enterprise/custom plans with monthly 0 as "Custom"
+    if (card.planType === "ENTERPRISE" && (monthly === 0 || monthly === null || monthly === undefined)) {
+      return "Custom";
+    }
+    // if monthly is undefined/null -> fallback to "Custom"
+    if (monthly === null || monthly === undefined) return "Custom";
+    return monthly;
+  };
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="flex flex-col lg:flex-row  justify-center items-center gap-4">
-
+      {/* allow wrapping so multiple cards show on smaller screens */}
+      <div className="grid grid-cols-1 justify-items-center lg:grid-cols-3 gap-4">
+       
         {cards.map((card, idx) => (
-          <PriceCard_Module 
-            key={idx}
+          <PriceCard_Module
+            key={card.id ?? idx}
             showModal={showModal}
-            title={card.title}
-            price={card.price}
-            period={card.period}
-            description={card.description}
-            buttontext={card.buttontext}
-            features={card.features}
-            isSelected={selectedCard === idx}
-            onSelect={() => setSelectedCard(idx)}
+            title={ card.planType } 
+            price={mapPriceProp(card)}
+            period="Monthly"
+            description={card.description ?? ""}
+            buttontext="Choose Plan"
+            features={Array.isArray(card.featureLimits) ? card.featureLimits.map(humanizeFeature) : []}
+            isSelected={selectedPlan?.id === card.id}
+           onSelect={() => {
+           setSelectedPlan(card)   
+            onPlanSelect?.(card, "monthly") 
+           }}
+            plan={card}
+            
           />
         ))}
       </div>

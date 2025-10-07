@@ -1,12 +1,9 @@
 'use client'
 import { Eye, EyeOff } from 'lucide-react'
 import Link from 'next/link'
-import React,{useState} from 'react'
+import React from 'react'
 
-export default function PasswordInput() {
-  const [password, setPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(false)
-
+export default function PasswordInput({ password, setPassword, showPassword, setShowPassword }) {
   return (
     <div className="space-y-2">
       <label htmlFor="password" className="text-sm font-medium text-textnormal">
@@ -19,7 +16,10 @@ export default function PasswordInput() {
           placeholder="Enter your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-4 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 text-gray-900 placeholder-textplaceholder"
+          className="w-full px-4 pr-10 py-3 border border-gray-300 rounded-lg 
+                     focus:ring-2 focus:ring-primary focus:border-transparent 
+                     outline-none transition-all duration-200 text-gray-900 
+                     placeholder-textplaceholder"
           required
         />
         <button

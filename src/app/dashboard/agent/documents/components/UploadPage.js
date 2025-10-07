@@ -9,7 +9,7 @@ import QuickTips from './QuickTips'
 
 export default function UploadPage () {
     return(
-    <div className="w-full flex flex-col lg:flex-row  gap-6 px-10 py-6">
+    <div className="w-full flex flex-col lg:flex-row  gap-6 px-2 md:px-6 lg:px-10 py-6">
         <div className="w-full lg:w-8/12 flex flex-col items-start space-y-6 border border-bordercolor p-4 rounded-lg shadow-md">
              <ConfigProvider
       theme={{

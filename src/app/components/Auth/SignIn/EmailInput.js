@@ -4,8 +4,7 @@ import Image from 'next/image'
 import mail from '../../../images/mail.svg'
 import React,{useState} from 'react'
 
-export default function EmailInput() {
-  const [email, setEmail] = useState('')
+export default function EmailInput({email,setEmail}) {
   return (
     <div className="space-y-2">
       <label htmlFor="email" className="text-sm font-medium text-textnormal">
@@ -18,7 +17,7 @@ export default function EmailInput() {
           placeholder="Enter your email address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-4 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 text-gray-900 placeholder-textplaceholder"
+          className="w-full px-4 pr-10 py-3 border border-bordercolor rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 text-gray-900 placeholder-textplaceholder"
           required
         />
         <Image

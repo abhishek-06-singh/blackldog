@@ -35,7 +35,7 @@ const AdditionalInfo = () => {
             value={notes}
             onChange={handleNotesChange}
             rows={4}
-           className="bg-cardbg border border-bordercolor"
+         className="rounded-xl text-xs sm:!text-sm h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
             style={{
               fontSize: '14px',
               lineHeight: '1.5'
@@ -55,8 +55,7 @@ const AdditionalInfo = () => {
                 value={location}
                 onChange={handleLocationChange}
                 size="large"
-               className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
-              />
+               className="rounded-xl text-xs sm:!text-sm h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"/>
             </div>
             {/* Empty column for larger screens */}
             <div className="hidden lg:block"></div>

@@ -1,0 +1,58 @@
+'use client'
+import React, { useState } from 'react'
+import PropertiesTab from './components/PropertiesTab'
+import MessagesTab from './components/MessagesTab'
+// Example icons (replace with your own if needed)
+import { Home, Users, MessageCircle, DollarSign } from 'lucide-react'
+
+// Dummy components for each tab
+
+const DashboardTabs = ({ decodedUser }) => {
+  const [activeTab, setActiveTab] = useState('properties')
+
+  const tabs = [
+    {
+      id: 'properties',
+      label: 'Properties',
+      icon: <Home size={16} />,
+      component: <PropertiesTab decodedUser={decodedUser} />,
+    },
+   
+    {
+      id: 'messages',
+      label: 'Messages',
+      icon: <MessageCircle size={16} />,
+      component: <MessagesTab />,
+    },
+   
+  ]
+
+  return (
+    <div className="w-full rounded-2xl p-2 md:p-6 bg-cardbg shadow">
+      {/* Tabs Header */}
+      <div className="flex border-b border-bordercolor">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-t-lg transition-all
+              ${
+                activeTab === tab.id
+                  ? 'text-buttonbg border-b-2 border-buttonbg'
+                  : 'text-textnormal hover:text-textheading'
+              }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Tabs Content */}
+      <div className="mt-4">
+        {tabs.find((tab) => tab.id === activeTab)?.component}
+      </div>
+    </div>
+  )
+}
+
+export default DashboardTabs

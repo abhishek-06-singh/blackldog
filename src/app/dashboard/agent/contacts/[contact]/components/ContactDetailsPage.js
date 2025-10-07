@@ -10,17 +10,17 @@ export default function ContactDetailsPage({contact}) {
                     <Heading title="Leads Details" />
     
                     <div className="flex gap-4">
-                      <button className="bg-background text-textnormal border-2 p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
+                      <button className="bg-background font-medium text-textnormal border border-bordercolor p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
                         <Edit className="w-4 h-4" />
                         Edit Lead
                       </button>
-                      <button className="bg-buttonbg text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
+                      <button className="bg-buttonbg font-medium text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
                        <Trash className="w-4 h-4" /> 
                        Delete Lead    
                       </button>
                     </div>
                   </div>
-        <div className='px-10 pb-10 gap-6 flex flex-col lg:flex-row'>
+        <div className='px-2 md:px-6 lg:px-10 pb-10 gap-6 flex flex-col lg:flex-row'>
             <LeftColumn_Contact contact={contact} />
             <RightColumn_contact />
         </div>

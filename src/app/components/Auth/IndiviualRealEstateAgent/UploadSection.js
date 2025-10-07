@@ -3,12 +3,8 @@ import React, { useState } from 'react'
 import UploadSectionHeading from '../Shared_AuthComponents/UploadSectionHeading'
 import UploadBox from '../Shared_AuthComponents/UploadBox'
 import UploadProgressBar from '../Shared_AuthComponents/UploadProgressBar'
-export default function UploadSection({
-  uploadsections,
-}) {
+export default function UploadSection({ uploadsections,files,errors,setFiles,setErrors }) {
 
-  const [files, setFiles] = useState({})
-  const [errors, setErrors] = useState({})
 
   const handleFiles = (sectionTitle, newFiles) => {
     const validFiles = Array.from(newFiles).filter(
@@ -26,26 +22,31 @@ export default function UploadSection({
       }))
       return
     }
-    setFiles((prev) => ({
-      ...prev,
-      [sectionTitle]: totalFiles,
-    }))
+    setFiles((prev) => {
+  const updated = {
+    ...prev,
+    [sectionTitle]: totalFiles,
+  }
+  console.log('In UploadSection, updated files state:', updated)
+  return updated
+})
+
     setErrors((prev) => ({
       ...prev,
       [sectionTitle]: '',
     }))
-    }
-     const uploadedCount = Object.values(files).reduce((count, fileArr) => {
+  }
+  const uploadedCount = Object.values(files).reduce((count, fileArr) => {
     return count + (fileArr?.length || 0)
   }, 0)
   const maxFiles = 5
-    return (
-      <div className="w-full ">
-        <UploadProgressBar UploadCount={uploadedCount} Maxfiles={maxFiles} />
-        {uploadsections.map((section, index) => (
-          <div className="w-full flex items-start  border justify-start rounded-xl mb-8">
-
-            <div className="w-full flex flex-col ">
+  return (
+    <div className="w-full ">
+      <UploadProgressBar UploadCount={uploadedCount} Maxfiles={maxFiles} />
+      {uploadsections.map((section, index) => (
+        <div
+         key={section.title} className="w-full flex items-start  border justify-start rounded-xl mb-8">
+          <div className="w-full flex flex-col ">
             <UploadSectionHeading index={index} section={section} />
             <UploadBox
               section={section}
@@ -54,9 +55,8 @@ export default function UploadSection({
               uploadedFile={files[section.title]?.[0]}
             />
           </div>
-          </div>
-        ))}
-      </div>
-    )
-  
+        </div>
+      ))}
+    </div>
+  )
 }

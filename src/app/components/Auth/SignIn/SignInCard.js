@@ -39,7 +39,7 @@ export default function SignInCard() {
       >
         <span className="text-sm text-textcheckbox">New here? </span>
         <Link
-          href="/agentsignup"
+          href="/agentagencysignup"
           className="text-sm text-primary hover:underline font-medium"
         >
           Sign up to get started

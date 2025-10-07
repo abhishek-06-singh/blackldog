@@ -3,6 +3,7 @@
 import React, { useState } from "react"
 import { Select, Button, DatePicker } from "antd"
 import { ChevronDown, Download } from "lucide-react"
+import { CalendarOutlined } from "@ant-design/icons"
 
 const { Option } = Select
 const { RangePicker } = DatePicker
@@ -24,13 +25,15 @@ const ReportsFilter = () => {
           <Select
             value={property}
             onChange={setProperty}
-            dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal"
+             dropdownClassName=" bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
+            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-xs sm:[&_.ant-select-selection-item]:!text-sm [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
             suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
+
           >
-            <Option value="all" className="!text-textnormal">All Properties</Option>
-            <Option value="villa" className="!text-textnormal">Villas</Option>
-            <Option value="apartment" className="!text-textnormal">Apartments</Option>
+            <Option value="all" className="!text-textnormal !text-xs sm:!text-sm">All Properties</Option>
+            <Option value="villa" className="!text-textnormal !text-xs sm:!text-sm">Villas</Option>
+            <Option value="apartment" className="!text-textnormal !text-xs sm:!text-sm">Apartments</Option>
+            <Option value="condo" className="!text-textnormal !text-xs sm:!text-sm">Condos</Option>
           </Select>
         </div>
 
@@ -40,12 +43,13 @@ const ReportsFilter = () => {
           <Select
             value={postedBy}
             onChange={setPostedBy}
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal"
+             dropdownClassName=" bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
+            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-xs sm:[&_.ant-select-selection-item]:!text-sm [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
             suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
           >
-            <Option value="all" className="!text-textnormal">All</Option>
-            <Option value="admin" className="!text-textnormal">Admin</Option>
-            <Option value="agent" className="!text-textnormal">Agents</Option>
+            <Option value="all" className="!text-textnormal !text-xs sm:!text-sm">All</Option>
+            <Option value="admin" className="!text-textnormal !text-xs sm:!text-sm">Admin</Option>
+            <Option value="agent" className="!text-textnormal !text-xs sm:!text-sm">Agents</Option>
           </Select>
         </div>
 
@@ -55,12 +59,14 @@ const ReportsFilter = () => {
           <Select
             value={subagents}
             onChange={setSubagents}
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal"
+             dropdownClassName=" bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
+            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-xs sm:[&_.ant-select-selection-item]:!text-sm [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
             suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
+
           >
-            <Option value="all" className="!text-textnormal">All Subagents</Option>
-            <Option value="sa1" className="!text-textnormal">Subagent 1</Option>
-            <Option value="sa2" className="!text-textnormal">Subagent 2</Option>
+            <Option value="all" className="!text-textnormal !text-xs sm:!text-sm">All Subagents</Option>
+            <Option value="sa1" className="!text-textnormal !text-xs sm:!text-sm">Subagent 1</Option>
+            <Option value="sa2" className="!text-textnormal !text-xs sm:!text-sm">Subagent 2</Option>
           </Select>
         </div>
 
@@ -70,7 +76,13 @@ const ReportsFilter = () => {
           <RangePicker
             value={dateRange}
             onChange={setDateRange}
-            className="w-full h-10 rounded-xl !bg-cardbg !border-bordercolor"
+            className="
+             w-full h-10 rounded-xl
+             [&_.ant-picker-input>input]:!text-textnormal
+             [&_.ant-picker-input>input::placeholder]:!text-placeholder
+             !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0
+           "
+           suffixIcon={<CalendarOutlined className="w-4 h-4 text-placeholder" />}
           />
         </div>
 
@@ -78,7 +90,7 @@ const ReportsFilter = () => {
         <div className=" coll-span-full flex sm:justify-start lg:justify-end mt-2 lg:mt-6">
           <Button
             icon={<Download className="w-4 h-4" />}
-            className="rounded-xl h-10 px-4 bg-buttonbg border border-bordercolor text-background hover:bg-boxbg"
+            className="font-medium rounded-xl h-10 px-4 bg-buttonbg border border-bordercolor text-background hover:bg-boxbg"
           >
             Export CSV
           </Button>

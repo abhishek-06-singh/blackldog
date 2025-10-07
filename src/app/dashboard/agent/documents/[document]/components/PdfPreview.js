@@ -17,16 +17,16 @@ export default function PdfPreview(doc) {
       {/* Preview Area */}
       <div className="bg-gray-100  dark:bg-background rounded-lg flex flex-col items-center justify-center h-64">
         <Image src={pdf_Light} className="block dark:hidden w-12 h-12  mb-2" />
-        <Image src={pdf_Dark} className='hidden dark:block w-12 h-12 mb-2'></Image>
+        <Image src={pdf_Dark} className='hidden dark:block w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 mb-2' />
 
-        <p className="text-textnormal  font-medium">
+        <p className="text-textnormal text-sm md:text-base  font-medium">
           PDF Document Preview
         </p>
-        <p className="text-sm text-textnormal ">{doc.doc}</p>
+        <p className="text-xs md:text-sm text-textnormal ">{doc.doc}</p>
       </div>
 
       {/* Controls */}
-      <div className="flex items-center justify-center gap-6 mt-4 text-sm text-textnormal dark:text-textnormal">
+      <div className="flex items-center justify-center gap-6 mt-4 text-xs md:text-sm text-textnormal dark:text-textnormal">
         <button
           onClick={handleZoomOut}
           className="flex items-center gap-1 hover:text-black-500 dark:hover:text-white"

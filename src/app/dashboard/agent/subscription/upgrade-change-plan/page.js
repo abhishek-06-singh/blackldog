@@ -23,13 +23,13 @@ export default function UpgradeChangePlan() {
              <Navbar />
     <div className='px-4 lg:px-4 py-5'>
       {/* Banner */}
-      <div className="flex items-center gap-2  p-3 border border-secondary bg-coral  rounded-md text-sm">
+      <div className="flex md:flex-row flex-col items-center md:gap-2 p-2 md:p-3 border border-secondary bg-coral  rounded-md ">
         <div className="flex items-center gap-0.5">
-          <Clock className="text-red-500 w-5 h-5" />
-          <span className="text-red-500">Free trial ended</span>
+          <Clock className="text-red-500 sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
+          <span className="text-xs lg:text-sm text-red-500">Free trial ended</span>
         </div>
 
-        <span className="text-textnormal font-medium">- Choose a plan to continue using all features</span>
+        <span className="text-[11px] md:text-xs lg:text-sm text-textnormal font-medium">- Choose a plan to continue using all features</span>
       </div>
 
       {/* Heading with ref attached */}
@@ -78,7 +78,7 @@ export default function UpgradeChangePlan() {
             onClick={() => setActive("Anually")}
           >
             <span>Annual</span>
-            <span className="ml-1 text-xs text-orange-500 border border-orange-200 bg-orange-50 px-2 py-0.5 rounded-full">
+            <span className="ml-1 text-xs text-orange-500 border border-orange-200 bg-cardbg px-2 py-0.5 rounded-full">
               -15%
             </span>
           </button>

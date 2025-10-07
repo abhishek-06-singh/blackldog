@@ -37,14 +37,14 @@ export default function TeamPage() {
           {/* ✅ Default team page content */}
           {!showNewDev ? (
             <>
-              <div className="ml-5 md:ml-10 mt-4 md:h-10 flex flex-col md:flex-row pr-5 md:pr-10 md:justify-between">
+              <div className="ml-2 md:ml-6 lg:ml-10 mt-4 md:h-10 flex flex-col md:flex-row pr-2 md:pr-6 lg:pr-10 md:justify-between">
                 <Heading
                   title="Team Members"
                   subtitle="Manage your sub-agents, External collaborators track their activity"
                 />
                 <button
                   onClick={() => setShowInviteMember(true)}
-                  className="bg-buttonbg mt-4 md:mt-0 text-background p-2 rounded-lg flex text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
+                  className="bg-buttonbg font-medium mt-4 md:mt-0 text-background p-2 rounded-lg flex text-xs sm:text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
                 >
                   <Plus className="text-sm w-4 " /> Add New Member
                 </button>
@@ -61,7 +61,7 @@ export default function TeamPage() {
           ) : (
             // ✅ Add New Property flow
             <>
-              <div className="ml-10 mt-4 h-10 flex pr-10 justify-between">
+              <div className="ml-2 md:ml-6 lg:ml-10 mt-4 h-10 flex pr-2 md:pr-6 lg:pr-10 justify-between">
                 <Heading title="Add New Property" />
 
                 <div className="flex gap-4">

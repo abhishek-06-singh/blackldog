@@ -1,4 +1,6 @@
 'use client'
+
+import { Library } from 'lucide-react'
 import React from 'react'
 import userplus from '../icons/userplus.svg'
 import warning from '../icons/warning.svg'
@@ -15,7 +17,7 @@ const notifications = [
       assignedTo: 'John Doe',
     },
     time: '5 mins ago',
-    icon: <Image src={userplus} alt="userplus" width={20} height={20} />,
+    icon: <Image src={userplus} alt="userplus" />,
   },
   {
     id: 2,
@@ -25,7 +27,7 @@ const notifications = [
       status: 'Pending',
     },
     time: '5 mins ago',
-    icon: <Image src={pdf} alt="pdf" width={20} height={20} />,
+    icon: <Image src={pdf} alt="pdf" />,
   },
   {
     id: 3,
@@ -34,7 +36,7 @@ const notifications = [
       message: 'Hey, did you check the documents?',
     },
     time: '5 mins ago',
-    icon: <Image src={message} alt="message" width={20} height={20} />,
+    icon: <Image src={message} alt="message" />,
   },
   {
     id: 4,
@@ -45,35 +47,46 @@ const notifications = [
       days: 4,
     },
     time: '5 mins ago',
-    icon: <Image src={warning} alt="warning" width={20} height={20} />,
+    icon: <Image src={warning} alt="warning" />,
   },
 ]
 
-export default function YesterdayNotifications() {
+export default function NotificationList() {
   return (
-    <div className="px-4 pb-4 w-full space-y-4">
-      <h3 className="font-semibold text-textheading text-lg mb-4">Yesterday</h3>
+    <div className="p-4 w-full space-y-4">
+      <h3 className="font-semibold text-lg text-textheading mb-4">Yesterday</h3>
+
       {notifications.map((notif) => (
         <div
           key={notif.id}
-          className="flex gap-4 items-start bg-cardbg p-4 rounded-lg shadow-md border border-bordercolor"
+          className="flex flex-col sm:flex-row gap-4 p-4 bg-cardbg rounded-lg shadow-md border border-bordercolor items-start sm:items-center"
         >
-          <div className="w-11 h-11 flex items-center justify-center rounded-full bg-orange-100">
+          {/* Icon */}
+          <div className="w-11 h-11 flex items-center justify-center rounded-full bg-orange-100 shrink-0">
             {notif.icon}
           </div>
 
-          <div className="flex flex-col gap-1 text-textnormal">
-            <span className="font-semibold text-base text-textheading">{notif.title}</span>
+          {/* Content */}
+          <div className="flex flex-col gap-1 w-full">
+            <span className="font-semibold text-textheading text-sm md:text-base">
+              {notif.title}
+            </span>
 
-            <div className="text-sm text-textnormal">
+            <span className="text-textnormal text-xs md:text-sm flex flex-wrap gap-2">
               {notif.subtitle.property && (
                 <>
-                  Property: <span className="font-semibold mx-2">{notif.subtitle.property}</span>{' '}
+                  Property:{' '}
+                  <span className="font-semibold mx-1 md:mx-3">
+                    {notif.subtitle.property}
+                  </span>{' '}
                 </>
               )}
               {notif.subtitle.assignedTo && (
-                < >
-                  Assigned To: <span className=" font-semibold">{notif.subtitle.assignedTo}</span>{' '}
+                <>
+                  Assigned To:{' '}
+                  <span className="font-semibold">
+                    {notif.subtitle.assignedTo}
+                  </span>{' '}
                 </>
               )}
               {notif.subtitle.status && (
@@ -85,10 +98,10 @@ export default function YesterdayNotifications() {
                 </>
               )}
               {notif.subtitle.days && <>For {notif.subtitle.days} days</>}
-              {notif.subtitle.message && <span>"{notif.subtitle.message}"</span>}
-            </div>
+              {notif.subtitle.message && <>"{notif.subtitle.message}"</>}
+            </span>
 
-            <span className="text-xs text-subtext mt-1">{notif.time}</span>
+            <span className="text-subtext text-xs mt-1">{notif.time}</span>
           </div>
         </div>
       ))}

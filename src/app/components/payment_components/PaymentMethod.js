@@ -6,8 +6,9 @@ import BillingAddressForm from "./BillingAddressForm";
 import CreditCardForm from "./CreditCardForm";
 import CheckboxWithLabel from "./CheckboxWithLabel";
 import SecureButton from "./SecureButton";
+import {Subscribe} from '../../../services/api'
 
-export default function PaymentMethod() {
+export default function PaymentMethod({plan,billingPeriod}) {
 const [cardNumber, setCardNumber] = useState("");
     const [nameOnCard, setNameOnCard] = useState("");
     const [expiry, setExpiry] = useState("");
@@ -16,7 +17,38 @@ const [cardNumber, setCardNumber] = useState("");
     const [address, setAddress] = useState("");
     const [city, setCity] = useState("");
     const [zip, setZip] = useState("");
-    const [saveCard, setSaveCard] = useState(false); 
+    const [saveCard, setSaveCard] = useState(false);
+    const[loading, setLoading] = useState(false);
+
+     const handlePaymentMethodChange =async () => {
+      setLoading(true);
+      try {
+        const planId = plan?.featureLimits?.planId;
+        const billingCycle = billingPeriod === "Monthly" ? "MONTHLY" : "ANNUAL";
+        const paymentMethodId = saveCard ? "SAVE_CARD" : "ONE_TIME_PAYMENT";
+       const response = await Subscribe({
+         planId,
+      billingCycle,
+      paymentMethodId
+        });
+      
+      }
+      catch (error) {
+        console.error('Subscribe API Error:', error.response?.data || error.message)
+        throw error
+      }
+      finally {
+        setLoading(false);
+      }
+      };
+      const price =
+  billingPeriod === "Monthly"
+    ? plan.pricing?.monthly
+    : billingPeriod === "Anually"
+    
+  const subtotal = price ?? 0;
+  const tax = (subtotal * 0.18).toFixed(2); // 18% GST/VAT
+  const total = (subtotal * 1.18).toFixed(2);
 
   return (
     <div className="w-full mx-auto bg-cardbg rounded-2xl border border-bordercolor p-6 space-y-6">
@@ -59,9 +91,9 @@ const [cardNumber, setCardNumber] = useState("");
       {/* CTA */}
      <SecureButton 
       text="Activate Your Plan" 
-      amount="53.90" 
-      onClick={console.log("Payment Activated")} 
-
+      amount={total} 
+      onClick={handlePaymentMethodChange} 
+      
     />
     </div>
   );

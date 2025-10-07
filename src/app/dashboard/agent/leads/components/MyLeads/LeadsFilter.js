@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { Input, Select, Button ,DatePicker } from 'antd'
-import { SearchOutlined, DownloadOutlined } from '@ant-design/icons'
+import { SearchOutlined, DownloadOutlined, CalendarOutlined } from '@ant-design/icons'
 import { ChevronDown } from 'lucide-react'
 
 const { Option } = Select
@@ -24,7 +24,7 @@ const LeadsFilters = () => {
           <Input
             prefix={<SearchOutlined />}
             placeholder="Search by name, email or listing"
-            className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
+            className="rounded-xl text-xs sm:!text-sm h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
           />
         </div>
 
@@ -34,22 +34,30 @@ const LeadsFilters = () => {
           <Select
             value={type}
             onChange={setType}
-            dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+            dropdownClassName=" bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
+            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-xs sm:[&_.ant-select-selection-item]:!text-sm [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
             suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
 
           >
-            <Option value="all" className="!text-textnormal">All</Option>
-            <Option value="house" className="!text-textnormal">New</Option>
-            <Option value="apartment" className="!text-textnormal">Negotiation</Option>
-            <Option value="apartment" className="!text-textnormal">Closed</Option>
+            <Option value="all" className="!text-textnormal text-xs sm:text-sm">All</Option>
+            <Option value="house" className="!text-textnormal text-xs sm:text-sm">New</Option>
+            <Option value="apartment" className="!text-textnormal text-xs sm:text-sm">Negotiation</Option>
+            <Option value="apartment" className="!text-textnormal text-xs sm:text-sm">Closed</Option>
           </Select>
         </div>
 
         {/* Price Range */}
       <div className="lg:col-span-3 w-full flex flex-col mt-4 sm:mt-0">
           <label className="text-sm text-textheading mb-1">Date Range</label>
-          <RangePicker className="w-full h-10 rounded-xl !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0"
+          <RangePicker
+           className="
+             w-full h-10 rounded-xl
+             [&_.ant-picker-input>input]:!text-textnormal
+             [&_.ant-picker-input>input::placeholder]:!text-placeholder
+             !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0
+              [&_.ant-picker-separator]:!text-textnormal 
+           "
+           suffixIcon={<CalendarOutlined className="w-4 h-4 text-placeholder" />}
          />
 
         </div>

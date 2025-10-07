@@ -28,7 +28,7 @@ export default function DealHistoryPage() {
                 <Heading title="Deals History" subtitle={'View past deals, including closed, canceled, or archived transactions.'}/>
                 <button
                   onClick={() => setShowNewDeals(true)} 
-                  className="bg-buttonbg text-background p-2 rounded-lg flex text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
+                  className="bg-buttonbg font-medium text-background p-2 rounded-lg flex text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
                 >
                   <Plus className="text-sm w-4" /> Create New Deals
                 </button>

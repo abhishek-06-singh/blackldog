@@ -10,9 +10,9 @@ export default function QuickStats() {
   return (
     <div className="bg-cardbg dark:bg-cardbg border border-bordercolor rounded-xl shadow-md p-4 w-full">
 
-      <h3 className="text-base text-textnormal font-semibold mb-4">Quick Stats</h3>
+      <h3 className="text-sm md:text-base text-textnormal font-semibold mb-4">Quick Stats</h3>
 
-      <div className="space-y-2 text-sm">
+      <div className="space-y-2 text-xs sm:text-sm">
         <div className="flex justify-between">
           <span className="text-textnormal">Total Documents</span>
           <span className="font-semibold text-textnormal">{stats.total}</span>

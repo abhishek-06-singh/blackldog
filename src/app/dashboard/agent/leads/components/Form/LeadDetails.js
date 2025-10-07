@@ -22,52 +22,53 @@ export default function LeadDetails() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Lead Name */}
           <Form.Item
-            label={<span className="text-textheading font-semibold">Lead Name / Contact Name*</span>}
+            label={<span className="text-sm font-medium text-textheading ">Lead Name / Contact Name*</span>}
             name="leadName"
-            className="!text-textheading font-semibold"
-            rules={[{ required: true, message: "Please enter lead/contact name" }]}
+            className="!text-textheading "
+            rules={[{ message: "Please enter lead/contact name" }]}
           >
-            <Input className="h-12 bg-input border border-bordercolor" placeholder="Enter Lead Name / Contact name" />
+            <Input  className="!text-xs md:!text-sm rounded-xl placeholder:!text-textplaceholder h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none" placeholder="Enter Lead Name / Contact name" />
           </Form.Item>
 
           {/* Company Name */}
           <Form.Item
             label={
-              <>{<span className="text-textheading font-semibold">
-                Company Name{" "}
-                <span style={{ color: "#999" }}>(Optional)</span>
-                </span>}
+              <>
+                <span className="text-sm  font-medium text-textheading ">
+                  Company Name{" "}
+                  <span style={{ color: "#999" }}>(Optional)</span>
+                </span>
               </>
             }
             name="companyName"
-            className="text-textheading font-semibold"
+            className="text-textheading "
           >
-            <Input className="h-12 bg-input border border-bordercolor" placeholder="Enter Company Name" />
+            <Input  className="!text-xs md:!text-sm  rounded-xl placeholder:!text-textplaceholder h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none" placeholder="Enter Company Name" />
           </Form.Item>
 
           {/* Email */}
           <Form.Item
-            label={<span className="text-textheading font-semibold">Email*</span>}
+            label={<span className="text-sm font-medium text-textheading ">Email*</span>}
             name="email"
-            className="text-textheading font-semibold"
-            rules={[{ required: true, message: "Please enter email" }]}
+            className="text-textheading "
+            rules={[{ message: "Please enter email" }]}
           >
             <Input
-              className="h-12 bg-input border border-bordercolor"
+               className="!text-xs md:!text-sm  rounded-xl placeholder:!text-textplaceholder h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
               placeholder="Enter Email"
-              prefix={<MailOutlined />}
+              prefix={<MailOutlined className="mr-2" />}
               type="email"
             />
           </Form.Item>
 
           {/* Phone Number */}
           <Form.Item
-            label={<span className="text-textheading font-semibold">Phone Number</span>}
+            label={<span className="text-sm font-medium text-textheading ">Phone Number</span>}
             name="phone"
-            className="text-textheading font-semibold"
+            className="text-textheading "
           >
             <Input
-              className="h-12 bg-input border border-bordercolor"
+               className="!text-xs md:!text-sm  rounded-xl placeholder:!text-textplaceholder h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
             //   addonBefore={
             //     <Select
             //       value={countryCode}

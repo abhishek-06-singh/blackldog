@@ -21,16 +21,19 @@ export default function DocumentsPage() {
       transition={{ duration: 0.6, ease: 'easeInOut' }} // 400ms
     >
       <Navbar />
-      <div className="ml-10 mt-6 h-10 flex pr-10 justify-between">
+     <div className="ml-2 md:ml-6 lg:ml-10 mt-6 pr-2 md:pr-6 lg:pr-10 
+     flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+ 
         <Heading
           title="Documents"
           subtitle={
             'Upload, manage, sign, and track your client documents seamlessly.'
           }
         />
-        <div className="flex gap-4">
+     
+        <div className="flex flex-row mt-1 md:mt-0  gap-4">
           <button
-            className="bg-buttonbg text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform"
+            className="w-full md:w-fit bg-buttonbg font-medium text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform"
             onClick={handleClick}
           >
             <Plus className="w-5 h-5" />

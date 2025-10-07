@@ -36,11 +36,11 @@ export default function ListingsPage() {
           {/* ✅ CASE 2: If NOT adding new dev, show default content */}
           {!showNewDev ? (
             <>
-              <div className="w-full ml-5 md:ml-10 mt-6 md:h-10 flex flex-col md:flex-row pr-10 justify-between">
+              <div className="w-full ml-2 lg:ml-10 md:ml-6 mt-6 md:h-10 flex flex-col md:flex-row lg:pr-10 md:pr-6 pr-2 justify-between">
                 <Heading title="Listings" />
                 <button
                   onClick={() => setShowNewDev(true)}
-                  className="w-full md:w-fit mt-4 mr-4 md:mr-8 md:mt-0 bg-buttonbg text-background p-2 rounded-lg flex text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
+                  className="w-full md:w-fit mt-4 mr-4 md:mr-8 md:mt-0 bg-buttonbg font-medium text-background p-2 rounded-lg flex text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
                 >
                   <Plus className="text-sm w-4" /> Add New Listing
                 </button>

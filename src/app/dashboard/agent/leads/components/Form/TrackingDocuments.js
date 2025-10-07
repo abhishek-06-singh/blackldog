@@ -1,5 +1,7 @@
 import { Form, DatePicker, Upload, Button } from "antd";
-import { UploadOutlined, InboxOutlined } from "@ant-design/icons";
+import { UploadOutlined, InboxOutlined, CalendarOutlined } from "@ant-design/icons";
+import Image from "next/image";
+import upload from '../../../../components/icons/Lightmode_icons/listing/cloudupload_orange.svg'
 
 const { Dragger } = Upload;
 
@@ -26,7 +28,7 @@ export default function TrackingDocuments() {
   };
 
   return (
-    <div className="py-2 px-4 rounded-xl border border-bordercolor shadow-md">
+    <div className="py-2 px-4 rounded-xl border border-bordercolor bg-cardbg shadow-md">
       <h1 className="text-md font-bold text-primary mb-4 mt-2">
         Tracking & Documents
       </h1>
@@ -41,23 +43,30 @@ export default function TrackingDocuments() {
           {/* Date Lead Added */}
           <Form.Item
             label={
-              <span className="text-textheading font-semibold">
+              <span className="text-textheading font-medium">
                 Date Lead Added*
               </span>
             }
             name="dateLeadAdded"
             rules={[{ required: true, message: "Please select date" }]}
           >
-            <DatePicker
-              className="w-full h-12 bg-input border border-bordercolor rounded-xl"
-              placeholder="Select Date"
-            />
+           <DatePicker
+  className="
+    w-full h-10 rounded-xl
+    [&_.ant-picker-input>input]:!text-textnormal
+    [&_.ant-picker-input>input::placeholder]:!text-placeholder
+    !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0
+  "
+  placeholder="Select Date"
+  suffixIcon={<CalendarOutlined className="w-4 h-4 text-placeholder" />}
+/>
+
           </Form.Item>
 
           {/* Follow-Up Reminder */}
           <Form.Item
             label={
-              <span className="text-textheading font-semibold">
+              <span className="text-textheading font-medium">
                 Follow-Up Reminder*
               </span>
             }
@@ -65,16 +74,23 @@ export default function TrackingDocuments() {
             rules={[{ required: true, message: "Please select follow-up date" }]}
           >
             <DatePicker
-              className="w-full h-12 bg-input border border-bordercolor rounded-xl"
-              placeholder="Select Date"
-            />
+  className="
+    w-full h-10 rounded-xl
+    [&_.ant-picker-input>input]:!text-textnormal
+    [&_.ant-picker-input>input::placeholder]:!text-placeholder
+    !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0
+  "
+  placeholder="Select Date"
+  suffixIcon={<CalendarOutlined className="w-4 h-4 text-placeholder" />}
+/>
+
           </Form.Item>
         </div>
 
         {/* Upload Documents */}
         <Form.Item
           label={
-            <span className="text-textheading font-semibold">
+            <span className="text-textheading font-medium">
               Upload Documents
             </span>
           }
@@ -84,18 +100,18 @@ export default function TrackingDocuments() {
             {...uploadProps}
             className="!bg-input !border-bordercolor !rounded-xl"
           >
-            <p className="ant-upload-drag-icon">
-              <InboxOutlined className="text-primary" />
+            <p className="flex items-center justify-center gap-2">
+              <Image src={upload} alt="upload icon" width={20} height={20} className="w-8 h-8"/>
             </p>
-            <p className="ant-upload-text !text-textnormal">
+            <p className="text-sm md:text-base !text-textnormal">
               Drag and drop your files here, or
             </p>
-            <p className="ant-upload-hint !text-textnormal mb-3">
+            <p className="text-xs md:text-sm !text-textnormal mb-3">
               JPG, PNG only. Max 5MB per image. Up to 7 images.
             </p>
             <Button
-              icon={<UploadOutlined />}
-              className="!bg-buttonbg !text-background !rounded-lg"
+             
+              className="!bg-buttonbg !text-background border border-bordercolor font-medium !rounded-lg"
             >
               Browse Files
             </Button>

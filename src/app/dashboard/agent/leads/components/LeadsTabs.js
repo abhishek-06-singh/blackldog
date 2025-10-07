@@ -12,9 +12,9 @@ const LeadsTabs = () => {
   return (
     <div>
       {' '}
-      <div className="w-full  rounded-2xl p-2 md:p-6">
+      <div className="w-full p-2 md:p-6 lg:px-10">
         {/* Tabs Header */}
-        <div className="flex border-b border-bordercolor  mb-8">
+        <div className="flex border-b border-bordercolor  mb-6">
 
           <button
             onClick={() => setActiveTab('my')}

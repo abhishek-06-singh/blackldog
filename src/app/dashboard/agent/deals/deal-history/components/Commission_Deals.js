@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Input, Select, Button, Avatar } from "antd";
 import { PlusOutlined, DeleteOutlined } from "@ant-design/icons";
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from "lucide-react";
 
 const { Option } = Select;
 
@@ -57,33 +57,33 @@ export default function Commission_Deals() {
   return (
     <div className="bg-cardbg px-4 pt-4 pb-6 rounded-xl border border-bordercolor shadow-md w-full mx-auto">
       {/* Header */}
-      <div className="flex flex-col justify-center md:flex-row md:justify-between items-center mb-4">
-        <h3 className="text-lg mb-4 md:mb-0 font-semibold text-textnormal">Commission Distribution</h3>
-        <div className="space-y-4 md:space-x-2">
-          <Button
-            icon={<PlusOutlined />}
-            className="w-full md:w-fit mb-2 md:mb-0 !h-9 !rounded-xl border border-bordercolor bg-buttonbg text-background"
-          >
-            Add New Contact
-          </Button>
-          <Button
-            type="primary"
-            onClick={handleAddRow}
-            className="w-full md:w-fit !h-9 !rounded-xl bg-buttonbg text-background border-none"
-          >
-            + Add Agent
-          </Button>
-        </div>
+      <div className="flex flex-col md:flex-row md:justify-between items-center mb-4">
+        <h3 className="text-sm md:text-lg mb-4 md:mb-0 font-semibold whitespace-nowrap text-textnormal">Commission Distribution</h3>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-end space-y-4 md:space-y-0 md:space-x-2 w-full">
+  <Button
+    icon={<PlusOutlined />}
+    className="w-full font-medium  md:w-auto !h-9 !rounded-xl border border-bordercolor text-xs sm:text-sm bg-cardbg text-textnormal"
+  >
+    Add New Contact
+  </Button>
+  <Button
+    onClick={handleAddRow}
+    className="w-full font-medium text-xs sm:text-sm md:w-auto !h-9 !rounded-xl bg-textheading text-background border border-bordercolor"
+  >
+    + Add Agent
+  </Button>
+</div>
+
       </div>
 
       {/* Table */}
-      <div className="w-full rounded-xl overflow-x-auto">
+<div className="w-full rounded-xl overflow-x-auto">
   <table
     className="min-w-full table-auto text-left border border-bordercolor rounded-xl"
     style={{
       borderCollapse: "separate",
       borderSpacing: 0,
-      tableLayout: "auto",
+      tableLayout: "auto", // switch from fixed to auto for responsiveness
     }}
   >
     <thead className="bg-subcardbg text-textnormal text-sm font-medium">
@@ -95,10 +95,10 @@ export default function Commission_Deals() {
         <th className="p-4"></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody className="text-textnormal text-xs sm:text-sm">
       {rows.map((row, index) => (
         <tr key={index} className="border-b border-bordercolor last:border-none">
-          {/* Name */}
+          {/* Name + Avatar/Select */}
           <td className="p-4 whitespace-nowrap">
             <div className="flex items-center space-x-3 min-w-[220px]">
               {row.avatar && <Avatar size={32} src={row.avatar} />}
@@ -106,12 +106,26 @@ export default function Commission_Deals() {
                 placeholder="Search for Agent/Contact"
                 value={row.name || undefined}
                 onChange={(val) => handleChange(index, "name", val)}
-                className="w-full h-10 min-w-[160px] [&_.ant-select-selector]:!bg-input [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-                dropdownClassName="bg-input border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-                suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
+                 dropdownClassName="bg-cardbg border border-bordercolor 
+      [&_.ant-select-item-option-selected]:!bg-buttonbg 
+      [&_.ant-select-item-option-selected]:!text-background 
+      [&_.ant-select-item-option-active]:!bg-buttonbg 
+      [&_.ant-select-item-option-active]:!text-background"
+    
+    className="w-full h-10 
+      [&_.ant-select-selection-item]:!text-xs md:[&_.ant-select-selection-item]:!text-sm 
+      [&_.ant-select-selector]:!bg-cardbg 
+      [&_.ant-select-selector]:!rounded-xl 
+      [&_.ant-select-selector]:!border-bordercolor 
+      [&_.ant-select-selection-item]:!text-textnormal
+      [&_.ant-select-selector]:!focus:border-textnormal 
+      [&_.ant-select-selector]:!ring-0
+      placeholder:!text-textplaceholder"
+    
+    suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
               >
-                <Option value="Michael Chen">Michael Chen</Option>
-                <Option value="Sarah Johnson">Sarah Johnson</Option>
+                <Option value="Michael Chen" className="!text-xs md:!text-sm !text-textnormal">Michael Chen</Option>
+                <Option value="Sarah Johnson" className="!text-xs md:!text-sm !text-textnormal">Sarah Johnson</Option>
               </Select>
             </div>
           </td>
@@ -122,23 +136,36 @@ export default function Commission_Deals() {
               placeholder="Select Role"
               value={row.role || undefined}
               onChange={(val) => handleChange(index, "role", val)}
-              className="w-full h-10 [&_.ant-select-selector]:!bg-input [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-              dropdownClassName="bg-input border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-              suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
+               dropdownClassName="bg-cardbg border border-bordercolor 
+      [&_.ant-select-item-option-selected]:!bg-buttonbg 
+      [&_.ant-select-item-option-selected]:!text-background 
+      [&_.ant-select-item-option-active]:!bg-buttonbg 
+      [&_.ant-select-item-option-active]:!text-background"
+    
+    className="w-full h-10 
+      [&_.ant-select-selection-item]:!text-xs md:[&_.ant-select-selection-item]:!text-sm 
+      [&_.ant-select-selector]:!bg-cardbg 
+      [&_.ant-select-selector]:!rounded-xl 
+      [&_.ant-select-selector]:!border-bordercolor 
+      [&_.ant-select-selection-item]:!text-textnormal
+      [&_.ant-select-selector]:!focus:border-textnormal 
+      [&_.ant-select-selector]:!ring-0
+      placeholder:!text-textplaceholder"
+    
+    suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
             >
-              <Option value="You">You</Option>
-              <Option value="Lead Agent">Lead Agent</Option>
+              <Option value="You" className="!text-xs md:!text-sm !text-textnormal">You</Option>
+              <Option value="Lead Agent" className="!text-xs md:!text-sm !text-textnormal">Lead Agent</Option>
             </Select>
           </td>
 
           {/* Split */}
           <td className="p-4 whitespace-nowrap min-w-[120px]">
             <Input
-              type="number"
               placeholder="Enter Commission"
               value={row.split}
               onChange={(e) => handleChange(index, "split", e.target.value)}
-              className="rounded-xl h-10 !bg-input !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
+             className="!text-xs md:!text-sm rounded-xl placeholder:!text-textplaceholder h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor  !shadow-none !outline-none"
             />
           </td>
 
@@ -148,7 +175,7 @@ export default function Commission_Deals() {
               placeholder="Enter Amount"
               value={row.amount ? `$${Number(row.amount).toLocaleString()}` : ""}
               readOnly
-              className="rounded-xl h-10 !bg-input !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
+           className="!text-xs md:!text-sm rounded-xl placeholder:!text-textplaceholder h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-none  !shadow-none !outline-none"
             />
           </td>
 
@@ -172,18 +199,18 @@ export default function Commission_Deals() {
       {/* Footer summary */}
       <div className="mt-4 p-2">
         <div className="flex justify-between mb-1">
-          <span className="text-textnormal">Total Percentage</span>
-          <span className="text-textnormal">{totalPercentage}%</span>
+          <span className="text-textnormal text-sm md:text-base">Total Percentage</span>
+          <span className="text-textnormal text-sm md:text-base">{totalPercentage}%</span>
         </div>
         <div className="h-2 bg-shadow rounded-full mb-2">
           <div
-            className="h-2 bg-buttonbg rounded-full"
+            className="h-2 bg-textheading rounded-full"
             style={{ width: `${totalPercentage}%` }}
           />
         </div>
         <div className="flex text-textnormal justify-between font-semibold">
-          <span>Total Amount</span>
-          <span>${totalAmount.toLocaleString()}</span>
+          <span className="text-textnormal text-sm md:text-base">Total Amount</span>
+          <span className="text-textnormal text-sm md:text-base">${totalAmount.toLocaleString()}</span>
         </div>
       </div>
     </div>

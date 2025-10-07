@@ -118,7 +118,7 @@ export default function SubagentTable() {
     <div className="mt-8">
       <div className="overflow-x-auto rounded-xl border border-bordercolor bg-cardbg shadow-md">
         <table className="min-w-full text-left table-auto overflow-x-auto">
-          <thead className="bg-cardbg text-textplaceholder text-sm font-thin">
+          <thead className="bg-cardbg text-textplaceholder whitespace-nowrap text-sm font-thin">
             <tr>
               <th className="p-4">
                 <input
@@ -136,7 +136,7 @@ export default function SubagentTable() {
               <th className="p-4">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-bordercolor">
+          <tbody className="divide-y whitespace-nowrap divide-bordercolor text-xs sm:text-sm">
             {currentItems.map((member) => (
               <tr key={member.id} className="hover:bg-boxbg transition">
                 <td className="p-4">
@@ -147,7 +147,7 @@ export default function SubagentTable() {
                     onChange={() => toggleRow(member.id)}
                   />
                 </td>
-                <td className="pr-10 md:pr-16 py-4 md:p-4">
+                <td className="pr-10 md:pr-12 lg:pr-0 py-4 md:p-4">
                   <div className="flex items-center gap-3 w-full">
                     <img
                       src={member.image}
@@ -156,7 +156,7 @@ export default function SubagentTable() {
                     />
                     <div className="min-w-0">
                       <Link
-                        href={`/dashboard/agent/team/${encodeURIComponent(member.member)}`}
+                        href={`/dashboard/agent/team/sub-agents/${encodeURIComponent(member.member)}`}
                         className="font-medium text-sm text-textnormal hover:underline"
                       >
                         {member.member}
@@ -212,7 +212,7 @@ export default function SubagentTable() {
               onClick={() => setCurrentPage(page)}
               className={`px-3 py-1 rounded-lg border border-bordercolor ${
                 currentPage === page
-                  ? 'bg-black-500 text-white'
+                  ? 'bg-black-500 text-white border border-textnormal'
                   : 'hover:bg-boxbg text-textnormal'
               }`}
             >

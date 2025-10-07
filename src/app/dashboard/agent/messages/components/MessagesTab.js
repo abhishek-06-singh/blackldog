@@ -109,12 +109,12 @@ const MessagesTabs = () => {
     <div className="relative">
       {/* Sidebar stays unchanged */}
       {showSidebar && (
-        <div className="overflow-y-scroll fixed right-0 top-0 h-full w-80 bg-cardbg shadow-lg border-l border-bordercolor z-50 p-4">
+        <div className="overflow-y-scroll h-screen fixed right-0 top-0  w-80 bg-cardbg shadow-lg border-l border-bordercolor z-50 p-4">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg font-semibold">Group Settings</h2>
+            <h2 className="text-lg text-textnormal font-semibold">Group Settings</h2>
             <button
               onClick={() => setShowSidebar(false)}
-              className="text-gray-500 hover:text-gray-700"
+              className="text-textnormal hover:text-textnormal"
             >
               ✕
             </button>
@@ -129,7 +129,7 @@ const MessagesTabs = () => {
         <div className="flex border-b border-bordercolor">
           <button
             onClick={() => setActiveTab('my')}
-            className={`px-4 py-2 text-sm font-medium rounded-t-lg ${
+            className={`px-4 py-2 text-xs md:text-sm font-medium rounded-t-lg ${
               activeTab === 'my'
                 ? 'text-buttonbg border-b-2 border-buttonbg'
                 : 'text-textnormal hover:text-textnormal '
@@ -139,7 +139,7 @@ const MessagesTabs = () => {
           </button>
           <button
             onClick={() => setActiveTab('sub')}
-            className={`ml-4 px-4 py-2 text-sm font-medium rounded-t-lg ${
+            className={`ml-4 px-4 py-2 text-xs md:text-sm font-medium rounded-t-lg ${
               activeTab === 'sub'
                 ? 'text-buttonbg border-b-2 border-buttonbg'
                 : 'text-textnormal hover:text-textnormal '
@@ -169,7 +169,7 @@ const MessagesTabs = () => {
             <div className="flex h-screen">
               {/* Chat List */}
               <div
-                className={`w-full lg:w-[40%] ${showMyChatWindow ? 'hidden lg:block' : 'block'}`}
+                className={`w-full lg:w-[45%] ${showMyChatWindow ? 'hidden lg:block' : 'block'}`}
               >
                 <ChatList
                   conversations={conversationsData}
@@ -180,7 +180,7 @@ const MessagesTabs = () => {
 
               {/* Chat Window */}
               <div
-                className={`w-full  lg:w-[60%] ${showMyChatWindow ? 'block' : 'hidden lg:block'}`}
+                className={`w-full  lg:w-60%] ${showMyChatWindow ? 'block' : 'hidden lg:block'}`}
               >
                 {selectedConversation && (
                   <div className="relative h-full">
@@ -201,7 +201,7 @@ const MessagesTabs = () => {
             <div className="flex h-screen">
               {/* Sub-Agent Chat List */}
               <div
-                className={`w-full lg:w-[40%] ${showSubChatWindow ? 'hidden lg:block' : 'block'}`}
+                className={`w-full lg:w-[45%] ${showSubChatWindow ? 'hidden lg:block' : 'block'}`}
               >
                 <SubAgentChatList
                   conversations={conversationsData}

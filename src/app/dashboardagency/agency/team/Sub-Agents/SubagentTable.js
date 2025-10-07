@@ -156,7 +156,7 @@ export default function SubagentTable() {
                     />
                     <div className="min-w-0">
                       <Link
-                        href={`/dashboardagency/agency/team/${encodeURIComponent(member.member)}`}
+                        href={`/dashboardagency/agency/team/sub-agents/${encodeURIComponent(member.member)}`}
                         className="font-medium text-sm text-textnormal hover:underline"
                       >
                         {member.member}

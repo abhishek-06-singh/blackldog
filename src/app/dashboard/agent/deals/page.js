@@ -31,14 +31,14 @@ export default function DealsPage() {
           {/* ✅ CASE 2: If NOT adding new dev, show default content */}
           {!showNewDeals ? (
             <>
-              <div className="ml-10 mt-6 h-10 flex pr-10 justify-between">
+              <div className="ml-2 md:ml-6 lg:ml-10 mt-6 h-10 flex pr-2 md:pr-6 lg:pr-10 justify-between">
                 <Heading
                   title="Manage Deals"
                   subtitle={'Track and manage all your real estate deals'}
                 />
                 <button
                   onClick={() => setShowNewDeals(true)}
-                  className="bg-buttonbg text-background p-2 rounded-lg flex text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
+                  className="font-medium bg-buttonbg text-background p-2 rounded-lg flex text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
                 >
                   <Plus className="text-sm w-4" /> Create New Deals
                 </button>
@@ -52,18 +52,18 @@ export default function DealsPage() {
           ) : (
             // ✅ CASE 3: New Dev Flow (Add New Property)
             <>
-              <div className="ml-10 mt-6 h-10 flex pr-10 justify-between">
+              <div className="ml-2 md:ml-6 lg:ml-10 mt-6 h-10 flex pr-2 md:pr-6 lg:pr-10 justify-between">
                 <Heading
                   title="Add New Property"
                   subtitle="Create a new lead"
                 />
 
                 <div className="flex gap-4">
-                  <button className="bg-background text-textnormal border-2 p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
+                  <button className="bg-background font-medium text-textnormal border-2 p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
                     Cancel
                   </button>
                   <button
-                    className="bg-textheading text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform"
+                    className="bg-textheading font-medium text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform"
                     onClick={() => setOpen(true)}
                   >
                     Save Lead

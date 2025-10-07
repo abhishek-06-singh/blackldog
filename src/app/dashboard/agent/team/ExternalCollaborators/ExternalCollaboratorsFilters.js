@@ -21,7 +21,7 @@ const ExternalCollaboratorsFilters = () => {
           <Input
             prefix={<SearchOutlined />}
             placeholder="Search by name, email"
-            className="rounded-xl h-10 !placeholder:text-textplaceholder !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
+            className="rounded-xl !text-xs md:!text-sm h-10 !placeholder:text-textplaceholder !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
           />
         </div>
 
@@ -34,13 +34,13 @@ const ExternalCollaboratorsFilters = () => {
               value={role}
               onChange={setRole}
               dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-              className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+              className="w-full h-10 [&_.ant-select-selection-item]:text-xs md:text-sm [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
               suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />} 
             >
-              <Option value="all" className="!text-textnormal">All Roles</Option>
-              <Option value="admin" className="!text-textnormal">Admin</Option>
-              <Option value="editor" className="!text-textnormal">Editor</Option>
-              <Option value="viewer" className="!text-textnormal">Viewer</Option>
+              <Option value="all" className="!text-textnormal text-xs md:text-sm ">All Roles</Option>
+              <Option value="admin" className="!text-textnormal text-xs md:text-sm">Admin</Option>
+              <Option value="editor" className="!text-textnormal text-xs md:text-sm">Editor</Option>
+              <Option value="viewer" className="!text-textnormal text-xs md:text-sm">Viewer</Option>
             </Select>
           </div>
 
@@ -51,12 +51,12 @@ const ExternalCollaboratorsFilters = () => {
               value={status}
               onChange={setStatus}
               dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-              className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+              className="w-full h-10 [&_.ant-select-selection-item]:text-xs md:text-sm [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
               suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />} 
             >
-              <Option value="all" className="!text-textnormal">All Statuses</Option>
-              <Option value="active" className="!text-textnormal">Active</Option>
-              <Option value="sold" className="!text-textnormal">Sold</Option>
+              <Option value="all" className="!text-textnormal text-xs md:text-sm">All Statuses</Option>
+              <Option value="active" className="!text-textnormal text-xs md:text-sm">Active</Option>
+              <Option value="sold" className="!text-textnormal text-xs md:text-sm">Sold</Option>
             </Select>
           </div>
 
@@ -67,14 +67,14 @@ const ExternalCollaboratorsFilters = () => {
               value={sort}
               onChange={setSort}
               dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-              className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+              className="w-full h-10 [&_.ant-select-selection-item]:text-xs md:text-sm [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
               suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />} 
 
             >
-              <Option value="all" className="!text-textnormal">All</Option>
-              <Option value="name" className="!text-textnormal">Name</Option>
-              <Option value="email" className="!text-textnormal">Email</Option>
-              <Option value="date" className="!text-textnormal">Date Added</Option>
+              <Option value="all" className="!text-textnormal text-xs md:text-sm">All</Option>
+              <Option value="name" className="!text-textnormal text-xs md:text-sm">Name</Option>
+              <Option value="email" className="!text-textnormal text-xs md:text-sm">Email</Option>
+              <Option value="date" className="!text-textnormal text-xs md:text-sm">Date Added</Option>
             </Select>
           </div>
         </div>

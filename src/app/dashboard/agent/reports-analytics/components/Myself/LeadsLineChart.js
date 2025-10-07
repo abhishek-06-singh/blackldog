@@ -36,10 +36,13 @@ export default function LeadsLineChart({ leadsData }) {
         />
 
         {/* Tooltip styling */}
-        <Tooltip
-          contentStyle={{ fontSize: '12px', borderRadius: '8px' }}
-          cursor={{ stroke: '#E4A267', strokeWidth: 1 }}
-        />
+         <Tooltip
+                cursor={{ fill: 'transparent' }}
+                contentStyle={{
+                  backgroundColor: 'var(--color-cardbg)', 
+                  border: "1px solid var(--color-bordercolor)",
+                  color: 'var(--color-textnormal)',
+                }}/>
 
         {/* Straight lines, not curvy */}
         <Line

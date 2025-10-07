@@ -14,7 +14,7 @@ const DowntownCondoPurchase = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:justify-between items-start mb-6">
           <div>
-            <div className="m-0 text-lg font-semibold text-textheading">
+            <div className="m-0 text-sm whitespace-nowrap mb-2 md:mb-0 md:text-lg font-semibold text-textheading">
               Downtown Condo Purchase
             </div>
           </div>
@@ -33,13 +33,13 @@ const DowntownCondoPurchase = () => {
           <div>
             <Text className="text-xs text-subtext">Deal Value</Text>
             <div>
-              <Text className="text-base font-semibold text-textnormal">$450,000</Text>
+              <Text className="text-sm md:text-base font-semibold text-textnormal">$450,000</Text>
             </div>
           </div>
           <div className="text-center">
             <Text className="text-xs text-subtext">Expected Closing</Text>
             <div>
-              <Text className="text-base font-semibold text-textnormal">Jan 15, 2025</Text>
+              <Text className="text-sm md:text-base font-semibold text-textnormal">Jan 15, 2025</Text>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@ const DowntownCondoPurchase = () => {
           <div className="flex justify-between items-center mb-3">
             <div className="text-left">
             <div>
-              <Text className="text-sm font-semibold text-textnormal">John Smith</Text>
+              <Text className="text-xs md:text-sm font-semibold text-textnormal">John Smith</Text>
             </div>
              <div>
                 <Text className="text-xs text-subtext"> Agent</Text>
@@ -69,7 +69,7 @@ const DowntownCondoPurchase = () => {
             </div>
 
             <div className="text-right">
-              <Text className="text-sm font-semibold text-textnormal">70%</Text>
+              <Text className="text-xs md:text-sm font-semibold text-textnormal">70%</Text>
               <div>
                 <Text className="text-xs text-subtext">$9,450</Text>
               </div>
@@ -80,7 +80,7 @@ const DowntownCondoPurchase = () => {
           <div className="flex justify-between items-center">
             <div className='text-left'>
             <div>
-              <Text className="text-sm font-semibold text-textnormal">Lisa Chen</Text>
+              <Text className="text-xs md:text-sm font-semibold text-textnormal">Lisa Chen</Text>
             </div>
              <div>
                 <Text className="text-xs text-subtext">Sub-Agent</Text>
@@ -89,7 +89,7 @@ const DowntownCondoPurchase = () => {
 
 
             <div className="text-right">
-              <Text className="text-sm font-semibold text-textnormal">30%</Text>
+              <Text className="text-xs md:text-sm font-semibold text-textnormal">30%</Text>
               <div>
                 <Text className="text-xs text-subtext">$4,500</Text>
               </div>

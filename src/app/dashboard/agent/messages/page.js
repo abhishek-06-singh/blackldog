@@ -33,7 +33,7 @@ export default function MessagesPage() {
           {/* ✅ CASE 2: If NOT adding new messages, show default content */}
           {!showMessages ? (
             <>
-              <div className="ml-10 mt-6 h-10 flex pr-10 justify-between">
+              <div className="ml-2 md:ml-6 lg:ml-10 mt-6 h-10 flex pr-2 md:pr-6 lg:pr-10 justify-center flex-col md:flex-row md:justify-between">
                 <Heading
                   title="Messages"
                   subtitle={
@@ -42,13 +42,13 @@ export default function MessagesPage() {
                 />
                 <button
                   onClick={() => setIsOpen(true)}
-                  className="bg-buttonbg text-background p-2 rounded-lg flex text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
+                  className="mt-2 md:mt-0 bg-buttonbg font-medium text-background p-2 rounded-lg flex text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
                 >
                   <Plus className="text-sm w-4" /> New Chat
                 </button>
               </div>
 
-              <div className="mt-4">
+              <div className="ml-2 md:ml-6 lg:ml-10 mt-6 pr-2 md:pr-6 lg:pr-10">
                 <MessagesTabs />
               </div>
             </>

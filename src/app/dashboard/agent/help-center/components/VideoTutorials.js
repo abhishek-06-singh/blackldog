@@ -23,11 +23,11 @@ const tutorials = [
 export default function VideoTutorials() {
   return (
     <div className="bg-cardbg rounded-xl border border-bordercolor p-4 shadow-md w-full">
-      <h2 className="text-base font-semibold text-textnormal mb-6">
+      <h2 className="text-sm md:text-base font-semibold text-textnormal mb-6">
         Watch & Learn: Step-by-Step Tutorials
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {tutorials.map((video, index) => (
           <div
             key={index}
@@ -36,7 +36,7 @@ export default function VideoTutorials() {
             {/* Thumbnail */}
             <div className="bg-cardHeading h-40 flex flex-col items-center justify-center text-background text-sm">
               <Play className="w-6 h-6 mb-1 fill-current" />
-              <span>Video Tutorial</span>
+              <span className='font-medium'>Video Tutorial</span>
             </div>
 
             {/* Content */}

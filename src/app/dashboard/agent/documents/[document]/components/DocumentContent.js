@@ -10,7 +10,7 @@ import RightColumnDocument from './RightColumnDocument'
 const DocumentContent = ({doc}) => {
   return (
     <>
-    <div className="flex flex-col lg:flex-row w-full gap-6 px-10 py-6">
+    <div className="flex flex-col lg:flex-row w-full gap-6 px-2 md:px-6 lg:px-10 py-6">
     <LeftColumnDocument doc={doc} />
     <RightColumnDocument />
 

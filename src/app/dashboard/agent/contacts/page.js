@@ -31,7 +31,7 @@ export default function LeadsPage() {
           {/* ✅ CASE 2: If NOT adding new contact, show default content */}
           {!showNewContacts ? (
             <>
-              <div className="w-full ml-4 md:ml-10 mt-6 md:h-10 flex pr-6 md:pr-10 flex-col md:flex-row md:justify-between">
+              <div className="w-full ml-2 md:ml-6 lg:ml-10 mt-6 md:h-10 flex pr-2 mr:pr-6 lg:pr-10 flex-col md:flex-row md:justify-between">
                 <div className="md:w-1/2">
                   <Heading
                     title="Contacts"
@@ -40,14 +40,15 @@ export default function LeadsPage() {
                     }
                   />
                 </div>
-                <div className="flex flex-col pt-6 mr-4 md:pt-0 md:mr-10 md:flex-row gap-2 lg:gap-4 md:w-auto">
-                  <button className="bg-background text-textnormal text-xs md:text-sm border border-bordercolor p-2 rounded-lg flex justify-center items-center gap-1 whitespace-nowrap lg:gap-2 hover:scale-95 transition-transform">
+                <div className="flex flex-col pt-6 mr-2 md:pt-6 lg:mr-10 md:flex-row gap-2 lg:gap-4 md:w-auto">
+                  <button className="bg-background text-textnormal text-xs md:text-sm border border-bordercolor p-2 md:p-4 rounded-lg flex justify-center items-center gap-1 whitespace-nowrap lg:gap-2 hover:scale-95 transition-transform">
                     <Upload className="w-4" /> Export CSV
                   </button>
                   <button
-                    className="bg-buttonbg text-background whitespace-nowrap p-3 md:p-2 rounded-lg flex text-xs md:text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
+                    className="bg-buttonbg text-background whitespace-nowrap p-3 md:p-4 font-medium rounded-lg flex text-xs md:text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
                     onClick={() => setShowNewContacts(true)}
                   >
+                    <Plus className="w-4" />
                     Add Contact
                   </button>
                 </div>
@@ -60,18 +61,18 @@ export default function LeadsPage() {
           ) : (
             // ✅ CASE 3: New Dev Flow (Add New Property)
             <>
-              <div className="ml-5 md:ml-10 mt-6 md:h-10 flex pr-5 md:pr-10 flex-col md:flex-row md:justify-between">
+              <div className="ml-2 md:ml-6 lg:ml-10 mt-6 md:h-10 flex pr-2 md:pr-6 lg:pr-10 flex-col md:flex-row md:justify-between">
                 <Heading
                   title="Add New Contact"
                   subtitle="Add a new professional contact to your CRM."
                 />
 
-                <div className="flex flex-col md:flex-row gap-4">
-                  <button className="bg-background text-textnormal border border-bordercolor p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
+                <div className="flex flex-col md:flex-row mt-2 md:mt-0 gap-2 md:gap-4">
+                  <button className="font-medium bg-background text-textnormal border border-bordercolor p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
                     Cancel
                   </button>
                   <button
-                    className="bg-buttonbg text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform"
+                    className="font-medium bg-buttonbg text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform"
                     onClick={() => setOpen(true)}
                   >
                     Save Contact

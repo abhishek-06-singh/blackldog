@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { Input, Select, Button } from 'antd'
 import { SearchOutlined, DownloadOutlined } from '@ant-design/icons'
+import { ChevronDown } from 'lucide-react'
 
 const { Option } = Select
 
@@ -15,13 +16,13 @@ const PropertyFilters = () => {
   return (
     <div className="w-full bg-cardbg rounded-2xl shadow-md border border-bordercolor p-6">
       {/* Grid Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 whitespace-nowrap gap-4">
         {/* Search */}
         <div className="lg:col-span-6 w-full flex flex-col justify-end mt-4 sm:mt-0">
           <Input
             prefix={<SearchOutlined />}
             placeholder="Search by Property name"
-            className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
+            className=" rounded-xl placeholder:!text-textplaceholder h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
           />
         </div>
 
@@ -32,11 +33,12 @@ const PropertyFilters = () => {
             value={status}
             onChange={setStatus}
             dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+            className="w-full h-10 [&_.ant-select-selection-item]:!text-xs md:[&_.ant-select-selection-item]:!text-sm [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+            suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
           >
-            <Option value="all" className="!text-textnormal">All Statuses</Option>
-            <Option value="active" className="!text-textnormal">Active</Option>
-            <Option value="sold" className="!text-textnormal">Sold</Option>
+            <Option value="all" className="!text-xs md:!text-sm !text-textnormal">All Statuses</Option>
+            <Option value="active" className="!text-xs md:!text-sm !text-textnormal">Active</Option>
+            <Option value="sold" className="!text-xs md:!text-sm !text-textnormal">Sold</Option>
           </Select>
         </div>
 
@@ -47,11 +49,12 @@ const PropertyFilters = () => {
             value={type}
             onChange={setType}
             dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+            className="w-full h-10 [&_.ant-select-selection-item]:!text-xs md:[&_.ant-select-selection-item]:!text-sm [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+             suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
           >
-            <Option value="all" className="!text-textnormal">All</Option>
-            <Option value="house" className="!text-textnormal">House</Option>
-            <Option value="apartment" className="!text-textnormal">Apartment</Option>
+            <Option value="all" className="!text-xs md:!text-sm !text-textnormal">All</Option>
+            <Option value="house" className="!text-xs md:!text-sm !text-textnormal">House</Option>
+            <Option value="apartment" className="!text-xs md:!text-sm !text-textnormal">Apartment</Option>
           </Select>
         </div>
 
@@ -62,11 +65,12 @@ const PropertyFilters = () => {
             value={price}
             onChange={setPrice}
             dropdownClassName="w-full bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+            className="w-full h-10 [&_.ant-select-selection-item]:!text-xs md:[&_.ant-select-selection-item]:!text-sm [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+             suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
           >
-            <Option value="all" className="!text-textnormal">All</Option>
-            <Option value="0-100k" className="!text-textnormal">0 - 100k</Option>
-            <Option value="100k-500k" className="!text-textnormal">100k - 500k</Option>
+            <Option value="all" className="!text-xs md:!text-sm !text-textnormal">All</Option>
+            <Option value="0-100k" className="!text-xs md:!text-sm !text-textnormal">0 - 100k</Option>
+            <Option value="100k-500k" className="!text-xs md:!text-sm !text-textnormal">100k - 500k</Option>
           </Select>
         </div>
       </div>
@@ -88,10 +92,11 @@ const PropertyFilters = () => {
             value={sort}
             onChange={setSort}
             dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+            className="w-full h-10 [&_.ant-select-selection-item]:!text-xs md:[&_.ant-select-selection-item]:!text-sm [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+             suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
           >
-            <Option value="newest" className="!text-textnormal">Newest</Option>
-            <Option value="oldest" className="!text-textnormal">Oldest</Option>
+            <Option value="newest" className="!text-xs md:!text-sm !text-textnormal">Newest</Option>
+            <Option value="oldest" className="!text-xs md:!text-sm !text-textnormal">Oldest</Option>
           </Select>
         </div>
       </div>

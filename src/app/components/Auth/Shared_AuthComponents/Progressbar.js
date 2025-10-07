@@ -8,7 +8,7 @@ export default function Progressbar({ progress,no,desc }) {
             <p className="text-primary text-xs md:text-sm">Step {no} of 3</p>
         </div>
         <div>
-        <p className="text-secondary-alt text-xs md:text-sm">{desc}</p>
+        <p className="text-secondary-alt font-medium text-xs md:text-sm">{desc}</p>
         </div>
     </div>
     <div className="w-full bg-progressbarbackground rounded-full h-1.5 md:h-2.5 dark:bg-primary">

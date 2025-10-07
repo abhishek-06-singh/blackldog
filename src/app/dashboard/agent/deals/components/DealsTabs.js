@@ -12,7 +12,7 @@ const DealsTabs = () => {
   return (
     <div>
       {' '}
-      <div className="w-full  rounded-2xl  ">
+      <div className="w-full px-2 md:px-6 lg:px-10  rounded-2xl  ">
         {/* Tabs Header */}
         <div className="flex border-b border-bordercolor  mb-8">
 
@@ -39,7 +39,7 @@ const DealsTabs = () => {
         </div>
 
         {/* Tabs Content */}
-        <div className="mt-4 px-10">
+        <div className="mt-4 ">
           {activeTab === 'my' && (
             <div>
                 <DealsFilter/>

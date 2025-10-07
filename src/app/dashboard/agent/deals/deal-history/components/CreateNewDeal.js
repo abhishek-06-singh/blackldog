@@ -12,12 +12,12 @@ export default function CreateNewDeal() {
       <div className="ml-10 mt-4 text-textheading">
         <Breadcrumb  
 
-          separator=">"
+          separator={<span className='text-textnormal' >{">"}</span>}
           items={[
             {
               title: (
                 <a className="text-textnormal" href="/dashboard/agent/deals/deal-history">
-                  <span className="text-textnormal">Deal History</span>
+                  <span className="text-textnormal font-thin">Deal History</span>
                 </a>
               ),
             },
@@ -38,17 +38,17 @@ export default function CreateNewDeal() {
         <Heading title="Create New Deal" />
 
         <div className="flex flex-col md:flex-row gap-4">
-          <button className="w-full mt-4 md:mt-0 md:w-fit bg-background  text-textnormal border border-bordercolor p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
+          <button className="font-medium w-full mt-4 md:mt-0 md:w-fit bg-background  text-textnormal border border-bordercolor p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
             Cancel
           </button>
           <button
-            className="w-full md:w-fit bg-buttonbg text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform"
+            className="font-medium w-full md:w-fit bg-buttonbg text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform"
             onClick={() => setOpen(true)}
           >
             Save & Send Documents
           </button>
            <button
-            className="w-full md:w-fit bg-buttonbg text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform"
+            className="font-medium w-full md:w-fit bg-buttonbg text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform"
             onClick={() => setOpen(true)}
           >
             Save Lead

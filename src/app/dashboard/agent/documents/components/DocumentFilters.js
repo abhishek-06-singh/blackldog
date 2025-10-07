@@ -1,98 +1,102 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Input, Select, Button ,DatePicker } from 'antd'
-import { SearchOutlined, DownloadOutlined } from '@ant-design/icons'
+import { Input, Select, DatePicker } from 'antd'
+import { SearchOutlined, CalendarOutlined } from '@ant-design/icons'
 import { ChevronDown } from 'lucide-react'
 
 const { Option } = Select
 const { RangePicker } = DatePicker
 
-const ContactFilters = () => {
-
+const DocumentFilters = () => {
   const [status, setStatus] = useState('all')
   const [type, setType] = useState('all')
   const [price, setPrice] = useState('all')
-  const [sort, setSort] = useState('newest')
 
   return (
     <div className="w-full bg-cardbg rounded-2xl shadow-md border border-bordercolor p-6">
-      {/* Grid Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-y-6">
-        {/* Search */}
-        <div className="lg:col-span-12 w-full flex flex-col justify-end mt-4 sm:mt-0">
-          <Input
-            prefix={<SearchOutlined />}
-            placeholder="Search by name, email or listing"
-            className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
-          />
-        </div>
+      
+      {/* Search Bar - Always Full Width */}
+      <div className="mb-4">
+        <Input
+          prefix={<SearchOutlined />}
+          placeholder="Search by name, email or listing"
+          className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
+        />
+      </div>
 
-        {/* Property Type */}
-        <div className=" w-full flex flex-col mt-4 sm:mt-0">
+      {/* Filters Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        
+        {/* Status */}
+        <div className="flex flex-col">
           <label className="text-sm text-textheading mb-1">All Statuses</label>
           <Select
-            value={type}
-            onChange={setType}
+            value={status}
+            onChange={setStatus}
             dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
             className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
             suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
-
           >
-            <Option value="all" className="!text-textnormal">All</Option>
-            <Option value="house" className="!text-textnormal">New</Option>
-            <Option value="apartment" className="!text-textnormal">Negotiation</Option>
-            <Option value="apartment" className="!text-textnormal">Closed</Option>
+            <Option value="all">All</Option>
+            <Option value="new">New</Option>
+            <Option value="negotiation">Negotiation</Option>
+            <Option value="closed">Closed</Option>
           </Select>
         </div>
-        
-         <div className=" w-full flex flex-col mt-4 sm:mt-0">
-          <label className="text-sm text-textheading mb-1">Document Type</label>
 
+        {/* Document Type */}
+        <div className="flex flex-col">
+          <label className="text-sm text-textheading mb-1">Document Type</label>
           <Select
             value={type}
             onChange={setType}
             dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
             className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
             suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
-
           >
-            <Option value="all" className="!text-textnormal">All</Option>
-            <Option value="house" className="!text-textnormal">Contract</Option>
-            <Option value="apartment" className="!text-textnormal">Offer</Option>
-            <Option value="apartment" className="!text-textnormal">Agreement</Option>
-            <Option value="apartment" className="!text-textnormal">Other</Option>
-
+            <Option value="all">All</Option>
+            <Option value="contract">Contract</Option>
+            <Option value="offer">Offer</Option>
+            <Option value="agreement">Agreement</Option>
+            <Option value="other">Other</Option>
           </Select>
         </div>
-         <div className=" w-full flex flex-col mt-4 sm:mt-0">
+
+        {/* Linked Properties */}
+        <div className="flex flex-col">
           <label className="text-sm text-textheading mb-1">Linked Properties</label>
           <Select
-            value={type}
-            onChange={setType}
+            value={price}
+            onChange={setPrice}
             dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
             className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
             suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
-
           >
-            <Option value="all" className="!text-textnormal">All</Option>
-            <Option value="house" className="!text-textnormal">Property 1</Option>
-            <Option value="apartment" className="!text-textnormal">Property 2</Option>
-            <Option value="apartment" className="!text-textnormal">Property 3</Option>
+            <Option value="all">All</Option>
+            <Option value="property1">Property 1</Option>
+            <Option value="property2">Property 2</Option>
+            <Option value="property3">Property 3</Option>
           </Select>
         </div>
 
-        {/* Price Range */}
-      <div className=" w-full flex flex-col mt-4 sm:mt-0">
+        {/* Date Range */}
+        <div className="flex flex-col">
           <label className="text-sm text-textheading mb-1">Date Range</label>
-          <RangePicker className="w-full h-10 rounded-xl !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0"
-         />
-
+          <RangePicker
+            className="
+              w-full h-10 rounded-xl
+              [&_.ant-picker-input>input]:!text-textnormal
+              [&_.ant-picker-input>input::placeholder]:!text-placeholder
+              [&_.ant-picker-separator]:!text-textnormal
+              !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0
+            "
+            suffixIcon={<CalendarOutlined className="w-4 h-4 text-placeholder" />}
+          />
         </div>
       </div>
     </div>
   )
 }
 
-export default ContactFilters
-
+export default DocumentFilters

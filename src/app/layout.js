@@ -4,7 +4,7 @@ import './globals.css'
 import { Montserrat } from 'next/font/google'
 import LayoutWrapper from './LayoutWrapper'
 
-
+import { Toaster } from 'sonner'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -42,10 +42,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        
-          <LayoutWrapper>{children}</LayoutWrapper>
-          
-        
+        <Toaster position="top-right" />
+
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   )

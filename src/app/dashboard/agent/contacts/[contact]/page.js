@@ -15,7 +15,7 @@ export default function UserPageContact({ params }) {
       {/* AntD Breadcrumb with custom separator */}
       <div className="ml-10 mt-4 text-textheading">
         <Breadcrumb 
-          separator=">"
+          separator={<span className="text-textnormal">{">"}</span>}
           items={[
             {
               title: (

@@ -61,7 +61,7 @@ export default function ListingDetailsTable() {
 
   return (
     <div className="overflow-x-auto mt-8 bg-cardbg rounded-xl shadow-md border border-bordercolor p-6">
-      <h2 className="text-sm font-semibold text-textheading mb-6">Listing Details</h2>
+      <h2 className="text-base md:text-lg font-semibold text-textheading mb-6">Listing Details</h2>
 
    <table className="min-w-full text-sm text-lef overflow-x-auto">
 <thead>
@@ -148,8 +148,8 @@ export default function ListingDetailsTable() {
               onClick={() => setCurrentPage(page)}
               className={`px-3 py-1 rounded-lg border border-bordercolor ${
                 currentPage === page
-                  ? 'bg-black-500 text-white'
-                  : 'hover:bg-boxbg text-textnormal'
+                  ? 'bg-black-500 text-white border border-white'
+                  : 'hover:bg-black-500 text-white'
               }`}
             >
               {page}

@@ -2,15 +2,39 @@
 import React from "react"
 import Monthly_Module from "./Monthly_Module"
 import Anually_Module from "./Anually_Module"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import {getSubscriptionPlans} from "../../../services/api"
+import { toast } from "sonner"
 
-
-export default function ActivePlan_Module() {
+export default function ActivePlan_Module({onPlanSelect}) {
     const [active, setActive] = useState('Monthly')
-  const [selectedCard, setSelectedCard] = useState(1)
+  const [selectedMonthlyCard, setSelectedMonthlyCard] = useState(null);
+const [selectedAnnualCard, setSelectedAnnualCard] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const[loading,setLoading] = useState(false)
+  const [plans, setPlans] = useState([])
+
+  useEffect(() => {
+  const fetchPlans = async () => {
+    setLoading(true);
+    try {
+      const response = await getSubscriptionPlans();
+      console.log('API Response:', response); 
+      setPlans(response.data || []); // ✅ inner data array
+    } catch (error) {
+      toast.error(error.message || 'Failed to fetch plans');
+    } finally {
+      setLoading(false); // ✅ ensure loading resets
+    }
+  };
+
+  fetchPlans();
+}, []);
 
 
+if (loading) {
+    return <p className="text-center text-sm text-textheading">Loading Plans...</p>;
+  }
   return (
     <>
       {/* Toggle Container */}
@@ -52,16 +76,20 @@ export default function ActivePlan_Module() {
           <Monthly_Module
 
             showModal={showModal}
-            selectedCard={selectedCard}
-            setSelectedCard={setSelectedCard}
+            selectedPlan={selectedMonthlyCard}
+            setSelectedPlan={setSelectedMonthlyCard}
+            cards={plans}
+            onPlanSelect={onPlanSelect}
           />
         )}
         {active === "Anually" && (
           <Anually_Module
 
             showModal={showModal}
-            selectedCard={selectedCard}
-            setSelectedCard={setSelectedCard}
+            selectedPlan={selectedAnnualCard}
+            setSelectedPlan={setSelectedAnnualCard}
+            cards={plans}
+            onPlanSelect={onPlanSelect}
           />
         )}
       </div>

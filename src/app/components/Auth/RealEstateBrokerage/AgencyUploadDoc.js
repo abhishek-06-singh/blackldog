@@ -30,11 +30,15 @@ const uploadsections = [
   },
 ]
 
-export default function AgencyUploadDoc() {
+export default function AgencyUploadDoc({files,setFiles,errors,setErrors}) {
     return (
     <div className="w-full mx-auto px-6  ">
       <UploadSection
         uploadsections={uploadsections}
+        files={files}
+        setFiles={setFiles}
+        setErrors={setErrors}
+        errors={errors}
             />
     </div>
   )

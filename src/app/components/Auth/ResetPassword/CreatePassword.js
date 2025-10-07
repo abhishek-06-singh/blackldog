@@ -1,87 +1,100 @@
 'use client'
-import React from 'react'
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from "framer-motion"
 import { Eye, EyeOff } from 'lucide-react'
 
-export default function CreatePassword() {
-const[password,setPassword] = useState('')
-const[confirmPassword,setConfirmPassword] = useState('')
-const[showPassword,setShowPassword] = useState(false)
-const[showConfirmPassword,setShowConfirmPassword] = useState(false)
+export default function CreatePassword({
+  password,
+  setPassword,
+  confirmPassword,
+  setConfirmPassword,
+  showPassword,
+  setShowPassword,
+  showConfirmPassword,
+  setShowConfirmPassword
+}) {
 
+  const [error, setError] = useState('');
+
+  // Check if passwords match whenever they change
+  useEffect(() => {
+    if (confirmPassword && password !== confirmPassword) {
+      setError("Passwords do not match");
+    } else {
+      setError("");
+    }
+  }, [password, confirmPassword]);
 
   return (
     <motion.div
-            className=" p-8 space-y-6"
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+      className="px-8 space-y-6"
+      initial={{ y: 40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
+    >
+      <div className="space-y-4">
+        {/* New Password Field */}
+        <div>
+          <label
+            htmlFor="new-password"
+            className="block text-sm font-medium text-textnormal"
           >
-    <div className="space-y-4">
-      {/* New Password Field */}
-      <div>
-        <label
-          htmlFor="new-password"
-          className="block text-sm font-medium text-textnormal"
-        >
-          New Password
-        </label>
-        <div className="relative mt-1">
-          <input
-            id="new-password"
-            type={showPassword ? 'text' : 'password'}
-            placeholder="Enter new password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 text-gray-900 placeholder-textplaceholder"
-            required
-          />
-          <button
-            type="button"
-            onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
-          >
-            {showPassword ? (
-              <EyeOff className="w-5 h-5" />
-            ) : (
-              <Eye className="w-5 h-5" />
-            )}
-          </button>
+            New Password
+          </label>
+          <div className="relative mt-1">
+            <input
+              id="new-password"
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Enter new password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className={`w-full px-4 pr-10 py-3 border rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all duration-200 text-gray-900 placeholder-textplaceholder
+                ${error ? 'border-red-500' : 'border-bordercolor'}
+              `}
+              required
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-textnormal hover:text-gray-600 transition-colors"
+            >
+              {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
-      </div>
 
-      {/* Confirm Password Field */}
-      <div>
-        <label
-          htmlFor="confirm-password"
-          className="block text-sm font-medium text-textnormal"
-        >
-          Confirm Password
-        </label>
-        <div className="relative mt-1">
-          <input
-            id="confirm-password"
-            type={showConfirmPassword ? 'text' : 'password'}
-            placeholder="Confirm password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            className="w-full px-4 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 text-gray-900 placeholder-textplaceholder"
-            required
-          />
-          <button
-            type="button"
-            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+        {/* Confirm Password Field */}
+        <div>
+          <label
+            htmlFor="confirm-password"
+            className="block text-sm font-medium text-textnormal"
           >
-            {showConfirmPassword ? (
-              <EyeOff className="w-5 h-5" />
-            ) : (
-              <Eye className="w-5 h-5" />
-            )}
-          </button>
+            Confirm Password
+          </label>
+          <div className="relative mt-1">
+            <input
+              id="confirm-password"
+              type={showConfirmPassword ? 'text' : 'password'}
+              placeholder="Confirm password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className={`w-full px-4 pr-10 py-3 border rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all duration-200 text-gray-900 placeholder-textplaceholder
+                ${error ? 'border-red-500' : 'border-bordercolor'}
+              `}
+              required
+            />
+            <button
+              type="button"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-textnormal hover:text-gray-600 transition-colors"
+            >
+              {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+            </button>
+          </div>
+          {/* Error Message */}
+          {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
         </div>
       </div>
-    </div></motion.div>
+    </motion.div>
   )
 }

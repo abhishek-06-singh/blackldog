@@ -37,7 +37,7 @@ const LeftPanel = () => {
       </div>
 
       {/* Logo Section aligned left */}
-      <div className="flex justify-start md:mb-24 lg:mb-14 relative z-10">
+      <div className="flex justify-start mb-6 relative z-10">
         <div className="w-24 sm:w-28 md:w-44 lg:w-48">
 
       <Link href="/">
@@ -61,10 +61,10 @@ const LeftPanel = () => {
       </div>
 
       {/* Title + Description */}
-      <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-primary mb-3 relative z-10">
+      <h2 className="text-lg lg:text-xl font-medium text-primary mb-3 relative z-10">
         Your Real Estate Management Solution
       </h2>
-      <p className="text-xs md:text-base lg:text-lg text-textnormal px-1 lg:px-2 sm:px-4 relative z-10">
+      <p className="text-sm md:text-base text-textnormal px-1 lg:px-2 sm:px-4 relative z-10">
         Streamlined platform for agents, agencies, and brokerages to manage listings,
         and transactions in one place.
       </p>

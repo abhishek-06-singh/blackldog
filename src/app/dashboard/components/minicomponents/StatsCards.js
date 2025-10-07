@@ -36,7 +36,7 @@ const statsData = [
 
 export default function StatsCards({ data = statsData }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-3 pr-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-3 lg:pr-10 md:pr-6 pr-2">
       {data.map((stat, index) => (
         <motion.div
           key={stat.id}

@@ -17,7 +17,7 @@ export default function Deal_Oppurtunity({ user }) {
         </p>
         <button
          onClick={handlenewDeal}
-         className="w-full mt-2 md:mt-0 bg-buttonbg text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
+         className="w-full md:w-fit mt-2 md:mt-0 font-medium bg-buttonbg text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
           <Plus className="w-4 h-4" /> Create New Deal
         </button>
       </div>

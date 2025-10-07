@@ -26,7 +26,7 @@ export default function AddDealPage({ handleCancel }) {
 
   return (
     <div className="bg-cardbg px-8 pt-16 pb-6 rounded-lg">
-      <h2 className="text-[24px] text-textheading font-semibold mb-2">
+      <h2 className="text-lg lg:text-[24px] text-textheading font-semibold mb-2">
         Send Documents for Signature to Sarah Johnson
       </h2>
 
@@ -35,7 +35,7 @@ export default function AddDealPage({ handleCancel }) {
         receive an email with a signing link.
       </p>
       <div className="my-4">
-        <h3 className="text-textheading font-semibold text-[18px] mb-4">
+        <h3 className="text-textheading font-semibold text-sm md:text-[18px] mb-4">
           Documents to Send
         </h3>
         <Checkbox.Group
@@ -52,17 +52,17 @@ export default function AddDealPage({ handleCancel }) {
               <Image
                 src={fileLight}
                 alt="file"
-                className="block dark:hidden w-5 h-5"
+                className="block dark:hidden w-4 h-4 md:w-5 md:h-5"
               />
               <Image
                 src={fileDark}
                 alt="file"
-                className="hidden dark:block w-5 h-5"
+                className="hidden dark:block w-4 h-4 md:w-5 md:h-5"
               />
 
               <div className="flex-1">
-                <p className="font-medium text-textheading">{doc.name}</p>
-                <Tag className="text-black-500 bg-orange-300 rounded-md border-none text-xs px-2 py-0.5">
+                <p className="text-xs sm:text-sm md:text-base font-medium text-textheading">{doc.name}</p>
+                <Tag className=" text-black-500 bg-orange-300 rounded-md border-none text-xs px-2 py-0.5">
                   {doc.tag}
                 </Tag>
               </div>
@@ -80,13 +80,13 @@ export default function AddDealPage({ handleCancel }) {
       <div className="flex justify-end gap-3 mt-2">
         <Button
           onClick={handleCancel}
-          className="rounded-lg bg-background text-textnormal w-[144.5px] py-5"
+          className="rounded-lg text-xs md:text-sm bg-background border-bordercolor text-textnormal w-[144.5px] py-5"
         >
           Cancel
         </Button>
         <Button
           onClick={handleSend}
-          className="bg-buttonbg text-background rounded-lg w-[144.5px] py-5"
+          className="bg-buttonbg text-xs md:text-sm font-medium border-bordercolor text-background rounded-lg w-[144.5px] py-5"
         >
           Send
         </Button>

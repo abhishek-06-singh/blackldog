@@ -35,7 +35,7 @@ export default function SubscriptionPlanCard() {
           </p>
         </div>
         <div className="w-full flex flex-col-reverse md:flex-col md:items-end gap-2">
-          <Button className=" bg-buttonbg text-background  px-4 py-3.5 text-sm rounded-md border-none">
+          <Button className=" bg-buttonbg font-medium text-background  px-4 py-3.5 text-sm rounded-md border-none">
             Upgrade Plan
           </Button>
           <div className="w-fit bg-green-500 text-white text-xs mt-2 font-medium px-2 py-0.5 rounded-full">● Active</div>

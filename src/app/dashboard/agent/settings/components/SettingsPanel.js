@@ -10,39 +10,39 @@ export default function SettingsPanel() {
     <div className="  w-full space-y-6">
       {/* Language Section */}
       <div className="bg-cardbg rounded-xl border border-bordercolor p-4 shadow-md w-full">
-        <h3 className="text-sm font-semibold text-primary pb-4">Language</h3>
-        <label className="block text-xs text-textplaceholder mb-1">Select Language</label>
+        <h3 className="text-base md:text-[18px] font-semibold text-primary pb-4">Language</h3>
+        <label className="block text-xs sm:text-sm font-medium text-textnormal mb-1">Select Language</label>
         <Select
           defaultValue="en"
           dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-12 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+            className="w-full h-12 [&_.ant-select-selection-item]:!text-xs [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
             suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
         >
-          <Option value="en">English (US)</Option>
-          <Option value="es">Spanish (ES)</Option>
-          <Option value="fr">French (FR)</Option>
+          <Option className="text-xs" value="en">English (US)</Option>
+          <Option className="text-xs" value="es">Spanish (ES)</Option>
+          <Option className="text-xs" value="fr">French (FR)</Option>
         </Select>
       </div>
 
       {/* Time Zone Section */}
       <div className="bg-cardbg rounded-xl border border-bordercolor p-4 shadow-md w-full">
-        <h3 className="text-sm font-semibold text-primary pb-4">Time Zone</h3>
-        <label className="block text-xs text-textplaceholder mb-1">Select Time Zone</label>
+        <h3 className="text-base md:text-[18px] font-semibold text-primary pb-4">Time Zone</h3>
+        <label className="block text-xs sm:text-sm font-medium text-textnormal mb-1">Select Time Zone</label>
         <Select
           defaultValue="pt"
            dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-12 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+            className="w-full h-12 [&_.ant-select-selection-item]:!text-xs [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
             suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
         >
-          <Option value="pt">Pacific Time (PT)</Option>
-          <Option value="et">Eastern Time (ET)</Option>
-          <Option value="ct">Central Time (CT)</Option>
+          <Option className="text-xs" value="pt">Pacific Time (PT)</Option>
+          <Option className="text-xs" value="et">Eastern Time (ET)</Option>
+          <Option className="text-xs" value="ct">Central Time (CT)</Option>
         </Select>
       </div>
 
       {/* Deactivate Section */}
       <div className="bg-red-50 border border-red-100 shadow-md p-4 rounded-xl">
-        <button className="text-red-500 font-semibold text-sm hover:underline">
+        <button className="text-red-500 font-semibold text-base md:text-[18px] hover:underline">
           Deactivate Account
         </button>
         <p className="text-xs text-black-500 mt-1">

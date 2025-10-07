@@ -10,7 +10,7 @@ const OptionalNotes = () => {
       bordered={false}
     >
       <p className="text-lg mb-4 text-primary font-semibold">Optional Notes</p>
-      <TextArea rows={4} placeholder="Enter here..." />
+      <TextArea rows={4} placeholder="Enter here..." className="rounded-xl text-xs sm:!text-sm h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none" />
     </Card></div>
   );
 };

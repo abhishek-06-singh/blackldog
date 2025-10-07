@@ -98,7 +98,7 @@ export default function ContactsTable() {
   return (
     <div className="mt-8">
       <div className="overflow-x-auto rounded-xl border border-bordercolor bg-cardbg shadow-md">
-        <table className="min-w-full text-left table-auto overflow-x-auto">
+        <table className="min-w-full text-left table-auto overflow-x-auto ">
           <thead className="bg-cardbg text-textplaceholder text-sm font-thin">
             <tr>
               <th className="p-4">
@@ -117,7 +117,7 @@ export default function ContactsTable() {
               <th className="p-4">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-bordercolor">
+          <tbody className="divide-y divide-bordercolor text-xs whitespace-nowrap sm:text-sm">
             {currentItems.map((item) => (
               <tr key={item.id} className="hover:bg-boxbg transition">
                 {/* Checkbox */}
@@ -188,7 +188,7 @@ export default function ContactsTable() {
       </div>
 
       {/* Pagination */}
-      <div className="flex flex-col sm:flex-row items-center justify-between my-10 text-sm text-textnormal gap-4 sm:gap-0">
+      <div className="flex flex-col  items-center  md:flex-row md:justify-between my-2 md:gap-0 md:my-10 text-xs sm:text-sm text-textnormal gap-2">
         <p>
           Showing {start + 1} to {Math.min(end, totalResults)} of {totalResults}{' '}
           results
@@ -208,8 +208,8 @@ export default function ContactsTable() {
               onClick={() => setCurrentPage(page)}
               className={`px-3 py-1 rounded-lg border border-bordercolor ${
                 currentPage === page
-                  ? 'bg-black-500 text-white'
-                  : 'hover:bg-boxbg text-textnormal'
+                  ? 'bg-black-500 text-white border border-textnormal'
+                  : 'hover:bg-black-500 text-white'
               }`}
             >
               {page}

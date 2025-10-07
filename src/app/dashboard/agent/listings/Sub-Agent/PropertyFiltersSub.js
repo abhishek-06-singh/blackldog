@@ -23,7 +23,7 @@ const PropertyFiltersSub = () => {
           <Input
             prefix={<SearchOutlined />}
             placeholder="Search by Property name"
-            className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
+            className="!text-xs md:!text-sm rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
           />
         </div>
 
@@ -34,12 +34,12 @@ const PropertyFiltersSub = () => {
             value={status}
             onChange={setStatus}
             dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-            suffixIcon={<ChevronDown className="w-4 h-4 text-white" />} 
+            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-xs md:[&_.ant-select-selection-item]:!text-sm [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+            suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />} 
           >
-            <Option value="all" className="!text-textnormal">All Statuses</Option>
-            <Option value="active" className="!text-textnormal">Active</Option>
-            <Option value="sold" className="!text-textnormal">Sold</Option>
+            <Option value="all" className="!text-xs md:!text-sm !text-textnormal">All Statuses</Option>
+            <Option value="active" className="!text-xs md:!text-sm !text-textnormal">Active</Option>
+            <Option value="sold" className="!text-xs md:!text-sm !text-textnormal">Sold</Option>
           </Select>
         </div>
 
@@ -50,20 +50,28 @@ const PropertyFiltersSub = () => {
             value={type}
             onChange={setType}
             dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-xs md:[&_.ant-select-selection-item]:!text-sm [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
             suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />} 
           >
-            <Option value="all" className="!text-textnormal">All</Option>
-            <Option value="house" className="!text-textnormal">House</Option>
-            <Option value="apartment" className="!text-textnormal">Apartment</Option>
+            <Option value="all" className="!text-xs md:!text-sm !text-textnormal">All</Option>
+            <Option value="house" className="!text-xs md:!text-sm !text-textnormal">House</Option>
+            <Option value="apartment" className="!text-xs md:!text-sm !text-textnormal">Apartment</Option>
           </Select>
         </div>
 
         {/* Date Range */}
         <div className="lg:col-span-2 w-full flex flex-col mt-4 sm:mt-0">
           <label className="text-sm text-textheading mb-1">Date Range</label>
-          <RangePicker className="w-full h-10 rounded-xl !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0"
-          suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}  />
+          <RangePicker
+  className="
+    w-full h-10 rounded-xl
+    [&_.ant-picker-input>input]:!text-textnormal
+    [&_.ant-picker-input>input::placeholder]:!text-placeholder
+    !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0
+  "
+  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
+/>
+
 
         </div>
       </div>

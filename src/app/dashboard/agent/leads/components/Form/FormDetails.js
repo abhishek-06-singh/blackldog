@@ -29,7 +29,7 @@ export default function FormDetails(){
         <Form form={form}
           layout="vertical"
           requiredMark={false}
-          className="space-y-6 p-8">
+          className="space-y-6 ">
             <LeadDetails />
             <OpportunityPreferences />
             <AssigmentStatus />

@@ -31,14 +31,14 @@ export default function PropertyActivityOverview() {
 ]
 
   return (
-    <div className="pr-10 mt-2 bg-background rounded-2xl ">
+    <div className="pr-2 md:pr-6 lg:pr-10 mt-2 bg-background rounded-2xl ">
       {/* Header */}
       <h2 className="text-xl font-semibold mb-3 text-subheading">
         Property Activity Overview
       </h2>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {stats.map((stat, index) => (
           <motion.div
             key={stat.id}

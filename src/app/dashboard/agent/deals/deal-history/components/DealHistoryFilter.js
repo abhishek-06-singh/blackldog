@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { Input, Select, Button ,DatePicker } from 'antd'
-import { SearchOutlined, DownloadOutlined } from '@ant-design/icons'
+import { SearchOutlined, DownloadOutlined, CalendarOutlined } from '@ant-design/icons'
 import { ChevronDown } from 'lucide-react'
 
 const { Option } = Select
@@ -49,7 +49,14 @@ const DealHistoryFilter = () => {
         {/* Price Range */}
       <div className="lg:col-span-3 w-full flex flex-col mt-4 sm:mt-0">
           <label className="text-sm text-textheading mb-1">Date Range</label>
-          <RangePicker className="w-full h-10 rounded-xl !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0"
+           <RangePicker
+           className="
+             w-full h-10 rounded-xl
+             [&_.ant-picker-input>input]:!text-textnormal
+             [&_.ant-picker-input>input::placeholder]:!text-placeholder
+             !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0
+           "
+           suffixIcon={<CalendarOutlined className="w-4 h-4 text-placeholder" />}
          />
 
         </div>

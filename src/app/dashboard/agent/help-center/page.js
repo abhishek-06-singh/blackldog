@@ -6,6 +6,7 @@ import Help_Page from './components/Help_Page'
 import { Input } from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
 import { motion } from 'framer-motion'
+import { ConfigProvider } from 'antd';
 export default function HelpCenterPage() {
   return (
     <motion.div
@@ -14,30 +15,47 @@ export default function HelpCenterPage() {
       animate={{ opacity: 1, y: 0 }} // fade in + move up
       transition={{ duration: 0.6, ease: 'easeInOut' }} // 400ms
     >
+     <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: '#EEB887',
+              borderRadius: 12,
+            },
+            components: {
+              Steps: {
+                colorPrimary: '#EEB887',
+                colorText: '#000',
+                colorTextActive: '#EEB887',
+              },
+            },
+          }}
+        >
       <Navbar />
 
-      <div className=" ml-5 md:ml-10 mt-6 pr-10 w-full  space-y-7">
+      <div className="ml-2 md:ml-6 lg:ml-10 mt-6 pr-2 md:pr-6 lg:pr-10 w-full  space-y-7">
         <Heading
           title="Help Center"
           subtitle="Find guides, tutorials, and answers to your questions."
         />
 
         {/* Search bar below Heading */}
-        <div className="mt-4 max-w-md">
+        <div className="mt-4 md:max-w-md pr-2 md:pr-0">
           <Input
             placeholder="Search articles, guides, and FAQs"
-            prefix={<SearchOutlined className="text-current" />}
+            prefix={<SearchOutlined className="text-placeholder" />}
             size="large"
-            className="rounded-lg border border-bordercolor shadow-sm !bg-input"
+            className="text-sm md:text-base rounded-lg border border-bordercolor shadow-sm !bg-input"
             allowClear
             onPressEnter={(e) => console.log('Search:', e.target.value)}
           />
         </div>
       </div>
 
-      <div className="   w-full ">
+      <div className="w-full">
         <Help_Page />
       </div>
+      </ConfigProvider>
     </motion.div>
+    
   )
 }

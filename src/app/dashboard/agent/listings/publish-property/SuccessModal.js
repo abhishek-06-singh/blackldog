@@ -36,12 +36,12 @@ export default function SuccessModal({ isOpen, onClose, setPropertyListings }) {
         </div>
 
         {/* Title */}
-        <h2 className="font-montserrat font-semibold text-sm sm:text-lg md:text-[24px] leading-[150%] tracking-[0] text-center text-textheading mb-2">
+        <h2 className="font-montserrat font-semibold text-sm sm:text-base md:text-lg md:text-[24px] leading-[150%] tracking-[0] text-center text-textheading mb-2">
           Property added! A new chat has been created for this listing.
         </h2>
 
         {/* Subtitle */}
-        <p className="text-xs sm:text-sm text-textnormal text-center mb-6">
+        <p className="text-xs md:text-sm text-textnormal text-center mb-6">
           You can now view and manage conversations related to this property
           directly from the Messages tab.
         </p>

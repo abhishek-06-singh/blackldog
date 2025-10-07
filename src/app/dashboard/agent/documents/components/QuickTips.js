@@ -32,7 +32,7 @@ export default function QuickTips() {
         {tips.map((tip, index) => (
           <li
             key={index}
-            className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base"
+            className="flex items-start gap-2 sm:gap-3 text-sm md:text-base"
           >
             <CheckCircleFilled className="text-green-500 text-lg sm:text-xl mt-0.5" />
             <span className="leading-snug">{tip}</span>

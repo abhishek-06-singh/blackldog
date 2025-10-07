@@ -16,12 +16,14 @@ export default function RejectForm() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
     <div className="w-full max-w-4xl mx-auto">
-      <div className="w-full px-2 md:px-4 my-16">
+      <div className="w-full my-16">
       <Progressbar  no={3} progress={100} desc={"Review & Approval"} />
       </div>
+      <div className="border border-bordercolor p-6 rounded-xl">
      <RejectDocumentReview/>
      <RejectSubmittedDocuments/>
      <RejectContactSupport/>
+     </div>
     </div></motion.div>
   )
 }

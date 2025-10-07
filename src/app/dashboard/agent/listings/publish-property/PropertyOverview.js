@@ -1,6 +1,6 @@
 'use client'
 
-import { Card, Row, Col, Tag, Button, Avatar, Table } from 'antd'
+import { Card, Row, Col, div, Button, Avatar, Table } from 'antd'
 import {
   LineChart,
   Line,
@@ -22,6 +22,7 @@ import clockDark from "../../../components/icons/Darkmode_icons/listing_dark/clo
 import messageDark from "../../../components/icons/Darkmode_icons/listing_dark/message_white.svg"
 import tagDark from "../../../components/icons/Darkmode_icons/listing_dark/tag_white.svg"
 import Image from 'next/image'
+import { MoreOutlined } from '@ant-design/icons'
 
 export default function PropertyOverview() {
   const data = [
@@ -53,14 +54,17 @@ export default function PropertyOverview() {
       dataIndex: 'status',
       render: (status) =>
         status === 'Active' ? (
-          <Tag color="green">{status}</Tag>
+          <div className="bg-green-500 w-fit  text-xs rounded-xl text-white flex items-center justify-center px-2 gap-1"><span className='w-1 h-1 rounded-full bg-white'/>{status}</div>
         ) : (
-          <Tag color="orange">{status}</Tag>
+          <div className="bg-status-pending-in-review-500 w-fit rounded-xl text-xs flex items-center justify-center gap-1 px-2 text-white"><span className='w-1 h-1 rounded-full bg-white'/>{status}</div>
         ),
     },
     {
       title: 'Actions',
-      render: () => <Button type="text">•••</Button>,
+      render: () => <Button
+                      type="text"
+                      icon={<MoreOutlined className="text-textnormal" />}
+                    />,
     },
   ]
 
@@ -131,15 +135,15 @@ export default function PropertyOverview() {
         <h2 className="text-xl md:text-2xl text-textnormal font-semibold">
           Modern Family Home
         </h2>
-        <p className="text-textnormal">
+        <p className="text-textnormal text-sm md:text-base">
           123 Oak Street, Beverly Hills, CA 90210
         </p>
 
         <div className="flex gap-2 mt-2 flex-wrap">
-          <span className="bg-green-100 text-green-800 px-3 py-1 rounded-md text-sm font-medium">
+          <span className="bg-green-100 text-green-800 px-3 py-1 rounded-md text-xs md:text-sm font-medium">
             Active
           </span>
-          <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-md text-sm font-medium">
+          <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-md text-xs md:text-sm font-medium">
             House
           </span>
         </div>
@@ -150,13 +154,13 @@ export default function PropertyOverview() {
 
         <div className="flex flex-col sm:flex-row mt-4 gap-6 text-textnormal">
           <div className="space-y-1">
-            <p>Bedrooms: 4</p>
-            <p>Area: 2,500 sq ft</p>
-            <p>Property ID: #PR-2025-001</p>
+            <p className="text-sm md:text-base">Bedrooms: 4</p>
+            <p className="text-sm md:text-base">Area: 2,500 sq ft</p>
+            <p className="text-sm md:text-base">Property ID: #PR-2025-001</p>
           </div>
           <div className="space-y-1">
-            <p>Bathrooms: 3</p>
-            <p>Year Built: 2018</p>
+            <p className="text-sm md:text-base">Bathrooms: 3</p>
+            <p className="text-sm md:text-base">Year Built: 2018</p>
           </div>
         </div>
       </div>
@@ -165,22 +169,22 @@ export default function PropertyOverview() {
 
   {/* Property Statistics */}
   <div className="bg-cardbg rounded-lg shadow-sm p-4">
-    <h3 className="text-sm md:text-lg text-textnormal font-semibold mb-4">
+    <h3 className="text-base md:text-lg text-textnormal font-semibold mb-4">
       Property Statistics
     </h3>
 
     {/* Charts */}
     <div className="flex flex-col lg:flex-row gap-6">
       {/* Views Chart */}
-      <div className="bg-cardbg rounded-lg shadow-md border border-bordercolor p-4 w-full lg:w-1/2">
-        <span className="text-textnormal font-semibold block mb-2 ml-2">
+      <div className="bg-cardbg rounded-lg shadow-md border border-bordercolor p-2 md:p-4 w-full lg:w-1/2">
+        <span className="text-sm md:text-base text-textnormal font-semibold block mb-2 ml-2">
           Views Over Time
         </span>
         <ResponsiveContainer width="100%" height={250}>
-          <LineChart data={data}>
+          <LineChart data={data} margin={{ top: 10, right: 0, left: 0, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />
-            <YAxis />
+            <YAxis width={35} />
             <Tooltip />
             <Line
               type="monotone"
@@ -194,21 +198,21 @@ export default function PropertyOverview() {
 
       {/* Funnel */}
       <div className="bg-cardbg rounded-lg shadow-md border border-bordercolor p-4 w-full lg:w-1/2">
-        <span className="text-textnormal font-semibold block mb-2">
+        <span className="text-base md:text-lg text-textnormal font-semibold block mb-2">
           Conversion Funnel
         </span>
         <div className="space-y-3 mt-4">
           <div className="bg-orange-200 p-3 rounded-lg flex justify-between">
-            <span>Leads</span>
-            <strong>60</strong>
+            <span className="text-sm font-medium md:text-base">Leads</span>
+            <strong className="text-sm md:text-base">60</strong>
           </div>
           <div className="bg-orange-100 p-3 rounded-lg flex justify-between">
-            <span>Offers</span>
-            <strong>32</strong>
+            <span className="text-sm font-medium md:text-base">Offers</span>
+            <strong className="text-sm md:text-base">32</strong>
           </div>
           <div className="bg-orange-50 p-3 rounded-lg flex justify-between">
-            <span>Conversions</span>
-            <strong>8</strong>
+            <span className="text-sm font-medium md:text-base">Conversions</span>
+            <strong className="text-sm md:text-base">8</strong>
           </div>
         </div>
       </div>
@@ -217,17 +221,17 @@ export default function PropertyOverview() {
     {/* Stats Cards */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 text-center">
       {[
-        { label: "Total Views", value: "1,218", icon :<><Image src={eyeLight} alt="eye" width={24} height={24} className='block dark:hidden' /><Image src={eyeDark} alt="eye" width={24} height={24} className='hidden dark:block' /></> },
-        { label: "Inquiries", value: "23" ,icon :<><Image src={messageLight} alt="message" width={24} height={24} className='block dark:hidden' /><Image src={messageDark} alt="message" width={24} height={24} className='hidden dark:block' /></> }, 
-        { label: "Offers Made", value: "5", icon :<><Image src={tagLight} alt="tag" width={24} height={24} className='block dark:hidden' /><Image src={tagDark} alt="tag" width={24} height={24} className='hidden dark:block' /></> },
-        { label: "Days Updated", value: "2 Days",icon :<><Image src={clockLight} alt="clock" width={24} height={24} className='block dark:hidden' /><Image src={clockDark} alt="clock" width={24} height={24} className='hidden dark:block' /></> },
+        { label: "Total Views", value: "1,218", icon :<><Image src={eyeLight} alt="eye" width={24} height={24} className='w-5 h-5 md:w-auto md:h-auto block dark:hidden' /><Image src={eyeDark} alt="eye" width={24} height={24} className='w-5 h-5 md:w-auto md:h-auto hidden dark:block' /></> },
+        { label: "Inquiries", value: "23" ,icon :<><Image src={messageLight} alt="message" width={24} height={24} className='w-5 h-5 md:w-auto md:h-autoblock dark:hidden' /><Image src={messageDark} alt="message" width={24} height={24} className='w-5 h-5 md:w-auto md:h-auto hidden dark:block' /></> }, 
+        { label: "Offers Made", value: "5", icon :<><Image src={tagLight} alt="tag" width={24} height={24} className='w-5 h-5 md:w-auto md:h-auto block dark:hidden' /><Image src={tagDark} alt="tag" width={24} height={24} className='w-5 h-5 md:w-auto md:h-auto hidden dark:block' /></> },
+        { label: "Days Updated", value: "2 Days",icon :<><Image src={clockLight} alt="clock" width={24} height={24} className='w-5 h-5 md:w-auto md:h-autoblock dark:hidden' /><Image src={clockDark} alt="clock" width={24} height={24} className='w-5 h-5 md:w-auto md:h-auto hidden dark:block' /></> },
       ].map((stat, idx) => (
         <div
           key={idx}
-          className="bg-cardbg rounded-lg shadow-md border border-bordercolor p-4 flex justify-between items-center"
+          className="bg-cardbg rounded-lg shadow-md border border-bordercolor p-2 lg:p-4 flex justify-between items-center"
         ><div>
-          <p className="text-xl text-textheading font-semibold">{stat.value}</p>
-          <p className="text-textnormal">{stat.label}</p>
+          <p className="text-base md:text-xl text-textheading font-semibold">{stat.value}</p>
+          <p className="text-xs md:text-base whitespace-nowrap text-textnormal">{stat.label}</p>
           </div>
             <div>
               {stat.icon}
@@ -273,11 +277,11 @@ export default function PropertyOverview() {
         ))}
       </tr>
     </thead>
-    <tbody className="divide-y divide-bordercolor text-textnormal">
+    <tbody className="divide-y text-sm whitespace-nowrap md:text-base divide-bordercolor text-textnormal">
       {collaborators.map((row, rowIndex) => (
         <tr
           key={row.key || rowIndex}
-          className="hover:bg-boxbg flex flex-col sm:table-row mb-4 sm:mb-0 transition"
+          className="hover:bg-boxbg table-row mb-4 sm:mb-0 transition"
         >
           {columns.map((col, colIndex) => (
             <td

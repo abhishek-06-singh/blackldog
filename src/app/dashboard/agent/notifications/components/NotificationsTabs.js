@@ -10,13 +10,13 @@ const NotificationsTabs = () => {
     <div className='relative'>
        
       {' '}
-      <div className="w-full  rounded-2xl  pt-8">
+      <div className="w-full  rounded-2xl p-2 md:p-6 lg:p-10">
         {/* Tabs Header */}
         <div className="flex border-b border-bordercolor ">
 
           <button
             onClick={() => setActiveTab('All')}
-            className={`px-4 py-2 text-sm font-medium rounded-t-lg ${
+            className={`px-2 md:px-4 py-2 text-xs md:text-sm font-medium rounded-t-lg ${
               activeTab === 'All'
                 ? 'text-buttonbg border-b-2 border-buttonbg'
                 : 'text-textnormal hover:text-textnormal '
@@ -26,7 +26,7 @@ const NotificationsTabs = () => {
           </button>
           <button
             onClick={() => setActiveTab('Leads')}
-            className={`ml-4 px-4 py-2 text-sm font-medium rounded-t-lg ${
+            className={`ml-4 px-2 md:px-4 py-2 text-xs md:text-sm font-medium rounded-t-lg ${
               activeTab === 'Leads'
                 ? 'text-buttonbg border-b-2 border-buttonbg'
                 : 'text-textnormal hover:text-textnormal '
@@ -36,7 +36,7 @@ const NotificationsTabs = () => {
           </button>
           <button
             onClick={() => setActiveTab('Deals')}
-            className={`ml-4 px-4 py-2 text-sm font-medium rounded-t-lg ${
+            className={`ml-4 px-2 md:px-4 py-2 text-xs md:text-sm font-medium rounded-t-lg ${
               activeTab === 'Deals'
                 ? 'text-buttonbg border-b-2 border-buttonbg'
                 : 'text-textnormal hover:text-textnormal '
@@ -46,7 +46,7 @@ const NotificationsTabs = () => {
           </button>
           <button
             onClick={() => setActiveTab('Messages')}
-            className={`ml-4 px-4 py-2 text-sm font-medium rounded-t-lg ${
+            className={`ml-4 px-2 md:px-4 py-2 text-xs md:text-sm font-medium rounded-t-lg ${
               activeTab === 'Messages'
                 ? 'text-buttonbg border-b-2 border-buttonbg'
                 : 'text-textnormal hover:text-textnormal '

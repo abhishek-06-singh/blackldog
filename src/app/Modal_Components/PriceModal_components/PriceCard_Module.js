@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Check } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function PriceCard_Module({
   title,
@@ -8,15 +9,26 @@ export default function PriceCard_Module({
   period,
   description,
   features,
-  showModal,
   isSelected,
   onSelect,
   buttontext,
+  plan,
 }) {
+  const Router = useRouter()
+ const handleplan = e => {
+  e.stopPropagation(); // prevent parent click
+  if (!plan) return;
+
+  // Store as JSON string
+  localStorage.setItem("selectedPlan", JSON.stringify(plan));
+  localStorage.setItem("period", period);
+
+  Router.push("/payment");
+}
   return (
     <div
       onClick={onSelect}
-       className={`w-full sm:w-[220px] md:w-[240px]   
+       className={`w-full sm:w-[280px] md:w-[260px] lg:w-[240px]   
      h-[320px]                          
     rounded-lg border border-secondary shadow-md p-3 sm:p-4 flex flex-col gap-3
     my-2 transition-all duration-300 cursor-pointer
@@ -38,12 +50,14 @@ export default function PriceCard_Module({
 
       {/* Button (kept inline, not pushed down) */}
       <button
+        onClick={handleplan}
         className={`text-textnormal border border-bordercolor font-semibold py-1  px-3 rounded-md transition
           ${isSelected ? "bg-buttonbg text-white hover:opacity-90" : "bg-background text-primary"}
         `}
-        onClick={showModal}
       >
-        {buttontext}
+    
+          {buttontext}
+        
       </button>
 
       {/* Features */}

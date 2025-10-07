@@ -25,14 +25,14 @@ const ChatList = ({ conversations, onSelect, selectedConversation }) => {
         placeholder="Search by agent name, property..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full px-3 py-2 mb-4 border border-bordercolor rounded-md text-sm focus:outline-none"
+       className="rounded-xl w-full p-4 mb-2 text-xs sm:text-sm h-10 bg-cardbg text-textnormal focus:ring-0 focus:border-textnormal border border-bordercolor shadow-none outline-none"
       />
 
       {/* 🗂 Filter Buttons */}
       <div className="flex space-x-2 mb-4 border-b border-bordercolor pb-4">
         <button
           onClick={() => setFilter('all')}
-          className={`px-3 py-1 text-sm rounded-md border ${
+          className={`px-3 py-1 text-xs md:text-sm rounded-md border ${
             filter === 'all' ? 'bg-buttonbg text-background' : 'bg-background text-textnormal border-bordercolor'
           }`}
         >
@@ -40,7 +40,7 @@ const ChatList = ({ conversations, onSelect, selectedConversation }) => {
         </button>
         <button
           onClick={() => setFilter('1:1')}
-          className={`px-3 py-1 text-sm rounded-md border ${
+          className={`px-3 py-1 text-xs md:text-sm rounded-md border ${
             filter === '1:1' ? 'bg-buttonbg text-background' : 'bg-background text-textnormal border-bordercolor'
           }`}
         >
@@ -48,7 +48,7 @@ const ChatList = ({ conversations, onSelect, selectedConversation }) => {
         </button>
         <button
           onClick={() => setFilter('group')}
-          className={`px-3 py-1 text-sm rounded-md border ${
+          className={`px-3 py-1 text-xs md:text-sm rounded-md border ${
             filter === 'group' ? 'bg-buttonbg text-background' : 'bg-background text-textnormal border-bordercolor'
           }`}
         >
@@ -79,19 +79,19 @@ const ChatList = ({ conversations, onSelect, selectedConversation }) => {
         />
       </div>
       <div className="w-full pl-3">
-        <div className="flex justify-between items-center">
-          <div className="font-semibold text-textheading">{conv.name}</div>
+        <div className="flex justify-start gap-4 sm:justify-between items-center">
+          <div className="font-semibold text-sm sm:text-sm text-textheading">{conv.name}</div>
           <div className="text-xs text-textnormal">{conv.time}</div>
         </div>
         <div className="text-xs text-textnormal">{conv.extra}</div>
 
         {/* Role Badge */}
-        <div className="mt-1 inline-block text-[10px] bg-gray-200 text-gray-800 px-2 py-0.5 rounded-full">
+        <div className="mt-1 inline-block text-[10px] bg-secondary-alt font-medium text-background px-2 py-0.5 rounded-full">
           {conv.agent}
         </div>
 
         {/* Message Preview */}
-        <div className="text-sm text-textnormal truncate mt-1">
+        <div className="text-xs text-textnormal truncate mt-1">
           {conv.preview}
         </div>
       </div>

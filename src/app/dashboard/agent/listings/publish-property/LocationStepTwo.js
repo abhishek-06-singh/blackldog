@@ -10,7 +10,7 @@ export default function LocationStepTwo({ onNext, onBack }) {
   return (
     <>
       <div className="p-6 bg-cardbg rounded-xl shadow-sm border border-bordercolor w-full">
-        <h2 className="text-lg text-textheading font-semibold mb-1">
+        <h2 className="text-lg text-textheading  mb-1">
           Location & Address
         </h2>
         <p className="text-textnormal mb-6 text-sm">
@@ -26,24 +26,46 @@ export default function LocationStepTwo({ onNext, onBack }) {
           <Row gutter={16}>
             <Col span={12}>
               <Form.Item
-                label={<span className="text-textheading font-semibold">Country</span>}
+                label={<span className="text-textheading font-medium">Country</span>}
                 name="country"
-                className="text-textheading font-semibold"
+                className="text-textheading "
               >
-                <Select placeholder="Select Country" dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-            suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}/>
+                <Select placeholder="Select Country"  dropdownClassName="bg-cardbg border border-bordercolor 
+    [&_.ant-select-item-option-selected]:!bg-buttonbg 
+    [&_.ant-select-item-option-selected]:!text-background 
+    [&_.ant-select-item-option-active]:!bg-buttonbg 
+    [&_.ant-select-item-option-active]:!text-background"
+  className="w-full h-10 
+    [&_.ant-select-selector]:!bg-cardbg 
+    [&_.ant-select-selector]:!rounded-xl 
+    [&_.ant-select-selector]:!border-bordercolor 
+    [&_.ant-select-selection-item]:!text-textnormal 
+    [&_.ant-select-selection-placeholder]:!text-placeholder 
+    [&_.ant-select-selector]:!focus:border-textnormal 
+    [&_.ant-select-selector]:!ring-0"
+  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}/>
               </Form.Item>
             </Col>
             <Col span={12}>
               <Form.Item
-                label={<span className="text-textheading font-semibold">City</span>}
+                label={<span className="text-textheading ">City</span>}
                 name="city"
-                className="text-textheading font-semibold"
+                className="text-textheading "
               >
-                <Select placeholder="Select City" dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-            suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal"/> } />
+                <Select placeholder="Select City"  dropdownClassName="bg-cardbg border border-bordercolor 
+    [&_.ant-select-item-option-selected]:!bg-buttonbg 
+    [&_.ant-select-item-option-selected]:!text-background 
+    [&_.ant-select-item-option-active]:!bg-buttonbg 
+    [&_.ant-select-item-option-active]:!text-background"
+  className="w-full h-10 
+    [&_.ant-select-selector]:!bg-cardbg 
+    [&_.ant-select-selector]:!rounded-xl 
+    [&_.ant-select-selector]:!border-bordercolor 
+    [&_.ant-select-selection-item]:!text-textnormal 
+    [&_.ant-select-selection-placeholder]:!text-placeholder 
+    [&_.ant-select-selector]:!focus:border-textnormal 
+    [&_.ant-select-selector]:!ring-0"
+  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />} />
               </Form.Item>
             </Col>
           </Row>
@@ -51,56 +73,78 @@ export default function LocationStepTwo({ onNext, onBack }) {
           <Row gutter={16}>
             <Col span={12}>
               <Form.Item
-                label={<span className="text-textheading font-semibold">Region/State</span>}
+                label={<span className="text-textheading ">Region/State</span>}
                 name="region"
-                className="text-textheading font-semibold"
+                className="text-textheading "
               >
-                <Select placeholder="Select Region/State" dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-            suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />} />
+                <Select placeholder="Select Region/State"  dropdownClassName="bg-cardbg border border-bordercolor 
+    [&_.ant-select-item-option-selected]:!bg-buttonbg 
+    [&_.ant-select-item-option-selected]:!text-background 
+    [&_.ant-select-item-option-active]:!bg-buttonbg 
+    [&_.ant-select-item-option-active]:!text-background"
+  className="w-full h-10 
+    [&_.ant-select-selector]:!bg-cardbg 
+    [&_.ant-select-selector]:!rounded-xl 
+    [&_.ant-select-selector]:!border-bordercolor 
+    [&_.ant-select-selection-item]:!text-textnormal 
+    [&_.ant-select-selection-placeholder]:!text-placeholder 
+    [&_.ant-select-selector]:!focus:border-textnormal 
+    [&_.ant-select-selector]:!ring-0"
+  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />} />
               </Form.Item>
             </Col>
             <Col span={12}>
               <Form.Item
-                label={<span className="text-textheading font-semibold">City</span>}
+                label={<span className="text-textheading font-medium">City</span>}
                 name="cityDuplicate"
-                className="text-textheading font-semibold"
+                className="text-textheading "
               >
-                <Select placeholder="Select City" dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-            suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />} />
+                <Select placeholder="Select City"   dropdownClassName="bg-cardbg border border-bordercolor 
+    [&_.ant-select-item-option-selected]:!bg-buttonbg 
+    [&_.ant-select-item-option-selected]:!text-background 
+    [&_.ant-select-item-option-active]:!bg-buttonbg 
+    [&_.ant-select-item-option-active]:!text-background"
+  className="w-full h-10 
+    [&_.ant-select-selector]:!bg-cardbg 
+    [&_.ant-select-selector]:!rounded-xl 
+    [&_.ant-select-selector]:!border-bordercolor 
+    [&_.ant-select-selection-item]:!text-textnormal 
+    [&_.ant-select-selection-placeholder]:!text-placeholder 
+    [&_.ant-select-selector]:!focus:border-textnormal 
+    [&_.ant-select-selector]:!ring-0"
+  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />} />
               </Form.Item>
             </Col>
           </Row>
 
           <Form.Item
-            label={<span className="text-textheading font-semibold">Neighborhood</span>}
+            label={<span className="text-textheading font-medium">Neighborhood</span>}
             name="neighborhood"
-            className="text-textheading font-semibold"
+            className="text-textheading "
           >
             <Input placeholder="Enter Neighborhood" className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none" />
           </Form.Item>
 
           <Form.Item
-            label={<span className="text-textheading font-semibold">Address</span>}
+            label={<span className="text-textheading font-medium">Address</span>}
             name="address"
-            className="text-textheading font-semibold"
+            className="text-textheading "
           >
             <TextArea rows={5} placeholder="Enter the address" className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none" />
           </Form.Item>
 
           <Form.Item
-            label={<span className="text-textheading font-semibold">Postal Code</span>}
+            label={<span className="text-textheading font-medium">Postal Code</span>}
             name="postalCode"
-            className="text-textheading font-semibold"
+            className="text-textheading "
           >
             <Input placeholder="Enter Postal Code" className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none" />
           </Form.Item>
 
           <Form.Item
-            label={<span className="text-textheading font-semibold">Location Pin</span>}
+            label={<span className="text-textheading font-medium">Location Pin</span>}
             name="locationPin"
-            className="text-textheading font-semibold"
+            className="text-textheading "
           >
             <div className="w-full h-40 bg-input rounded-xl flex items-center justify-center overflow-hidden">
               <div className="text-center">
@@ -125,7 +169,7 @@ export default function LocationStepTwo({ onNext, onBack }) {
           ← Go back
         </button>
         <button
-          className="bg-buttonbg mt-2 md:mt-0 text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform h-12 px-6"
+          className="bg-buttonbg font-medium mt-2 md:mt-0 text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform h-12 px-6"
           onClick={onNext}
         >
           Next : Property Features →

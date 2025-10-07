@@ -13,7 +13,7 @@ export default function NotificationsPage() {
     >
       <Navbar />
 
-      <div className="ml-10 mt-6 h-10 flex pr-10 justify-between">
+      <div className="ml-2 md:ml-6 lg:ml-10 mt-6 h-10 flex pr-2 md:pr-6 lg:pr-10 justify-between">
         <Heading
           title="Notifications"
           subtitle={'Stay updated on new leads, contract changes, and messages'}

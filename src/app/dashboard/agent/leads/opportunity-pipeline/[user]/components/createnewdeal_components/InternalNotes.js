@@ -10,7 +10,7 @@ const InternalNotes = () => {
       bordered={false}
     >
       <p className="text-lg mb-4 text-primary font-semibold">Internal Notes</p>
-      <TextArea className="bg-cardbg border border-bordercolor" rows={4} placeholder="Enter here..." />
+      <TextArea className="!text-xs md:!text-sm rounded-xl placeholder:!text-textplaceholder h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none" rows={4} placeholder="Enter here..." />
     </Card></div>
   );
 };

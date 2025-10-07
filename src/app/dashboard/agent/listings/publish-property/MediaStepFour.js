@@ -2,7 +2,9 @@
 
 import { Form, Input, Upload, Button } from 'antd'
 import { UploadOutlined, InboxOutlined } from '@ant-design/icons'
-
+import { ChevronLeft, Plus } from 'lucide-react'
+import Image from 'next/image'
+import cloudupload from '../../../components/icons/Lightmode_icons/listing/cloudupload_orange.svg'
 const { Dragger } = Upload
 
 export default function MediaStepFour({ onBack }) {
@@ -54,26 +56,28 @@ export default function MediaStepFour({ onBack }) {
               Upload your RUN – Front and Back (JPG, PNG, PDF | Max 5MB per
               file)
             </p>
-            <Dragger {...uploadProps} className="rounded-xl">
-              <p className="ant-upload-drag-icon">
-                <InboxOutlined className="text-textheading text-xl md:text-2xl" />
+            <Dragger {...uploadProps} className="rounded-xl text-textnormal">
+              <p className="flex flex-row items-center justify-center">
+                <Image src={cloudupload} alt='cloudupload' className="w-auto" />
               </p>
-              <p className="text-sm md:text-xl ant-upload-text">
+              <p className="text-xs font-normal text-textnormal">
                 Drag and drop your files here, or
               </p>
-              <p className="ant-upload-hint text-xs md:text-sm text-textnormal">
+              <p className=" text-xs font-normal text-textnormal">
                 JPG, PNG, PDF only. Max 5MB per file. Up to 7 images.
               </p>
-              <button className="mt-2 bg-buttonbg text-background rounded-lg h-10 gap-3 px-3 ">
-                Upload Images
+              <button className=" mt-2 text-textheading text-xs font-medium border-2 border-bordercolor rounded-lg h-10 gap-3 px-3 ">
+               <span className='flex flex-row gap-2 items-center justify-center'>
+               <Plus className="w-4 h-4 text-textnormal" /> Upload Images
+               </span> 
               </button>
             </Dragger>
           </Form.Item>
 
           <Form.Item
-            label={<span className='text-textheading font-semibold'>Video Link (Optional)</span>}
+            label={<span className='text-textheading font-medium'>Video Link (Optional)</span>}
             name="videoLink"
-            className="text-textheading font-semibold"
+            className="text-textheading "
           >
             <Input placeholder="Enter YouTube video URL"className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none" />
             <p className="text-textnormal text-sm mt-1 font-thin">
@@ -86,10 +90,11 @@ export default function MediaStepFour({ onBack }) {
       {/* Navigation Buttons */}
       <div className="flex justify-between mt-10 mb-20">
         <button
-          className="border border-bordercolor text-textheading p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform h-12 px-6"
+          className="font-medium border border-bordercolor text-textheading  rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform h-12 px-4"
           onClick={onBack}
         >
-          ← Go back
+          <ChevronLeft className="w-5 h-5 text-textnormal" />
+          Go back
         </button>
       </div>
     </>

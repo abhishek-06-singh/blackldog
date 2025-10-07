@@ -1,7 +1,7 @@
 'use client'
 import React,{useState} from 'react'
-export default function RememberMeCheckbox() {
-  const [rememberMe, setRememberMe] = useState(false)
+export default function RememberMeCheckbox(rememberMe,setRememberMe) {
+  
   return (
     <div className="flex items-center space-x-2">
       <input

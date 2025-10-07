@@ -29,11 +29,11 @@ export default function LeadsPage() {
           {/* ✅ CASE 2: Show Leads tab */}
           {!showNewLeads ? (
             <>
-              <div className="px-4 md:px-10 mt-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div className="px-2 md:ml-px-6 lg:px-10 mt-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <Heading title="Leads" />
                 <button
                   onClick={() => setShowNewLeads(true)}
-                  className="w-full md:w-auto bg-buttonbg text-background p-2 rounded-lg flex text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
+                  className="w-full font-medium md:w-auto bg-buttonbg text-background p-2 rounded-lg flex text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
                 >
                   <Plus className="w-4 h-4" /> Add New Leads
                 </button>
@@ -46,21 +46,21 @@ export default function LeadsPage() {
           ) : (
             // ✅ CASE 3: Show Add New Property Form
             <>
-              <div className="px-4 md:px-10 mt-6 flex flex-col md:flex-row justify-between gap-4">
+              <div className="px-2 md:px-6 lg:px-10 md:h-10 mb-6 mt-6 flex flex-col md:flex-row justify-between gap-4">
                 <Heading
                   title="Add New Property"
                   subtitle="Create a new lead"
                 />
 
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col md:flex-row gap-3">
                   <button
                     onClick={() => setShowNewLeads(false)}
-                    className="bg-background text-textnormal border border-bordercolor p-2 rounded-lg text-xs hover:scale-95 transition-transform w-full sm:w-auto"
+                    className="font-medium bg-background text-textnormal border border-bordercolor py-2 md:py-0 px-4 rounded-lg text-xs hover:scale-95 transition-transform w-full sm:w-auto"
                   >
                     Cancel
                   </button>
                   <button
-                    className="bg-buttonbg text-background p-2 rounded-lg text-xs hover:scale-95 transition-transform w-full sm:w-auto"
+                    className="font-medium bg-buttonbg text-background py-2 md:py-0 px-4 rounded-lg text-xs hover:scale-95 transition-transform w-full sm:w-auto"
                     onClick={() => setOpen(true)}
                   >
                     Save Lead
@@ -68,7 +68,7 @@ export default function LeadsPage() {
                 </div>
               </div>
 
-              <div className="my-4 px-4 md:px-10">
+              <div className="my-4 px-2 md:px-6 lg:px-10">
                 <FormDetails />
               </div>
             </>

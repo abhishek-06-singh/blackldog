@@ -18,19 +18,19 @@ export default function AgentDashboard() {
       {/* Navbar */}
       <Navbar />
 
-      <div className="ml-10 mt-4">
+      <div className="lg:ml-10 md:ml-6 ml-2 mt-4">
         <Heading
           title="Welcome back, John"
           subtitle="Here's what's happening with your business today."
         />
       </div>
-      <div className="ml-10 mt-4">
+      <div className="lg:ml-10 md:ml-6 ml-2  mt-4">
         <StatCards />
       </div>
-      <div className="ml-10 mt-4">
+      <div className="lg:ml-10 md:ml-6 ml-2  mt-4">
         <PropertyActivityOverview />
       </div>
-      <div className="ml-10 mt-4">
+      <div className="lg:ml-10 md:ml-6 ml-2  mt-4">
         <VisualAnalytics />
       </div>
     </motion.div>

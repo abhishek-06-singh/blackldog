@@ -14,13 +14,15 @@ export default function DocumentReviewForm() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-    <div className="w-full max-w-4xl mx-auto p-2 md:p-4">
+    <div className="w-full max-w-4xl mx-auto p-2 md:p-4 ">
       <div className="w-full my-16">
       <Progressbar  no={3} progress={100} desc={"Review & Approval"} />
       </div>
+      <div className="border border-bordercolor p-6 rounded-xl">
      <DocumentReview/>
      <SubmittedDocuments/>
      <ContactSupport/>
+     </div>
     </div></motion.div>
   )
 }

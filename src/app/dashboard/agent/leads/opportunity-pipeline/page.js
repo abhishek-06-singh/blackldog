@@ -19,11 +19,11 @@ export default function OpportunityPipeline() {
       {/* <SendDocumentsModal open={open} setOpen={setOpen} /> */}
       {/* <ReceiptAddOnModal open={open} setOpen={setOpen} /> */}
 
-      <div className="ml-5 lg:ml-10 mt-4 md:h-10 flex pr-10 justify-between">
+      <div className="ml-2 md:ml-6 lg:ml-10 mt-4 md:h-10 flex pr-2 md:pr-6 lg:pr-10 flex-col md:flex-row md:justify-between">
                 <Heading title="Opportunity Pipeline" subtitle={"Track and manage your active deals in real time"} />
 
-                <div className="flex gap-4">
-                  <button className="bg-background text-textnormal border border-bordercolor p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
+                <div className="flex flex-col gap-2 mt-2 md:mt-0 md:flex-row md:gap-4">
+                  <button className="font-mediumbg-background text-textnormal border border-bordercolor p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
                     Export CSV
                   </button>
                   <button className="bg-buttonbg text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform">
@@ -32,12 +32,12 @@ export default function OpportunityPipeline() {
                   </button>
                 </div>
               </div>
-              <div className="mt-8 md:px-4 lg:px-6">
+              <div className="mt-6 px-2 md:px-6 lg:px-10">
                 <StatsCards_Leads/>
 
               </div>
 
-              <div className="mt-4 md:px-4 lg:px-6">
+              <div className="mt-6 px-2 md:px-6 lg:px-10">
                 <Oppurtunity_Cards/>
               </div>
 

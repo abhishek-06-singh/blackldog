@@ -1,6 +1,35 @@
-import React from "react";
+"use client"
+import React, { useState, useEffect } from "react";
+import {useRouter} from "next/navigation";
+import {TrialAssign} from "../../../services/api";
+import { useAuth } from '../../../../context/AuthContext';
 
 export default function TrialBar() {
+     const { user } = useAuth();
+  const [trial, setTrial] = useState('');
+  const[loading, setLoading] = useState(false);
+  const[mounted, setMounted] = useState(false);
+  const router = useRouter();
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleTrialClick = async () => {
+    try {
+      setLoading(true);
+      const response = await TrialAssign();
+      setTrial(response.data);
+      router.push('/exploreproperties');
+    } catch (error) {
+      console.error('Trial Assign API Error:', error.response?.data || error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+   if (!mounted) return null;
+
   return (
     <div className="w-full bg-background border rounded-md shadow-sm p-4 flex flex-col md:flex-row items-center justify-between">
 
@@ -18,7 +47,7 @@ export default function TrialBar() {
 
       {/* Right Section (Button) */}
       <div>
-        <button className="bg-buttonbg text-background px-5 py-2 rounded-md text-sm font-medium  transition">
+        <button onClick={handleTrialClick} className="bg-buttonbg text-background px-5 py-2 rounded-md text-sm font-medium  transition" disabled={loading}>
 
           Start Free Trial
         </button>

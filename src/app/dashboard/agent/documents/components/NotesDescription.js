@@ -8,7 +8,7 @@ export default function NotesDescription() {
   return (
     <Form
       layout="vertical"
-      className="w-full px-4 sm:px-6 md:px-6"
+      className="w-full px-2 md:px-6"
     >
       {/* Notes/Description */}
       <Form.Item
@@ -23,7 +23,7 @@ export default function NotesDescription() {
         <TextArea
           placeholder="Enter here..."
           rows={4}
-          className="rounded-lg text-sm sm:text-base bg-cardbg"
+           className="rounded-xl text-xs sm:!text-sm h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
         />
       </Form.Item>
     </Form>

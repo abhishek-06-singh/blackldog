@@ -5,18 +5,20 @@ import Pricing_Modal from '../../Modal_Components/PriceModal_components/PriceMod
 
 export default function PriceModalWrapper({
   isModalOpen,
-  handleCancel,
   showModal,
+  onPlanSelect,
 }) {
   return (
     <Modal
       open={isModalOpen}
-      onCancel={handleCancel}
       footer={null}
       centered
-      width={900}
+      width={850}
+      closable={false}
+      bodyStyle={{ background: 'transparent', boxShadow: 'none' }} 
+       
     >
-      <Pricing_Modal showModal={showModal} />
+      <Pricing_Modal showModal={showModal} onPlanSelect={onPlanSelect} />
     </Modal>
   )
 }

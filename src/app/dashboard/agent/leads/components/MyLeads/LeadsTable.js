@@ -130,7 +130,7 @@ export default function LeadsTable() {
               <th className="p-4">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-bordercolor">
+          <tbody className="divide-y divide-bordercolor text-xs sm:text-sm text-textnormal">
             {currentItems.map((item) => (
               <tr key={item.id} className="hover:bg-boxbg transition">
                 <td className="p-4">
@@ -201,7 +201,7 @@ export default function LeadsTable() {
       </div>
 
       {/* Pagination */}
-      <div className="flex flex-col sm:flex-row items-center justify-between my-10 text-sm text-textnormal gap-4 sm:gap-0">
+      <div className="flex flex-col sm:flex-row items-center justify-between my-10 sm:text-xs md:text-sm text-textnormal gap-4 sm:gap-0">
         <p className='hidden md:block'>
           Showing {start + 1} to {Math.min(end, totalResults)} of {totalResults} results
         </p>
@@ -220,8 +220,8 @@ export default function LeadsTable() {
               onClick={() => setCurrentPage(page)}
               className={`px-3 py-1 rounded-lg border border-bordercolor ${
                 currentPage === page
-                  ? 'bg-black-500 text-white'
-                  : 'hover:bg-boxbg text-textnormal'
+                  ? 'bg-black-500 text-white border border-textnormal'
+                  : 'hover:bg-black-500 text-white'
               }`}
             >
               {page}

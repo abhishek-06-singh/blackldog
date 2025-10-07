@@ -49,7 +49,7 @@ export default function NotificationPreferences() {
 
   return (
     <div className="bg-cardbg rounded-xl border border-bordercolor p-4 shadow-md  w-full">
-      <h2 className="text-base font-semibold text-textheading mb-6">Notification Preferences</h2>
+      <h2 className="text-base md:text-[18px] font-semibold text-textheading mb-6">Notification Preferences</h2>
 
       <div className="flex flex-col gap-6">
         {notificationSettings.map(({ id, label, description }) => (
@@ -58,7 +58,7 @@ export default function NotificationPreferences() {
             className="flex flex-col sm:flex-row sm:items-center justify-between"
           >
             <div className="text-sm sm:max-w-[70%]">
-              <div className="font-medium text-primary">{label}</div>
+              <div className="font-medium text-sm md:text-base text-primary">{label}</div>
               {description && (
                 <div className="text-xs text-subtext mt-0.5">{description}</div>
               )}
@@ -66,7 +66,7 @@ export default function NotificationPreferences() {
             <Switch
               checked={toggles[id]}
               onChange={() => handleToggle(id)}
-              className="mt-2 sm:mt-0"
+              className="w-fit  mt-2 sm:mt-0"
               size="small"
             />
           </div>

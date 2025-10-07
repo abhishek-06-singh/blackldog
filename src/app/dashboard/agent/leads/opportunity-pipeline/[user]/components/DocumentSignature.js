@@ -20,7 +20,7 @@ const DocumentSignature = () => {
   return (
     <div className="bg-cardbg dark:bg-cardbg border border-bordercolor rounded-xl p-4 w-full ">
       {/* Header */}
-      <h3 className="text-lg font-semibold text-textheading mb-4">
+      <h3 className="text-sm md:text-lg font-semibold text-textheading mb-4">
         Document Signatures
       </h3>
 
@@ -47,8 +47,8 @@ const DocumentSignature = () => {
                 className='hidden dark:block'
               />
               <div>
-                <p className="text-sm font-medium text-textheading mb-0">{doc.title}</p>
-                <p className="text-xs text-subtext">{doc.time}</p>
+                <p className="text-xs md:text-sm font-medium text-textheading mb-0">{doc.title}</p>
+                <p className="text-[10px] md:text-xs text-subtext">{doc.time}</p>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ const DocumentSignature = () => {
       {/* Button */}
       <Button
         type="primary"
-        className="bg-buttonbg text-background w-full h-10 rounded-lg flex items-center justify-center gap-2 text-sm font-medium"
+        className="bg-buttonbg text-background w-full h-10 rounded-lg flex items-center justify-center gap-2 text-xs md:text-sm font-medium"
         icon={
           <>
           <Image

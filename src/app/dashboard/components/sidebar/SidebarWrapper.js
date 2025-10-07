@@ -65,7 +65,7 @@ export default function SidebarWrapper() {
 
   const sidebarContent = (
     <motion.div
-      className={` h-full overflow-y-auto bg-background text-textnormal p-4 relative
+      className={` md:block h-full overflow-y-auto bg-background text-textnormal p-4 relative
         ${isCollapsed ? 'w-[300px]' : 'w-[300px]'} transition-all duration-300`}
       initial={{ x: -300, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
@@ -75,12 +75,12 @@ export default function SidebarWrapper() {
       {/* Sidebar Header */}
       <div className="flex items-center justify-between mb-6">
         <LogoSection />
-        <button
+        {/* <button
           className="block lg:hidden text-subtext hover:text-buttonbg ml-auto"
           onClick={() => setSidebarVisible(false)}
         >
           <Menu />
-        </button>
+        </button> */}
       </div>
 
       {/* Sidebar Links */}
@@ -220,7 +220,7 @@ export default function SidebarWrapper() {
       {/* Sidebar Toggle Button */}
       {!sidebarVisible && (
         <button
-          className="block lg:hidden fixed top-1 left-2 z-50 bg-background border rounded-full p-1 shadow"
+          className=" md:hidden fixed top-1 left-2 z-50 bg-background border rounded-full p-1 shadow"
           onClick={() => setSidebarVisible(true)}
         >
           <MenuIcon />

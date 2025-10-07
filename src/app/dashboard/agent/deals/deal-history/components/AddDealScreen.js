@@ -19,7 +19,7 @@ export default function AddDealScreen({ open, setOpen }) {
     >
     <Modal
       open={open}
-      onCancel={handleCancel}
+      onCancel={<span>{handleCancel}</span>}
       footer={null}
       width={750}
       centered

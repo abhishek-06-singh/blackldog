@@ -1,0 +1,104 @@
+'use client'
+import React, { useState } from 'react'
+import { Card, Avatar, Tag, Select } from 'antd'
+import { ChevronDown } from 'lucide-react'
+import { MessageOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons'
+const { Option } = Select
+
+const AgentCard = () => {
+  const [agent, setAgent] = useState('placeholder')
+  return (
+    <div className=" !bg-cardbg p-2 md:p-6 rounded-2xl shadow-md border border-bordercolor mr-10">
+      <div className="flex items-center justify-between gap-6">
+        {/* Left Section - Avatar + Info */}
+        <div className="flex items-center gap-4">
+          {/* Avatar */}
+          <Avatar
+            size={72}
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            className="reletive -top-11"
+          />
+
+          {/* Name + Details */}
+          <div className="flex flex-col justify-center gap-1">
+            <div className="flex items-center gap-3">
+              <h3 className="m-0 font-semibold text-lg md:text-[24px] leading-[150%] text-textheading">
+                Sarah Johnson
+              </h3>
+              <Tag className="px-4 py-1 rounded-full text-xs" color="Green">
+                . Active
+              </Tag>
+            </div>
+
+            <p className="m-0 font-normal text-[16px] leading-[150%] tracking-[-0.02em] text-textnormal">
+              Sub-Agent
+            </p>
+            <p className="m-0 text-subtext text-xs leading-[150%]">
+              Joined : Jan 12, 2020
+            </p>
+
+            <div className="flex flex-wrap gap-2 mt-2">
+              <Tag className="rounded border bg-cardbg border-bordercolor px-3 py-1 text-sm font-normal leading-[150%] tracking-[-0.02em] text-textnormal">
+                Luxury
+              </Tag>
+              <Tag className="rounded border bg-cardbg border-bordercolor px-3 py-1 text-sm font-normal leading-[150%] tracking-[-0.02em] text-textnormal">
+                Residential
+              </Tag>
+              <Tag className="rounded border bg-cardbg border-bordercolor px-3 py-1 text-sm font-normal leading-[150%] tracking-[-0.02em] text-textnormal">
+                Verified
+              </Tag>
+            </div>
+
+            {/* Contact */}
+            <div className="flex flex-wrap gap-6 mt-2 text-textnormal font-normal text-[16px] leading-[150%] tracking-[-0.02em]">
+              <span className="flex items-center text-textnormal">
+                <PhoneOutlined className="mr-2" />
+                (555) 123-4567
+              </span>
+              <span className="flex items-center text-textnormal">
+                <MailOutlined className="mr-2" />
+                sarah@prestigerealty.com
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Section - Button */}
+        <div className="w-full lg:w-fit flex flex-col lg:flex-row lg:items-center sm:gap-4 justify center lg:self-start shrink-0 mt-4 sm:mt-0">
+           {/* Select Dropdown */}
+          <Select
+            value={agent}
+            onChange={setAgent}
+            dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
+            className="[&_.ant-select-selector]:!py-4 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-lg [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
+            suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
+          >
+            {' '}
+            <Option
+              value="placeholder"
+              disabled
+              hidden
+              className="!text-textnormal select-none"
+            >
+              {' '}
+              Assign To Agent{' '}
+            </Option>{' '}
+            <Option value="all" className="!text-textnormal">
+              {' '}
+              All{' '}
+            </Option>{' '}
+          </Select>
+
+          {/* Message Button */}
+          <button className="bg-buttonbg text-background px-6 py-2 rounded-lg flex items-center gap-2 text-sm hover:scale-95 transition-transform">
+            <MessageOutlined /> Message
+          </button>
+
+         
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default AgentCard

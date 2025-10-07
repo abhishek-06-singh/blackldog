@@ -26,14 +26,13 @@ export default function SubAgentPerformanceBarChart({ performanceData }) {
         />
 
         {/* Tooltip with subtle style & no extra bar rendering */}
-        <Tooltip
-          cursor={{ fill: 'transparent' }}
-          contentStyle={{
-            fontSize: '12px',
-            borderRadius: '8px',
-            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-          }}
-        />
+           <Tooltip
+                      cursor={{ fill: 'transparent' }}
+                      contentStyle={{
+                        backgroundColor: 'var(--color-cardbg)', 
+                        border: "1px solid var(--color-bordercolor)",
+                        color: 'var(--color-textnormal)',
+                      }}/>
 
         {/* Bar Style */}
         <Bar

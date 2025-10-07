@@ -32,7 +32,12 @@ export default function DealDetails() {
             id="saleDate"
             size="large"
             placeholder="Select Date"
-            className="w-full h-10 rounded-xl !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0"
+               className="
+             w-full h-10 rounded-xl
+             [&_.ant-picker-input>input]:!text-textnormal
+             [&_.ant-picker-input>input::placeholder]:!text-placeholder
+             !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0
+           "
           suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}  
             format="YYYY-MM-DD"
             disabledDate={(current) => current && current > dayjs().endOf('day')}

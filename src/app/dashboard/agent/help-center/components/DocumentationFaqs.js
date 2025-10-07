@@ -20,43 +20,43 @@ import Image from 'next/image'
 
 const faqItems = [
   {
-    icon: <Play className="w-5 h-5 text-textnormal fill-current" />,
+    icon: <Play className="w-3 h-3 md:w-5 md:h-5 text-textnormal fill-current" />,
     title: 'Getting Started',
     description: 'Learn the basics and set up your account.',
   },
   {
     icon: <>
-      <Image src={building} className='block dark:hidden' alt="building"/>
-      <Image src={building_dark} className='hidden dark:block' alt="building"/>
+      <Image src={building} className='w-3 h-3 md:w-5 md:h-5 block dark:hidden' alt="building"/>
+      <Image src={building_dark} className='w-3 h-3 md:w-5 md:h-5 hidden dark:block' alt="building"/>
     </>,
     title: 'Listing Properties',
     description: 'Add, edit, and manage your property listings.',
   },
   {
-    icon: <Play className="w-5 h-5 text-textnormal fill-current" />,
+    icon: <Play className="w-3 h-3 md:w-5 md:h-5 text-textnormal fill-current" />,
     title: 'Managing Leads & CRM',
     description: 'Track and nurture your leads effectively.',
   },
   {
     icon: <>
-      <Image src={credit} className='block dark:hidden' alt="credit"/>
-      <Image src={credit_dark} className='hidden dark:block' alt="credit"/>
+      <Image src={credit} className='w-3 h-3 md:w-5 md:h-5 block dark:hidden' alt="credit"/>
+      <Image src={credit_dark} className='w-3 h-3 md:w-5 md:h-5 hidden dark:block' alt="credit"/>
     </>,
     title: 'Payments & Billing',
     description: 'Understand billing, subscriptions, and payments.',
   },
   {
     icon: <>
-      <Image src={userplus} className='block dark:hidden' alt="userplus"/>
-      <Image src={userplus_dark} className='hidden dark:block' alt="userplus"/>
+      <Image src={userplus} className='w-3 h-3 md:w-5 md:h-5 block dark:hidden' alt="userplus"/>
+      <Image src={userplus_dark} className='w-3 h-3 md:w-5 md:h-5 hidden dark:block' alt="userplus"/>
     </>,
     title: 'Inviting Sub-agents',
     description: 'Add and manage your team members.',
   },
   {
     icon: <>
-      <Image src={settings} className='block dark:hidden' alt="settings"/>
-      <Image src={settings_dark} className='hidden dark:block' alt="settings"/>
+      <Image src={settings} className='w-3 h-3 md:w-5 md:h-5 block dark:hidden' alt="settings"/>
+      <Image src={settings_dark} className='w-3 h-3 md:w-5 md:h-5 hidden dark:block' alt="settings"/>
     </>,
     title: 'Account & Profile Settings',
     description: 'Customize your profile and account preferences.',
@@ -66,19 +66,19 @@ const faqItems = [
 export default function DocumentationFaqs() {
   return (
     <div className="bg-cardbg rounded-xl border border-bordercolor p-4 shadow-md w-full">
-      <h2 className="text-base font-semibold text-textnormal mb-6">Documentation & FAQs</h2>
+      <h2 className="text-sm md:text-base font-semibold text-textnormal mb-6">Documentation & FAQs</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
         {faqItems.map((item, index) => (
           <div
             key={index}
             className="border border-bordercolor rounded-lg p-4 bg-cardbg shadow hover:shadow-shadow transition cursor-pointer"
           >
-            <div className="flex items-center gap-3 mb-2">
+            <div className="flex items-center gap-1 mb-2">
               {item.icon}
-              <h3 className="text-sm font-semibold text-textnormal">{item.title}</h3>
+              <h3 className="text-xs md:text-sm font-semibold text-textnormal">{item.title}</h3>
             </div>
-            <p className="text-sm text-subtext">{item.description}</p>
+            <p className="text-xs md:text-sm text-subtext">{item.description}</p>
           </div>
         ))}
       </div>

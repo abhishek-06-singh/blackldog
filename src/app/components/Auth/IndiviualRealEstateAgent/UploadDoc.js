@@ -31,12 +31,16 @@ const uploadsections = [
   },
 ]
 
-export default function UploadDoc() {
+export default function UploadDoc({files,errors,setFiles,setErrors}) {
  
   return (
     <div className="w-full mx-auto px-1 md:px-6  ">
       <UploadSection
         uploadsections={uploadsections}
+        files={files}
+        errors={errors}
+        setFiles={setFiles}
+        setErrors={setErrors}
         />
     </div>
   )

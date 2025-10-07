@@ -44,7 +44,7 @@ export default function AgentSidebar() {
       <AnimatePresence>
         {sidebarVisible && (
           <motion.aside
-            className=" w-72 h-screen overflow-y-auto bg-background text-textnormal border-r p-4 relative"
+            className="hidden md:w-72  h-screen overflow-y-auto bg-background text-textnormal border-r p-4 relative"
             initial={{ x: 0, opacity: 1 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -300, opacity: 0 }}
@@ -178,7 +178,7 @@ export default function AgentSidebar() {
 
       {!sidebarVisible && (
         <button
-          className=" fixed top-4 left-4 z-50 bg-background border rounded-full p-2 shadow"
+          className="hidden md:block top-4 left-4 z-50 bg-background border rounded-full p-2 shadow"
           onClick={() => setSidebarVisible(true)}
         >
           <MenuIcon />

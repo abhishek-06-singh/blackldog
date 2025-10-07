@@ -94,7 +94,7 @@ export default function SubAgentLeadsTable() {
     <div className="mt-8">
       <div className="overflow-x-auto rounded-xl border border-bordercolor bg-cardbg shadow-md">
         <table className="min-w-full text-left table-auto overflow-x-auto">
-          <thead className="bg-cardbg text-textplaceholder text-sm font-thin">
+          <thead className="bg-cardbg text-textplaceholder whitespace-nowrap text-sm font-thin">
             <tr>
               <th className="p-4">
                 <input
@@ -111,7 +111,7 @@ export default function SubAgentLeadsTable() {
               <th className="p-4">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-bordercolor text-textnormal">
+          <tbody className="divide-y divide-bordercolor whitespace-nowrap text-xs sm:text-sm text-textnormal">
             {currentItems.map((lead) => (
               <tr
                 key={lead.id}
@@ -179,7 +179,7 @@ export default function SubAgentLeadsTable() {
       </div>
 
       {/* Pagination */}
-      <div className="flex flex-col sm:flex-row items-center justify-between my-10 text-sm text-textnormal gap-4 sm:gap-0">
+      <div className="flex flex-col md:flex-row items-center  md:justify-between my-10 sm:text-xs md:text-sm text-textnormal gap-4 sm:gap-0">
         <p className="hidden md:block">
           Showing {start + 1} to {Math.min(end, totalResults)} of {totalResults} results
         </p>
@@ -198,8 +198,8 @@ export default function SubAgentLeadsTable() {
               onClick={() => setCurrentPage(page)}
               className={`px-3 py-1 rounded-lg border border-bordercolor ${
                 currentPage === page
-                  ? 'bg-black-500 text-white'
-                  : 'hover:bg-boxbg text-textnormal'
+                  ? 'bg-black-500 text-white border border-textnormal'
+                  : 'hover:bg-black-500 text-white '
               }`}
             >
               {page}

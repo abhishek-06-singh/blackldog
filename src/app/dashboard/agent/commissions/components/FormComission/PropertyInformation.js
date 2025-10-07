@@ -1,6 +1,7 @@
 'use client';
 
 import { Select, Input, Button } from 'antd';
+import { ChevronDown } from 'lucide-react';
 
 const { Option } = Select;
 
@@ -18,26 +19,40 @@ export default function PropertyInformation() {
           <Select
             id="property"
             placeholder="Enter Full Name"
-             dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-            className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-          
+           dropdownClassName="bg-cardbg border border-bordercolor 
+      [&_.ant-select-item-option-selected]:!bg-buttonbg 
+      [&_.ant-select-item-option-selected]:!text-background 
+      [&_.ant-select-item-option-active]:!bg-buttonbg 
+      [&_.ant-select-item-option-active]:!text-background"
+    
+    className="w-full h-10 
+      [&_.ant-select-selection-item]:!text-xs md:[&_.ant-select-selection-item]:!text-sm 
+      [&_.ant-select-selector]:!bg-cardbg 
+      [&_.ant-select-selector]:!rounded-xl 
+      [&_.ant-select-selector]:!border-bordercolor 
+      [&_.ant-select-selection-item]:!text-textnormal
+      [&_.ant-select-selector]:!focus:border-textnormal 
+      [&_.ant-select-selector]:!ring-0
+      placeholder:!text-textplaceholder"
+    
+    suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
             size="large"
           >
-            <Option value="property1">Property One</Option>
-            <Option value="property2">Property Two</Option>
+            <Option value="property1" className="text-xs sm:!text-sm text-textnormal">Property One</Option>
+            <Option value="property2" className="text-xs sm:!text-sm text-textnormal">Property Two</Option>
           </Select>
         </div>
 
         {/* Property Value */}
         <div className="flex flex-col space-y-1">
-          <label htmlFor="propertyValue" className="text-sm font-medium text-gray-700">
+          <label htmlFor="propertyValue" className="text-sm font-medium text-textheading">
             Property Value<span className="text-red-500">*</span>
           </label>
           <Input
             id="propertyValue"
             placeholder="Enter Value"
             size="large"
-           className="rounded-xl h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
+           className="rounded-xl text-xs sm:!text-sm h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
             type="number"
           />
         </div>
@@ -45,7 +60,7 @@ export default function PropertyInformation() {
 
       {/* Button */}
       <div className="mt-4 ">
-        <Button className='bg-buttonbg text-background' type="default">+ Post A Property</Button>
+        <Button className='bg-textheading font-medium border border-bordercolor text-background' type="default">+ Post A Property</Button>
       </div>
     </div>
   );

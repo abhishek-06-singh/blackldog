@@ -57,7 +57,7 @@ export default function CommissionsPage() {
                 />
                 <button
                   onClick={() => setShowNewCommissions(true)}
-                  className="bg-buttonbg text-background p-2 rounded-lg flex text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
+                  className="bg-buttonbg whitespace-nowrap font-medium text-background p-2 rounded-lg flex text-sm justify-center items-center gap-2 hover:scale-95 transition-transform"
                 >
                   <Plus className="text-sm w-4" /> Add New Commissions
                 </button>
@@ -78,7 +78,7 @@ export default function CommissionsPage() {
                     Cancel
                   </button>
                   <button
-                    className="bg-buttonbg text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform"
+                    className="bg-buttonbg font-medium text-background p-2 rounded-lg flex text-xs justify-center items-center gap-2 hover:scale-95 transition-transform"
                     onClick={handleSave}
                   >
                     Save Commission

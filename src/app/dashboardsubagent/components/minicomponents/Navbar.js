@@ -15,7 +15,7 @@ export default function Navbar() {
     setOpenDropdown(openDropdown === key ? null : key)
   }
   const handleNotificationsClick = () => {
-    router.push('/dashboard/agent/notifications')
+    router.push('/dashboardsubagent/subagent/notifications')
   }
 
   return (

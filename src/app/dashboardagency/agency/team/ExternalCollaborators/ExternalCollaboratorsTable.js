@@ -145,7 +145,7 @@ export default function ExternalCollaboratorsTable() {
                     />
                     <div className="min-w-0 ">
                       <Link
-                        href={`/dashboardagency/agency/team/${encodeURIComponent(member.member)}`}
+                        href={`/dashboardagency/agency/team/externalcollaborators/${encodeURIComponent(member.member)}`}
                         className="font-medium text-sm text-textnormal whitespace-nowrap  hover:underline"
                       >
                         {member.member}

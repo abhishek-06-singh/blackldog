@@ -6,7 +6,7 @@ import SettingsPanel from './SettingsPanel';
 
 export default function FormPage_Setting() {
     return (
-        <div className="w-full h-full p-4 md:p-6 space-y-6">
+        <div className="w-full h-full my-6 px-2 md:px-6 lg:px-10 space-y-6">
                  <ConfigProvider
       theme={{
         token: {

@@ -16,12 +16,12 @@ export default function UserPageDocument({ params }) {
       <div className="ml-10 mt-4 text-textheading">
         <Breadcrumb  
 
-          separator=">"
+          separator={<span className="text-textnormal">{">"}</span>}
           items={[
             {
               title: (
                 <a className="text-textnormal" href="/dashboard/agent/documents">
-                  Documents
+                  <span className="text-textnormal">Documents</span>
 
                 </a>
               ),

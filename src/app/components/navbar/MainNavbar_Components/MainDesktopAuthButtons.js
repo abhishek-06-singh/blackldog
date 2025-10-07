@@ -9,16 +9,7 @@ export default function PropertyDesktopAuthButtons({openDashboard}) {
 
   return (
     <div className="ml-4 lg:ml-0 md:ml-0 flex items-center lg:space-x-2 md:space-x-1 space-x-4  whitespace-nowrap">
-      <Link href="/exploreproperties">
-
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-         className="bg-buttonbg text-background font-medium h-10 px-4 py-2   md:px-4 md:py-1 rounded-xl text-xs  transition-colors duration-200"
-      >
-        Add Listing
-      </motion.button>
-      </Link>
+     
       <motion.button
         onClick={openDashboard}
         whileTap={{ scale: 0.95 }}

@@ -8,16 +8,11 @@ import MainDesktopAuthButtons from './MainNavbar_Components/MainDesktopAuthButto
 import MainDesktopNavLinks from './MainNavbar_Components/MainDesktopNavLinks'
 import MainMobileMenu from './MainNavbar_Components/MainMobileMenu'
 import ThemeMode from '../common/ThemeMode'
-import PriceModalWrapper from '../Modal/PriceModalWrapper'
+
 
 
 export default function MainNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const showModal = () => setIsModalOpen(true);
-  const handleCancel = () => setIsModalOpen(false);
-
 
   return (
     <motion.nav
@@ -43,7 +38,7 @@ export default function MainNavbar() {
         
           <div className="hidden lg:flex items-center gap-4">
             <ThemeMode/>
-            <MainDesktopAuthButtons openDashboard={showModal} />
+            <MainDesktopAuthButtons />
           </div>
          
 
@@ -68,11 +63,7 @@ export default function MainNavbar() {
       {/* Mobile Menu */}
        
       <MainMobileMenu isOpen={isMenuOpen} /> 
-      <PriceModalWrapper
-  isModalOpen={isModalOpen}
-  handleCancel={handleCancel}
-  showModal={showModal}
-/>
+   
 
     </motion.nav>
   )

@@ -125,10 +125,10 @@ export default function ExternalCollaboratorsTable() {
               <th className="p-4">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-bordercolor">
+          <tbody className="divide-y divide-bordercolor !text-xs sm:!text-sm">
             {currentItems.map((member) => (
-              <tr key={member.id} className="hover:bg-boxbg transition">
-                <td className="p-4">
+              <tr key={member.id} className="hover:bg-boxbg  transition">
+                <td className="p-4 !text-xs sm:!text-sm">
                   <input
                     type="checkbox"
                     className="w-4 h-4 rounded border-bordercolor"
@@ -145,7 +145,7 @@ export default function ExternalCollaboratorsTable() {
                     />
                     <div className="min-w-0 ">
                       <Link
-                        href={`/dashboard/agent/team/${encodeURIComponent(member.member)}`}
+                        href={`/dashboard/agent/team/externalcollaborators/${encodeURIComponent(member.member)}`}
                         className="font-medium text-sm text-textnormal whitespace-nowrap  hover:underline"
                       >
                         {member.member}
@@ -170,7 +170,7 @@ export default function ExternalCollaboratorsTable() {
                       alt={member.property.name}
                       className="w-16 h-12 rounded-lg object-cover"
                     />
-                    <div className='mr-16 md:mr-0'>
+                    <div className='mr-16 md:mr-16 lg:mr-0'>
                       <div className="font-medium  whitespace-nowrap text-sm text-textnormal">{member.property.name}</div>
                       <div className="text-xs whitespace-nowrap text-subtext">{member.property.address}</div>
                     </div>
@@ -213,8 +213,8 @@ export default function ExternalCollaboratorsTable() {
                     onClick={() => setCurrentPage(page)}
                     className={`px-3 py-1 rounded-lg border border-bordercolor ${
                       currentPage === page
-                        ? 'bg-black-500 text-white'
-                        : 'hover:bg-boxbg text-textnormal'
+                        ? 'bg-black-500 text-white border border-textnormal'
+                        : 'hover:bg-black-500 text-textnormal'
                     }`}
                   >
                     {page}

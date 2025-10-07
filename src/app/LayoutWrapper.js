@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import MainNavbar from '../app/components/navbar/MainNavbar'
 import Footer from './components/common/Footer'
 import { ThemeProvider } from 'next-themes'
+import { AuthProvider } from '../../context/AuthContext'
 
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname()
@@ -12,11 +13,13 @@ export default function LayoutWrapper({ children }) {
     '/',
     '/signin',
     '/forgetpassword',
+    '/payment',
+    '/newpassword/reset-password',
     '/newpassword',
     '/agentdocs',
     '/agencydocs',
-    '/agencysignup',
-    '/agentsignup',
+    '/agentagencysignup',
+    '/signin/verify-email',
     '/approvalform',
     '/rejectform',
     '/keyfeatures',
@@ -35,7 +38,9 @@ export default function LayoutWrapper({ children }) {
           enableSystem={false} >
     <div className="min-h-screen bg-background">
       {!hideLayout && <MainNavbar />}
-      {children}
+      <AuthProvider>
+        {children}
+      </AuthProvider>
       {!hideLayout && <Footer />}
     </div></ThemeProvider>
     

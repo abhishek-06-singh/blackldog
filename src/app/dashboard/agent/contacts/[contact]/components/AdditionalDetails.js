@@ -5,7 +5,7 @@ import { Card } from "antd";
 export default function AdditionalDetails() {
   return (
     <Card
-      className="rounded-lg py-4 px-3 shadow-md border border-bordercolor w-full max-w-md mx-auto"
+      className="rounded-lg py-4 px-3 shadow-md border border-bordercolor w-full "
       bodyStyle={{ padding: "1.5rem" }}
     >
       {/* Header */}
@@ -18,17 +18,17 @@ export default function AdditionalDetails() {
         
         <div>
           <p className="text-subtext text-xs sm:text-sm">Client Type</p>
-          <p className="font-medium text-textnormal">Buyer</p>
+          <p className="font-medium text-xs sm:text-base text-textnormal">Buyer</p>
         </div>
 
         <div>
           <p className="text-subtext text-xs sm:text-sm">Budget Range</p>
-          <p className="font-medium text-textnormal">$300K – $500K</p>
+          <p className="font-medium text-xs sm:text-base text-textnormal">$300K – $500K</p>
         </div>
 
         <div>
           <p className="text-subtext text-xs sm:text-sm">Property Preferences</p>
-          <p className="font-medium text-textnormal">Condo, 2BHK, Pet-friendly</p>
+          <p className="font-medium text-xs sm:text-base text-textnormal">Condo, 2BHK, Pet-friendly</p>
         </div>
       </div>
     </Card>

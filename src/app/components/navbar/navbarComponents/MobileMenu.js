@@ -47,16 +47,17 @@ export default function MobileMenu({ isOpen }) {
 
             <div className="pt-4 pb-3 border-t border-gray-200">
               <div className="px-3 space-y-2">
-                <button className="w-full  text-textnormal hover:text-white hover:bg-buttonbg block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
+                <Link href="/login" className="w-full  text-textnormal hover:text-white hover:bg-buttonbg block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">
                   Login
-                </button>
-                <motion.button
+                </Link>
+                <Link
+                  href="/signup"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-buttonbg text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buttonbg transition-colors duration-200 w-full"
                 >
                   Sign Up
-                </motion.button>
+                </Link>
               </div>
             </div>
           </div>

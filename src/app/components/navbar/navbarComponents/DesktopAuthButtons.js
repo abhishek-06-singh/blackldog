@@ -15,7 +15,7 @@ export default function DesktopAuthButtons() {
           Login
         </motion.button>
       </Link>
-      <Link href={'/agencysignup'}>
+      <Link href={'/agentagencysignup'}>
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

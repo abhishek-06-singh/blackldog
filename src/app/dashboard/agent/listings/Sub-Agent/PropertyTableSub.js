@@ -161,7 +161,7 @@ export default function PropertyTableSub() {
                     onChange={() => toggleRow(property.id)}
                   />
                 </td>
-                <td className="p-2 sm:p-4 flex items-center gap-3">
+                <td className="p-2 sm:p-4  flex items-center gap-3">
                   <img
                     src={property.image}
                     alt={property.name}
@@ -178,10 +178,11 @@ export default function PropertyTableSub() {
                 </td>
                 <td className="p-2 sm:p-4">
                   <span
-                    className={`px-3 py-1 text-xs rounded-full whitespace-nowrap font-medium ${
+                    className={`flex items-center justify-center px-1 py-1 text-xs rounded-full whitespace-nowrap font-medium ${
                       statusStyles[property.status] || 'bg-gray-300 text-black-500'
                     }`}
                   >
+                       <span className=" w-1 h-1 mr-2 rounded-full inline-block bg-white"></span>
                     {property.status}
                   </span>
                 </td>
@@ -230,8 +231,8 @@ export default function PropertyTableSub() {
               onClick={() => setCurrentPage(page)}
               className={`px-3 py-1 rounded-lg border border-bordercolor ${
                 currentPage === page
-                  ? 'bg-black-500 text-white'
-                  : 'hover:bg-boxbg text-textnormal'
+                  ? 'bg-black-500 text-white border border-textnormal'
+                  : 'hover:bg-black-500 text-textnormal'
               }`}
             >
               {page}

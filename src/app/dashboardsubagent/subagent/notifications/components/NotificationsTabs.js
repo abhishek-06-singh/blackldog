@@ -54,6 +54,26 @@ const NotificationsTabs = () => {
           >
            Messages
           </button>
+           <button
+            onClick={() => setActiveTab('sharedlistings')}
+            className={`ml-4 px-4 py-2 text-sm font-medium rounded-t-lg ${
+              activeTab === 'sharedlistings'
+                ? 'text-buttonbg border-b-2 border-buttonbg'
+                : 'text-textnormal hover:text-textnormal '
+            }`}
+          >
+           Shared Listings
+          </button>
+           <button
+            onClick={() => setActiveTab('system')}
+            className={`ml-4 px-4 py-2 text-sm font-medium rounded-t-lg ${
+              activeTab === 'system'
+                ? 'text-buttonbg border-b-2 border-buttonbg'
+                : 'text-textnormal hover:text-textnormal '
+            }`}
+          >
+           System
+          </button>
         </div>
 
         {/* Tabs Content */}
@@ -82,7 +102,18 @@ const NotificationsTabs = () => {
             
             </div>
           )}
-         
+          {activeTab === 'sharedlistings' && (
+            <div className="">
+                 <AllNotifications/>
+            
+            </div>
+          )}
+          {activeTab === 'system' && (
+            <div className="">
+                 <AllNotifications/>
+            
+            </div>
+          )}
         </div>
       </div>
     </div>

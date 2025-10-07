@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import { Card, DatePicker, TimePicker, Typography } from "antd";
-import { ClockCircleOutlined } from "@ant-design/icons";
+import { ClockCircleOutlined, CalendarOutlined } from "@ant-design/icons";
 import dayjs from "dayjs";
 import {ConfigProvider} from 'antd'
 import Image from "next/image";
@@ -45,29 +45,42 @@ const FollowUpCard = () => {
         },
       }}
     >
-    <Card className="w-full rounded-lg shadow-sm border border-bordercolor px-4 py-3 bg-cardbg">
+    <div className="w-full rounded-lg shadow-sm border border-bordercolor px-4 py-3 bg-cardbg">
       {/* Title */}
-      <h3 className="text-lg font-semibold text-textheading mb-4">Follow-up</h3>
+      <h3 className="text-sm md:text-lg text-textheading mb-4">Follow-up</h3>
 
       {/* Date Picker */}
       <div className="mb-4">
         <Text strong className="text-textheading">Next Follow-Up Date</Text>
         <DatePicker
-          className="w-full mt-1 bg-input border border-bordercolor"
-          onChange={handleDateChange}
-          placeholder="Select Date"
-        />
+  className="
+    w-full h-10 rounded-xl
+    [&_.ant-picker-input>input]:!text-xs sm:[&_.ant-picker-input>input]:!text-sm
+    [&_.ant-picker-input>input]:!text-textnormal
+    [&_.ant-picker-input>input::placeholder]:!text-placeholder
+    !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0
+  "
+  placeholder="Select Date"
+  suffixIcon={<CalendarOutlined className="w-4 h-4 text-placeholder" />}
+/>
+
       </div>
 
       {/* Time Picker */}
       <div className="mb-4">
-        <Text strong className="text-textheading">Time</Text>
+        <Text strong className="text-sm md:text-lg text-textheading ">Time</Text>
         <TimePicker
-          className="w-full mt-1 bg-input border border-bordercolor"
-          onChange={handleTimeChange}
-          placeholder="Select Time"
-          format="h:mm A"
-        />
+  className="
+    w-full h-10 rounded-xl !text-xs sm:!text-sm
+    [&_.ant-picker-input>input]:!text-xs sm:[&_.ant-picker-input>input]:!text-sm
+    [&_.ant-picker-input>input]:!text-textnormal
+    [&_.ant-picker-input>input::placeholder]:!text-placeholder
+    !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0
+  "
+  placeholder="Select Time"
+  format="h:mm A"
+  suffixIcon={<ClockCircleOutlined className="w-4 h-4 text-placeholder" />}
+/>
       </div>
 
       {/* Display Follow-up */}
@@ -81,10 +94,10 @@ const FollowUpCard = () => {
       <div className="flex flex-row mt-5 gap-3 justify-start items-center px-2 bg-shadow rounded-lg">
         <Image className="w-4 h-4 block dark:hidden " src={clock_light} alt="clock" width={20} height={20} />
         <Image className="w-4 h-4 hidden dark:block" src={clock_dark} alt="clock" width={20} height={20} />
-        <p className="my-2 text-textnormal">Next follow-up on: January 18, 2025 at 2:00 PM</p>
+        <p className="my-2 text-xs md:text-sm text-textnormal">Next follow-up on: January 18, 2025 at 2:00 PM</p>
 
       </div>
-    </Card></ConfigProvider>
+    </div></ConfigProvider>
   );
 };
 

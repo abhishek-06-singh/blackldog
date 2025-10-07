@@ -47,7 +47,7 @@ export default function UpdateCommissionPage() {
         },
       }}
     >
-      <h2 className="text-xl font-semibold mb-6">Update Commission</h2>
+      <h2 className="text-xl text-textheading font-semibold mb-6">Update Commission</h2>
       <Form
         form={form}
         layout="vertical"

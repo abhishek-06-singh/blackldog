@@ -5,30 +5,24 @@ import Link from 'next/link'
 import { motion } from "framer-motion"
 
 
-export default function CreatePasswordButton({ onClick }) {
+export default function CreatePasswordButton({ handleChangePassword }) {
   const [loading, setLoading] = useState(false)
 
-  const handleClick = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    try {
-      await onClick(e)
-    } finally {
-      setLoading(false)
-    }
-  }
+
 
   return (
    <motion.div
-            className=" p-8 space-y-6"
+            className="px-8 "
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-    <Link href='/newpassword'>
-      <button
-        type="submit"
-        className="w-full flex justify-center items-center gap-2 bg-buttonbg text-white py-3 px-4 rounded-lg hover:bg-opacity-90 focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200 font-medium disabled:opacity-70"
+             <div className="text-textnormal text-xs mb-1">
+            Must be at least 8 characters, include a number and a symbol.
+          </div>
+    <button 
+          onClick={handleChangePassword}
+        className="w-full flex justify-center mb-4 items-center gap-2 bg-buttonbg text-white py-3 px-4 rounded-lg hover:bg-opacity-90 focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200 font-medium disabled:opacity-70"
         disabled={loading}
       >
         {loading && (
@@ -54,18 +48,15 @@ export default function CreatePasswordButton({ onClick }) {
           </svg>
         )}
         {loading ? 'Updating...' : 'Update Password'}
+    
       </button>
-      </Link>
-      <Link href="/signin">
 
-      <button
-        type="submit"
-        // onClick={handleClick}
-        className="w-full text-textheading flex justify-center items-center gap-2 py- "
+      <Link href="/signin"
+        className="w-full text-textheading font-medium flex justify-center items-center gap-2  "
         // disabled={loading}
       >
         <MoveLeft /> Back to Sign In
-      </button>
+     
       </Link>
     </motion.div>
   )

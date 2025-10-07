@@ -29,7 +29,7 @@ export default function VisualAnalytics() {
   ]
 
   return (
-    <div className="w-full pr-10 mt-5 mb-10 bg-background rounded-2xl ">
+    <div className="w-full pr-2 md:pr-6 lg:pr-10 mt-5 mb-10 bg-background rounded-2xl ">
       <h2 className="text-xl font-semibold mb-6 text-primary">
         Visual Analytics
       </h2>

@@ -2,18 +2,7 @@
 import React,{ useState } from 'react'
 import Link from 'next/link'
 
-export default function ForgetPasswordButton({ onClick }) {
-  const [loading, setLoading] = useState(false)
-
-  const handleClick = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    try {
-      await onClick(e)
-    } finally {
-      setLoading(false)
-    }
-  }
+export default function ForgetPasswordButton({ handleClick,loading,setLoading }) {
 
   return (
     <>
@@ -51,7 +40,7 @@ export default function ForgetPasswordButton({ onClick }) {
       <button
         type="submit"
         // onClick={handleClick}
-        className="w-full text-textheading flex justify-center items-center gap-2 py- "
+        className="w-full text-textheading flex justify-center items-center gap-2  "
         // disabled={loading}
       >
           <Link href={'/signin'}>

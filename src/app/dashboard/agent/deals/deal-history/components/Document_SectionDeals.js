@@ -65,12 +65,12 @@ const Documents_SectionDeals = () => {
 
     <div className="bg-cardbg border border-bordercolor rounded-xl shadow-sm p-4">
       <div className="flex flex-col md:flex-row md:justify-between mb-6 items-center">
-        <h3 className="text-md mb-2 md:mb-0 font-semibold  text-textnormal">
+        <h3 className="text-sm md:text-lg mb-2 md:mb-0 font-semibold  text-textnormal">
           Documents for Signature
         </h3>
        <div className="space-y-4 md:space-x-2">
-          <Button className=" md:mb-0 bg-background text-textnormal w-full md:w-fit">+ Add New Document</Button>
-          <Button className="w-full md:w-fit bg-buttonbg text-background" >
+          <Button className=" md:mb-0 rounded-xl text-textnormal text-xs md:text-sm font-medium border-bordercolor bg-cardbg w-full md:w-fit">+ Add New Document</Button>
+          <Button className="w-full  rounded-xl md:w-fit bg-textheading text-xs md:text-sm text-background font-medium" >
             Send For Signature
           </Button>
           </div>
@@ -96,7 +96,7 @@ const Documents_SectionDeals = () => {
       </tr>
     </thead>
 
-    <tbody>
+    <tbody className="text-xs sm:text-sm">
       {documents.map((doc, index) => (
         <tr
           key={doc.key || index}

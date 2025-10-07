@@ -7,6 +7,7 @@ import Button from './Button'
 import ThemeMode from '../../../components/common/ThemeMode'
 import { useRouter } from 'next/navigation'
 
+
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null)
   const router = useRouter()
@@ -20,10 +21,12 @@ export default function Navbar() {
 
   return (
     <div className="mt-0 w-full flex items-center border-b border-bordercolor p-2 md:p-4 lg:p-4 bg-background">
+      <div className='hidden md:block'>
       <ThemeMode />
+      </div>
       {/* Right-side buttons wrapper */}
       <div className="ml-auto flex items-center gap-4">
-        <Button className="text-textnormal bg-background border border-textnormal hover:bg-opacity-90 hover:scale-105 active:scale-95 hover:shadow-lg text-xs md:text-md lg:text-lg ">
+        <Button className="hidden lg:block text-textnormal bg-background border border-textnormal hover:bg-opacity-90 hover:scale-105 active:scale-95 hover:shadow-lg text-xs md:text-md lg:text-sm ">
           Explore Properties
         </Button>
 
@@ -41,20 +44,27 @@ export default function Navbar() {
 
         {/* User Dropdown */}
         <UserDropdown
+         className="flex items-center gap-2 text-[11px] font-medium whitespace-nowrap sm:text-xs md:text-sm lg:text-base bg-transparent"
           userImage="https://i0.wp.com/picjumbo.com/wp-content/uploads/chilled-young-black-male-model-in-studio-portrait-free-image.jpeg?w=2210&quality=70"
           userName="Abhishek Singh"
           isOpen={openDropdown === 'userMenu'}
           toggleDropdown={toggleDropdown}
           dropdownKey="userMenu"
         >
-          <button className="block w-full text-left px-4 py-2 hover:bg-gray-100">
+          <button className="block w-full text-left px-1 md:px-2 py-1 lg:px-4 lg:py-2 hover:bg-secondary hover:text-background">
             Profile
           </button>
-          <button className="block w-full text-left px-4 py-2 hover:bg-gray-100">
+          <button className="block w-full text-left px-1 md:px-2 py-1 lg:px-4 lg:py-2 hover:bg-secondary hover:text-background">
             Settings
           </button>
-          <button className="block w-full text-left px-4 py-2 hover:bg-gray-100">
+          <button className="block w-full text-left px-1 md:px-2 py-1 lg:px-4 lg:py-2 hover:bg-secondary hover:text-background">  
             Logout
+          </button>
+          <button className="block lg:hidden w-full px-1 text-left md:px-2 py-1 lg:px-4 lg:py-2 hover:bg-secondary hover:text-background">
+           Explore Properties
+          </button>
+          <button className="block md:hidden w-full px-1 text-left md:px-2 py-1 lg:px-4 lg:py-2 hover:bg-secondary hover:text-background">
+           <ThemeMode />
           </button>
         </UserDropdown>
       </div>

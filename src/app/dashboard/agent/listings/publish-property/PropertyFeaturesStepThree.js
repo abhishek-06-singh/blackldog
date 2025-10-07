@@ -39,12 +39,23 @@ export default function PropertyFeaturesStepThree({ onNext, onBack }) {
               >
                 <Select
                   placeholder="Select"
-                  className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-                  dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-                  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
+                   dropdownClassName="bg-cardbg border border-bordercolor 
+    [&_.ant-select-item-option-selected]:!bg-buttonbg 
+    [&_.ant-select-item-option-selected]:!text-background 
+    [&_.ant-select-item-option-active]:!bg-buttonbg 
+    [&_.ant-select-item-option-active]:!text-background"
+  className="w-full h-10 
+    [&_.ant-select-selector]:!bg-cardbg 
+    [&_.ant-select-selector]:!rounded-xl 
+    [&_.ant-select-selector]:!border-bordercolor 
+    [&_.ant-select-selection-item]:!text-textnormal 
+    [&_.ant-select-selection-placeholder]:!text-placeholder 
+    [&_.ant-select-selector]:!focus:border-textnormal 
+    [&_.ant-select-selector]:!ring-0"
+  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
                 >
                   {[1, 2, 3, 4, 5].map((num) => (
-                    <Select.Option key={num} value={num}>
+                    <Select.Option key={num} value={num} className="!text-textnormal">
                       {num}
                     </Select.Option>
                   ))}
@@ -58,12 +69,23 @@ export default function PropertyFeaturesStepThree({ onNext, onBack }) {
               >
                 <Select
                   placeholder="Select"
-                  className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-                  dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-                  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
+                    dropdownClassName="bg-cardbg border border-bordercolor 
+    [&_.ant-select-item-option-selected]:!bg-buttonbg 
+    [&_.ant-select-item-option-selected]:!text-background 
+    [&_.ant-select-item-option-active]:!bg-buttonbg 
+    [&_.ant-select-item-option-active]:!text-background"
+  className="w-full h-10 
+    [&_.ant-select-selector]:!bg-cardbg 
+    [&_.ant-select-selector]:!rounded-xl 
+    [&_.ant-select-selector]:!border-bordercolor 
+    [&_.ant-select-selection-item]:!text-textnormal 
+    [&_.ant-select-selection-placeholder]:!text-placeholder 
+    [&_.ant-select-selector]:!focus:border-textnormal 
+    [&_.ant-select-selector]:!ring-0"
+  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
                 >
                   {[1, 2, 3, 4].map((num) => (
-                    <Select.Option key={num} value={num}>
+                    <Select.Option key={num} value={num} className="!text-textnormal">
                       {num}
                     </Select.Option>
                   ))}
@@ -77,12 +99,23 @@ export default function PropertyFeaturesStepThree({ onNext, onBack }) {
               >
                 <Select
                   placeholder="Select Area"
-                  className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-                  dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-                  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
+                    dropdownClassName="bg-cardbg border border-bordercolor 
+    [&_.ant-select-item-option-selected]:!bg-buttonbg 
+    [&_.ant-select-item-option-selected]:!text-background 
+    [&_.ant-select-item-option-active]:!bg-buttonbg 
+    [&_.ant-select-item-option-active]:!text-background"
+  className="w-full h-10 
+    [&_.ant-select-selector]:!bg-cardbg 
+    [&_.ant-select-selector]:!rounded-xl 
+    [&_.ant-select-selector]:!border-bordercolor 
+    [&_.ant-select-selection-item]:!text-textnormal 
+    [&_.ant-select-selection-placeholder]:!text-placeholder 
+    [&_.ant-select-selector]:!focus:border-textnormal 
+    [&_.ant-select-selector]:!ring-0"
+  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
                 >
                   {[500, 1000, 1500, 2000, 2500, 3000].map((value) => (
-                    <Select.Option key={value} value={value}>
+                    <Select.Option key={value} value={value} className="!text-textnormal">
                       {value.toLocaleString()} sq ft
                     </Select.Option>
                   ))}
@@ -99,12 +132,23 @@ export default function PropertyFeaturesStepThree({ onNext, onBack }) {
               >
                 <Select
                   placeholder="Enter Number"
-                  className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-                 dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"
-                  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
+                   dropdownClassName="bg-cardbg border border-bordercolor 
+    [&_.ant-select-item-option-selected]:!bg-buttonbg 
+    [&_.ant-select-item-option-selected]:!text-background 
+    [&_.ant-select-item-option-active]:!bg-buttonbg 
+    [&_.ant-select-item-option-active]:!text-background"
+  className="w-full h-10 
+    [&_.ant-select-selector]:!bg-cardbg 
+    [&_.ant-select-selector]:!rounded-xl 
+    [&_.ant-select-selector]:!border-bordercolor 
+    [&_.ant-select-selection-item]:!text-textnormal 
+    [&_.ant-select-selection-placeholder]:!text-placeholder 
+    [&_.ant-select-selector]:!focus:border-textnormal 
+    [&_.ant-select-selector]:!ring-0"
+  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
                 >
                   {[0, 1, 2, 3, 4].map((num) => (
-                    <Select.Option key={num} value={num}>
+                    <Select.Option key={num} value={num} className="!text-textnormal">
                       {num}
                     </Select.Option>
                   ))}
@@ -118,13 +162,25 @@ export default function PropertyFeaturesStepThree({ onNext, onBack }) {
               >
                 <Select
                   placeholder="Select Year"
-                  dropdownClassName="bg-cardbg border border-bordercolor [&_.ant-select-item-option-selected]:!bg-buttonbg [&_.ant-select-item-option-selected]:!text-background [&_.ant-select-item-option-active]:!bg-buttonbg [&_.ant-select-item-option-active]:!text-background"className="w-full h-10 [&_.ant-select-selector]:!bg-cardbg [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-bordercolor [&_.ant-select-selection-item]:!text-textnormal [&_.ant-select-selector]:!focus:border-textnormal [&_.ant-select-selector]:!ring-0"
-                  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
+                   dropdownClassName="bg-cardbg border border-bordercolor 
+    [&_.ant-select-item-option-selected]:!bg-buttonbg 
+    [&_.ant-select-item-option-selected]:!text-background 
+    [&_.ant-select-item-option-active]:!bg-buttonbg 
+    [&_.ant-select-item-option-active]:!text-background"
+  className="w-full h-10 
+    [&_.ant-select-selector]:!bg-cardbg 
+    [&_.ant-select-selector]:!rounded-xl 
+    [&_.ant-select-selector]:!border-bordercolor 
+    [&_.ant-select-selection-item]:!text-textnormal 
+    [&_.ant-select-selection-placeholder]:!text-placeholder 
+    [&_.ant-select-selector]:!focus:border-textnormal 
+    [&_.ant-select-selector]:!ring-0"
+  suffixIcon={<ChevronDown className="w-4 h-4 text-textnormal" />}
                 >
                   {Array.from({ length: 50 }, (_, i) => {
                     const year = new Date().getFullYear() - i
                     return (
-                      <Select.Option key={year} value={year}>
+                      <Select.Option key={year} value={year} className="!text-textnormal">
                         {year}
                       </Select.Option>
                     )

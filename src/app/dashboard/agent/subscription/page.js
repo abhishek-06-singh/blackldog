@@ -15,14 +15,14 @@ export default function SubscriptionPage() {
       transition={{ duration: 0.6, ease: 'easeInOut' }} // 400ms
     >
       <Navbar />
-      <div className="ml-10">
+      <div className="ml-2 md:ml-6 lg:ml-10">
         <Heading
           className="mt-6"
           title="My Current Plan"
           subtitle={'Manage Your Subscription and billing information'}
         />
       </div>
-      <div className="space-y-6 p-10">
+      <div className="space-y-6 p-2 md:p-6 lg:p-10">
         <SubscriptionPlanCard />
         <BillingSummaryCard />
       </div>

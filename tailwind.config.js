@@ -72,7 +72,7 @@ module.exports = {
         accentBg: 'var(--color-accentBg)',
         bordersemicolor: 'var(--color-bordersemicolor)',
         corallighter: 'var(--color-corallighter)',
-
+        placeholder: 'var(--color-placeholder)',
 
 
 

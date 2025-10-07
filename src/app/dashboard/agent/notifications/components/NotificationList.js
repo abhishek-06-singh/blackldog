@@ -17,7 +17,7 @@ const notifications = [
       assignedTo: 'John Doe',
     },
     time: '5 mins ago',
-    icon: <Image src={userplus} alt="userplus"  />,
+    icon: <Image src={userplus} alt="userplus" />,
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const notifications = [
       status: 'Pending',
     },
     time: '5 mins ago',
-    icon:<Image src={pdf} alt="pdf" />,
+    icon: <Image src={pdf} alt="pdf" />,
   },
   {
     id: 3,
@@ -53,36 +53,46 @@ const notifications = [
 
 export default function NotificationList() {
   return (
-    <div className="p-4 w-full space-y-4">
-      <h3 className="font-semibold text-lg text-textheading mb-4">Today</h3>
+    <div className="md:p-4 w-full space-y-4">
+      <h3 className="font-semibold text-sm md:text-lg text-textheading mb-4">Today</h3>
 
       {notifications.map((notif) => (
         <div
           key={notif.id}
-          className="flex gap-4 p-4 bg-cardbg rounded-lg shadow-md border border-bordercolor items-center"
+          className="flex flex-col sm:flex-row gap-4 p-4 bg-cardbg rounded-lg shadow-md border border-bordercolor items-start sm:items-center"
         >
-          <div className="w-11 h-11 flex items-center justify-center rounded-full bg-orange-100 z-0">
-          {notif.icon}
+          {/* Icon */}
+          <div className="w-11 h-11 flex items-center justify-center rounded-full bg-orange-100 shrink-0">
+            {notif.icon}
           </div>
-          <div className="flex flex-col gap-1">
-            <span className="font-semibold text-textheading">{notif.title}</span>
 
-            {/* Uniform rendering of structured subtitle */}
-            <span className="text-textnormal text-sm">
+          {/* Content */}
+          <div className="flex flex-col gap-1 w-full">
+            <span className="font-semibold text-textheading text-sm md:text-base">
+              {notif.title}
+            </span>
+
+            <span className="text-textnormal text-xs md:text-sm flex flex-wrap gap-2">
               {notif.subtitle.property && (
                 <>
-                  Property: <span className="font-semibold mx-3">{notif.subtitle.property}</span>{' '}
+                  Property:{' '}
+                  <span className="font-semibold mx-1 md:mx-3">
+                    {notif.subtitle.property}
+                  </span>{' '}
                 </>
               )}
               {notif.subtitle.assignedTo && (
                 <>
-                  Assigned To: <span className="font-semibold">{notif.subtitle.assignedTo}</span>{' '}
+                  Assigned To:{' '}
+                  <span className="font-semibold">
+                    {notif.subtitle.assignedTo}
+                  </span>{' '}
                 </>
               )}
               {notif.subtitle.status && (
                 <>
                   Status:{' '}
-                  <span className=" border border-status-pending-in-review-500 text-status-pending-in-review-500 text-xs px-2 py-0.5 rounded-full">
+                  <span className="border border-status-pending-in-review-500 text-status-pending-in-review-500 text-xs px-2 py-0.5 rounded-full">
                     {notif.subtitle.status}
                   </span>{' '}
                 </>

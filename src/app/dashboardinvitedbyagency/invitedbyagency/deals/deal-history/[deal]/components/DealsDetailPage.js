@@ -1,0 +1,28 @@
+import Navbar from '../../../../../components/minicomponents/Navbar'
+import Heading from '../../../../../components/minicomponents/Heading'
+import { Plus } from 'lucide-react'
+import DealSummaryCard from './DealSummaryCard'
+import LeadAndDealDetailsCard from './LeadAndDealDetailsCard'
+import CommissionDistributionCard from './CommissionDistributionCard'
+import DocumentsForSignatureCard from './DocumentsForSignatureCard'
+import InternalNotesCard from './InternalNotesCard'
+import CommissionDetails from './CommissionDetails'
+
+export default function DealsDetailPage() {
+  return (
+    <div className="mt-0 w-full flex flex-col overflow-x-hidden">
+          <Navbar />
+         <div className="ml-5 md:ml-10 mt-6 md:h-10 flex pr-5 md:pr-10 justify-between">
+                    <Heading title="Deal Details" />
+                  </div>
+
+                  <div className=' space-y-6 p-2 md:px-6 py-10'>
+                    <DealSummaryCard />
+                    <LeadAndDealDetailsCard />
+                    <CommissionDetails />
+                    <DocumentsForSignatureCard />
+                    <InternalNotesCard />
+                  </div>
+                  </div>
+  )
+}

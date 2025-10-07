@@ -54,6 +54,26 @@ const NotificationsTabs = () => {
           >
            Messages
           </button>
+           <button
+            onClick={() => setActiveTab('team')}
+            className={`ml-4 px-4 py-2 text-sm font-medium rounded-t-lg ${
+              activeTab === 'team'
+                ? 'text-buttonbg border-b-2 border-buttonbg'
+                : 'text-textnormal hover:text-textnormal '
+            }`}
+          >
+           Team Activity
+          </button>
+            <button
+            onClick={() => setActiveTab('billing')}
+            className={`ml-4 px-4 py-2 text-sm font-medium rounded-t-lg ${
+              activeTab === 'billing'
+                ? 'text-buttonbg border-b-2 border-buttonbg'
+                : 'text-textnormal hover:text-textnormal '
+            }`}
+          >
+           System & Billing
+          </button>
         </div>
 
         {/* Tabs Content */}
@@ -77,6 +97,18 @@ const NotificationsTabs = () => {
             </div>
           )}
           {activeTab === 'Messages' && (
+            <div className="">
+                 <AllNotifications/>
+            
+            </div>
+          )}
+           {activeTab === 'team' && (
+            <div className="">
+                 <AllNotifications/>
+            
+            </div>
+          )}
+           {activeTab === 'billing' && (
             <div className="">
                  <AllNotifications/>
             

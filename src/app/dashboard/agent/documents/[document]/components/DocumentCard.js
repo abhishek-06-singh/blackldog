@@ -13,12 +13,12 @@ export default function DocumentCard({ doc }) {
 
       {/* Top section */}
       <div className="flex gap-3 items-center justify-start">
-        <Image src={pdf_Light} className='block dark:hidden w-8 h-8'></Image>
+        <Image src={pdf_Light} className='block dark:hidden w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8'></Image>
         <Image src={pdf_Dark} className='hidden dark:block w-8 h-8'></Image>
 
         <div>
-          <h3 className="text-lg font-semibold text-textheading">{doc}</h3>
-          <p className="text-sm text-textnormal mb-1">
+          <h3 className="text-sm md:text-base font-semibold text-textheading">{doc}</h3>
+          <p className="text-xs md:text-sm text-textnormal mb-1">
             Uploaded by {doc.uploadedBy || 'Uploaded By John Smith'  }  
           </p>
           <p className='text-xs text-textnormal mb-1'>{doc.size || '2.4 MB'}</p>
@@ -29,21 +29,21 @@ export default function DocumentCard({ doc }) {
       </div>
 
       {/* Info section */}
-      <div className="mt-4 flex items-center text-textnormal justify-between text-sm">
-        <p>
-          Last Interaction : <span className="text-textnormal font-medium">{doc}</span>
+      <div className="mt-4 flex md:items-center items-start  text-textnormal flex-col  justify-start md:flex-row md:justify-between text-xs md:text-sm">
+        <p className='mb-2 md:mb-0'>
+          Last Interaction : <span className="text-sm md:text-base text-textnormal font-medium">{doc}</span>
 
         </p>
         <div className="flex items-center">
 
-        <span className="mr-2 text-sm text-textnormal">Status : </span>
+        <span className="mr-2 text-xs md:text-sm text-textnormal">Status : </span>
 
         <div
           className={`px-3 py-1 rounded-full text-xs text-textnormal font-medium ${
             doc.status === 'Signed'
               ? 'bg-green-500 text-white'
               : doc.status === 'Pending'
-              ? 'bg-yellow-500 text-white'
+              ? 'bg-status-pending-in-review-500 text-white'
               : 'bg-bordercolor text-black'
           }`}
         >
@@ -56,16 +56,16 @@ export default function DocumentCard({ doc }) {
 
       {/* Buttons */}
       <div className="mt-5 flex gap-3 flex-wrap">
-        <button className="flex bg-buttonbg text-background items-center gap-2 px-4 py-2 border border-bordercolor rounded-lg">
+        <button className="flex bg-buttonbg text-background items-center text-sm md:text-base gap-2 px-4 py-2 border border-bordercolor rounded-lg">
           <Download className="w-4 h-4" /> Download
         </button>
-        <button className="flex text-textnormal items-center gap-2 px-4 py-2 border border-bordercolor rounded-lg">
+        <button className="flex text-textnormal text-sm md:text-base items-center gap-2 px-4 py-2 border border-bordercolor rounded-lg">
           <Image src={signature_dark} className="block dark:hidden w-4 h-4" /> 
           <Image src={signature_light} className="hidden dark:block w-4 h-4" /> 
           Send For Signature
 
         </button>
-        <button className="flex items-center gap-2 px-4 py-2 border border-bordercolor rounded-lg text-textnormal">
+        <button className="flex items-center gap-2 px-4 py-2 border border-bordercolor rounded-lg text-textnormal text-sm md:text-base">
           <Trash2 className="w-4 h-4" /> Delete
         </button>
       </div>

@@ -12,7 +12,7 @@ export default function ContactPreview({ contacts }) {
 
   return (
     <div className="w-full border border-bordercolor rounded-xl shadow-md p-4">
-      <p className="text-lg text-textheading font-semibold mb-6">
+      <p className="text-base md:text-lg text-textheading font-semibold mb-6">
         Contact Preview
       </p>
 
@@ -31,7 +31,7 @@ export default function ContactPreview({ contacts }) {
               <div className="flex flex-1 flex-row justify-between items-center">
                 {/* Name + Status */}
                 <div className="flex flex-col">
-                  <span className="text-sm font-semibold">{contact.name}</span>
+                  <span className="text-xs sm:text-sm text-textnormal font-semibold">{contact.name}</span>
                   <Tag
                     className={`w-fit mt-1 rounded-full text-white ${
                       contact.status === "Active"

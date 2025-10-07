@@ -9,7 +9,6 @@ export default function PriceCard({
   period,
   description,
   features,
-  showModal,
   isSelected,
   onSelect,
   buttontext,
@@ -38,9 +37,14 @@ export default function PriceCard({
       <button
         className={`text-textnormal border border-bordercolor font-semibold py-3 sm:py-4 px-4 rounded-lg transition
           ${isSelected ? "bg-buttonbg text-white hover:opacity-90" : " bg-background text-primary"}`}
-        onClick={showModal}
+        
       >
+        <Link
+  href="/payment"
+  className="block w-full text-center text-inherit no-underline hover:no-underline hover:text-white"
+>
         {buttontext}
+        </Link>
       </button>
 
       {/* Features */}

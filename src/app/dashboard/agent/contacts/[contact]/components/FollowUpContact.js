@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import { Card, DatePicker, TimePicker, Typography } from "antd";
-import { ClockCircleOutlined } from "@ant-design/icons";
+import { ClockCircleOutlined, CalendarOutlined } from "@ant-design/icons";
 import dayjs from "dayjs";
 import Image from "next/image";
 import clock_light from '../../../../components/icons/Lightmode_icons/leads-light/black_clock.svg'
@@ -38,9 +38,14 @@ const FollowUpContact = () => {
       {/* Date Picker */}
       <div className="mb-4">
         <Text strong className="text-textheading">Next Follow-Up Date</Text>
-        <DatePicker
-          className="w-full mt-1 bg-input border border-bordercolor"
-          onChange={handleDateChange}
+        <DatePicker className="
+             w-full h-10 rounded-xl
+             [&_.ant-picker-input>input]:!text-textnormal
+             [&_.ant-picker-input>input::placeholder]:!text-placeholder
+             !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0
+           "
+           suffixIcon={<CalendarOutlined className="w-4 h-4 text-placeholder" />}
+             onChange={handleDateChange}
           placeholder="Select Date"
         />
       </div>
@@ -49,7 +54,13 @@ const FollowUpContact = () => {
       <div className="mb-4">
         <Text strong className="text-textheading">Time</Text>
         <TimePicker
-          className="w-full mt-1 bg-input border border-bordercolor"
+          className="
+             w-full h-10 rounded-xl
+             [&_.ant-picker-input>input]:!text-textnormal
+             [&_.ant-picker-input>input::placeholder]:!text-placeholder
+             !bg-cardbg !border-bordercolor !focus:border-textnormal !ring-0
+           "
+           suffixIcon={<ClockCircleOutlined className="w-4 h-4 text-placeholder" />}
           onChange={handleTimeChange}
           placeholder="Select Time"
           format="h:mm A"
@@ -67,7 +78,7 @@ const FollowUpContact = () => {
       <div className="flex flex-row mt-5 gap-3 justify-start items-center px-2 bg-shadow rounded-lg">
         <Image className="w-4 h-4 block dark:hidden " src={clock_light} alt="clock" width={20} height={20} />
         <Image className="w-4 h-4 hidden dark:block" src={clock_dark} alt="clock" width={20} height={20} />
-        <p className="my-2 text-textnormal">Next follow-up on: January 18, 2025 at 2:00 PM</p>
+        <p className="my-2 text-xs md:text-sm text-textnormal">Next follow-up on: January 18, 2025 at 2:00 PM</p>
 
       </div>
     </Card>

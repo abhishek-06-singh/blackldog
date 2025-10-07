@@ -3,12 +3,28 @@
 import React, { useState } from 'react';
 import { Switch, Button, Input } from 'antd';
 import { MoreOutlined, FileTextOutlined, UserAddOutlined, DeleteOutlined, LogoutOutlined, EditOutlined } from '@ant-design/icons';
+import { ConfigProvider } from 'antd';
 
 export default function GroupDetailsSidebar() {
   const [notificationsMuted, setNotificationsMuted] = useState(false);
 
   return (
-    <div className=" w-full max-w-xs bg-cardbg p-4 shadow-sm flex flex-col gap-5">
+    <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: '#EEB887',
+              borderRadius: 12,
+            },
+            components: {
+              Steps: {
+                colorPrimary: '#EEB887',
+                colorText: '#000',
+                colorTextActive: '#EEB887',
+              },
+            },
+          }}
+        >
+    <div className=" w-full max-w-xs bg-cardbg p-2  shadow-sm flex flex-col gap-5">
       {/* Group Header */}
       <div>
         <h3 className="text-sm font-semibold text-textheading mb-1">Group Details</h3>
@@ -18,7 +34,7 @@ export default function GroupDetailsSidebar() {
             alt="Group Avatar"
             className="w-10 h-10 rounded-full object-cover"
           />
-          <span className="font-semibold text-base text-black flex items-center gap-1">
+          <span className="font-semibold text-base text-textheading flex items-center gap-1">
             DownTown Team
             <EditOutlined className="text-textnormal text-sm cursor-pointer" />
           </span>
@@ -41,7 +57,7 @@ export default function GroupDetailsSidebar() {
                   alt={user.name}
                   className="w-8 h-8 rounded-full"
                 />
-                <span className="text-sm font-medium">{user.name}</span>
+                <span className="text-sm font-medium text-textheading">{user.name}</span>
                 <span className="text-xs px-2 py-0.5 rounded-full bg- text-textnormal border border-bordercolor">
                   {user.role}
                 </span>
@@ -52,7 +68,7 @@ export default function GroupDetailsSidebar() {
         </div>
         <Button
           icon={<UserAddOutlined />}
-          className="w-full mt-3 bg-buttonbg text-background border-none hover:bg-buttonbg"
+          className="w-full mt-3 bg-buttonbg font-medium text-background border-none hover:bg-buttonbg"
         >
           Add Participant
         </Button>
@@ -93,7 +109,7 @@ export default function GroupDetailsSidebar() {
         <Input.TextArea
           placeholder="Enter Description here"
           rows={2}
-          className="resize-none text-sm"
+           className=" resize-none rounded-xl text-xs sm:!text-sm h-10 !bg-cardbg !text-textnormal !focus:ring-0 !focus:border-textnormal !border-bordercolor !shadow-none !outline-none"
         />
       </div>
 
@@ -102,18 +118,19 @@ export default function GroupDetailsSidebar() {
         <Button
           icon={<LogoutOutlined />}
           danger
-          className="w-full border border-red-300 text-red-500 bg-cardbg hover:bg-red-50"
+          className="w-full  border border-red-300 text-red-500 !bg-cardbg hover:bg-red-50"
         >
           Leave Group
         </Button>
         <Button
           icon={<DeleteOutlined />}
           danger
-          className="w-full border-none text-white bg-red-500 hover:bg-red-600"
+          className="w-full border-none text-textnormal !bg-red-500 hover:bg-red-600"
         >
           Delete Group
         </Button>
       </div>
     </div>
+    </ConfigProvider>
   );
 }
