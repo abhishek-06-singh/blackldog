@@ -28,7 +28,7 @@ export default function NewPassword() {
     }
   }, []);
 
-  const handleChangePassword = async (e: React.FormEvent) => {
+  const handleChangePassword = async (e) => {
     e.preventDefault();
 
     if (newPassword !== confirmPassword) {
