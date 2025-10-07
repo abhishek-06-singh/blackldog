@@ -15,7 +15,7 @@ export default function NewPassword() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [token, setToken] = useState<string | null>(null);
+  const [token, setToken] = useState(null);
 
   const router = useRouter();
 
